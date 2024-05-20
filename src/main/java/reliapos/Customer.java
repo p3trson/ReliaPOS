@@ -23,7 +23,7 @@ public class Customer extends javax.swing.JPanel{
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        p_allCus = new javax.swing.JPanel();
+        p_allEmp = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         dbTable = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
@@ -38,8 +38,8 @@ public class Customer extends javax.swing.JPanel{
         jLabel7 = new javax.swing.JLabel();
         all_addressTf = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        p_manageCus = new javax.swing.JPanel();
-        p_addCus = new javax.swing.JPanel();
+        p_manageEmp = new javax.swing.JPanel();
+        p_addEmp = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         add_nameTf = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -51,7 +51,7 @@ public class Customer extends javax.swing.JPanel{
         jLabel14 = new javax.swing.JLabel();
         addBtn = new javax.swing.JButton();
         clearBtn = new javax.swing.JButton();
-        p_editCus = new javax.swing.JPanel();
+        p_editEmp = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         edit_nameTf = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
@@ -73,8 +73,8 @@ public class Customer extends javax.swing.JPanel{
         jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
         jTabbedPane1.setToolTipText("");
 
-        p_allCus.setBackground(new java.awt.Color(72, 72, 72));
-        p_allCus.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        p_allEmp.setBackground(new java.awt.Color(72, 72, 72));
+        p_allEmp.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jScrollPane1.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -241,21 +241,21 @@ public class Customer extends javax.swing.JPanel{
 
         all_searchTf.getAccessibleContext().setAccessibleName("");
 
-        javax.swing.GroupLayout p_allCusLayout = new javax.swing.GroupLayout(p_allCus);
-        p_allCus.setLayout(p_allCusLayout);
-        p_allCusLayout.setHorizontalGroup(
-            p_allCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(p_allCusLayout.createSequentialGroup()
+        javax.swing.GroupLayout p_allEmpLayout = new javax.swing.GroupLayout(p_allEmp);
+        p_allEmp.setLayout(p_allEmpLayout);
+        p_allEmpLayout.setHorizontalGroup(
+            p_allEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_allEmpLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(p_allCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(p_allCusLayout.createSequentialGroup()
+                .addGroup(p_allEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(p_allEmpLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1196, Short.MAX_VALUE)
                         .addContainerGap())
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-        p_allCusLayout.setVerticalGroup(
-            p_allCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_allCusLayout.createSequentialGroup()
+        p_allEmpLayout.setVerticalGroup(
+            p_allEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_allEmpLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -263,11 +263,11 @@ public class Customer extends javax.swing.JPanel{
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("All Customers", p_allCus);
+        jTabbedPane1.addTab("All Customers", p_allEmp);
 
-        p_manageCus.setBackground(new java.awt.Color(72, 72, 72));
+        p_manageEmp.setBackground(new java.awt.Color(72, 72, 72));
 
-        p_addCus.setBackground(new java.awt.Color(51, 51, 51));
+        p_addEmp.setBackground(new java.awt.Color(51, 51, 51));
 
         jLabel9.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -323,13 +323,13 @@ public class Customer extends javax.swing.JPanel{
             }
         });
 
-        javax.swing.GroupLayout p_addCusLayout = new javax.swing.GroupLayout(p_addCus);
-        p_addCus.setLayout(p_addCusLayout);
-        p_addCusLayout.setHorizontalGroup(
-            p_addCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(p_addCusLayout.createSequentialGroup()
+        javax.swing.GroupLayout p_addEmpLayout = new javax.swing.GroupLayout(p_addEmp);
+        p_addEmp.setLayout(p_addEmpLayout);
+        p_addEmpLayout.setHorizontalGroup(
+            p_addEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_addEmpLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(p_addCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(p_addEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(add_nameTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11)
@@ -339,15 +339,15 @@ public class Customer extends javax.swing.JPanel{
                     .addComponent(jLabel13)
                     .addComponent(add_numberTF, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14)
-                    .addGroup(p_addCusLayout.createSequentialGroup()
+                    .addGroup(p_addEmpLayout.createSequentialGroup()
                         .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(289, Short.MAX_VALUE))
         );
-        p_addCusLayout.setVerticalGroup(
-            p_addCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(p_addCusLayout.createSequentialGroup()
+        p_addEmpLayout.setVerticalGroup(
+            p_addEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_addEmpLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -367,13 +367,13 @@ public class Customer extends javax.swing.JPanel{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(add_numberTF, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(p_addCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(p_addEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        p_editCus.setBackground(new java.awt.Color(51, 51, 51));
+        p_editEmp.setBackground(new java.awt.Color(51, 51, 51));
 
         jLabel10.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -443,13 +443,13 @@ public class Customer extends javax.swing.JPanel{
             }
         });
 
-        javax.swing.GroupLayout p_editCusLayout = new javax.swing.GroupLayout(p_editCus);
-        p_editCus.setLayout(p_editCusLayout);
-        p_editCusLayout.setHorizontalGroup(
-            p_editCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(p_editCusLayout.createSequentialGroup()
+        javax.swing.GroupLayout p_editEmpLayout = new javax.swing.GroupLayout(p_editEmp);
+        p_editEmp.setLayout(p_editEmpLayout);
+        p_editEmpLayout.setHorizontalGroup(
+            p_editEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_editEmpLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(p_editCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(p_editEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
                     .addComponent(edit_nameTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17)
@@ -461,15 +461,15 @@ public class Customer extends javax.swing.JPanel{
                     .addComponent(jLabel20)
                     .addComponent(jLabel23)
                     .addComponent(edit_searchTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(p_editCusLayout.createSequentialGroup()
+                    .addGroup(p_editEmpLayout.createSequentialGroup()
                         .addComponent(saveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(delBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(288, Short.MAX_VALUE))
         );
-        p_editCusLayout.setVerticalGroup(
-            p_editCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(p_editCusLayout.createSequentialGroup()
+        p_editEmpLayout.setVerticalGroup(
+            p_editEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_editEmpLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
@@ -493,34 +493,34 @@ public class Customer extends javax.swing.JPanel{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(edit_numberTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(p_editCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(p_editEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(delBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(176, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout p_manageCusLayout = new javax.swing.GroupLayout(p_manageCus);
-        p_manageCus.setLayout(p_manageCusLayout);
-        p_manageCusLayout.setHorizontalGroup(
-            p_manageCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(p_manageCusLayout.createSequentialGroup()
+        javax.swing.GroupLayout p_manageEmpLayout = new javax.swing.GroupLayout(p_manageEmp);
+        p_manageEmp.setLayout(p_manageEmpLayout);
+        p_manageEmpLayout.setHorizontalGroup(
+            p_manageEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_manageEmpLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(p_addCus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(p_addEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(p_editCus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(p_editEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(7, 7, 7))
         );
-        p_manageCusLayout.setVerticalGroup(
-            p_manageCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_manageCusLayout.createSequentialGroup()
+        p_manageEmpLayout.setVerticalGroup(
+            p_manageEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_manageEmpLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(p_manageCusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(p_editCus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(p_addCus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(p_manageEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(p_editEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(p_addEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Manage Customers", p_manageCus);
+        jTabbedPane1.addTab("Manage Customers", p_manageEmp);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -550,7 +550,7 @@ public class Customer extends javax.swing.JPanel{
     }//GEN-LAST:event_saveBtnActionPerformed
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
-        addEmployee();
+        addCustomer();
         tb_load();   
         clearText(add_nameTf, add_mailTf, add_adressTf, add_numberTF);
     }//GEN-LAST:event_addBtnActionPerformed
@@ -560,7 +560,7 @@ public class Customer extends javax.swing.JPanel{
     }//GEN-LAST:event_edit_searchTfActionPerformed
 
     private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
-        clearText(add_nameTf, add_mailTf, add_adressTf, add_numberTF);
+        clearText(add_nameTf, add_mailTf, add_adressTf, add_numberTF );
     }//GEN-LAST:event_clearBtnActionPerformed
 
     public void all_SearchCustomer() {
@@ -608,8 +608,7 @@ public class Customer extends javax.swing.JPanel{
             edit_nameTf.setText(rs.getString("Name"));
             edit_emailTf.setText(rs.getString("E-mail"));
             edit_numberTf.setText(rs.getString("Phone number"));
-            edit_addressTf.setText(rs.getString("Address"));
-            
+            edit_addressTf.setText(rs.getString("Address"));            
             }
             
         } catch (SQLException e) {
@@ -623,23 +622,20 @@ public class Customer extends javax.swing.JPanel{
     
     
     
-    public void addEmployee() {
+    public void addCustomer() {
         String name = add_nameTf.getText();
         String email = add_mailTf.getText();
         String address = add_adressTf.getText();
         String phnumber = add_numberTF.getText();
-        
-        
-       
+                   
         Statement s = null;
-        
-        
+                
         try {
             
             s = DB.connect().createStatement();
             s.executeUpdate("INSERT INTO customers (Name, Address, `E-mail`, `Phone number`) VALUES ('" + name + "', '" + address + "', '" + email + "', '" + phnumber + "')");
            
-            JOptionPane.showMessageDialog(p_addCus, "Customer sucessfully added !");
+            JOptionPane.showMessageDialog(p_addEmp, "Customer sucessfully added !");
             
         } catch (SQLException e) {
           System.out.println(e);
@@ -676,8 +672,7 @@ public class Customer extends javax.swing.JPanel{
                 v.add(rs.getString(3));
                 v.add(rs.getString(4));
                 v.add(rs.getString(5));
-
-                
+                                
                 dt.addRow(v);
                        
             }
@@ -695,7 +690,7 @@ public class Customer extends javax.swing.JPanel{
         String name = edit_nameTf.getText();
         String email = edit_emailTf.getText();
         String address = edit_addressTf.getText();
-        String phnumber = edit_numberTf.getText();
+        String phnumber = edit_numberTf.getText();        
         String id = edit_searchTf.getText();
         
         Statement s = null;
@@ -705,7 +700,7 @@ public class Customer extends javax.swing.JPanel{
         s = DB.connect().createStatement();
         s.executeUpdate("UPDATE customers SET Name = '" + name + "', Address = '" + address + "', `E-mail` =  '" + email + "', `Phone number` = '" + phnumber + "' WHERE ID = '" + id + "'");
            
-        JOptionPane.showMessageDialog(p_editCus, "Customer sucessfully updated !");
+        JOptionPane.showMessageDialog(p_editEmp, "Customer sucessfully updated !");
         
         } catch (SQLException e) {
           System.out.println(e);
@@ -725,7 +720,7 @@ public class Customer extends javax.swing.JPanel{
        s = DB.connect().createStatement();
        s.executeUpdate("DELETE FROM customers WHERE ID = '" + id + "'");
        
-       JOptionPane.showMessageDialog(p_editCus, "Customer sucessfully deleted !");
+       JOptionPane.showMessageDialog(p_editEmp, "Customer sucessfully deleted !");
        
        } catch (SQLException e) {
         System.out.println(e);
@@ -774,10 +769,10 @@ public class Customer extends javax.swing.JPanel{
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JPanel p_addCus;
-    private javax.swing.JPanel p_allCus;
-    private javax.swing.JPanel p_editCus;
-    private javax.swing.JPanel p_manageCus;
+    private javax.swing.JPanel p_addEmp;
+    private javax.swing.JPanel p_allEmp;
+    private javax.swing.JPanel p_editEmp;
+    private javax.swing.JPanel p_manageEmp;
     private javax.swing.JButton saveBtn;
     // End of variables declaration//GEN-END:variables
 }
