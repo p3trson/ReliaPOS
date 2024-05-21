@@ -9,11 +9,13 @@ import javax.swing.table.DefaultTableModel;
 
 public class Product extends javax.swing.JPanel {
 
-    
+    private ReliaPOS reliapos;
+    private String query = "SELECT * FROM products";
    
     public Product() {
+        reliapos = new ReliaPOS();
         initComponents();       
-        tb_load();
+        reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query); 
     }
 
     
@@ -604,212 +606,52 @@ public class Product extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void all_searchTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_all_searchTfActionPerformed
-       all_SearchProduct();
+       reliapos.searchRecord("products", "ID", all_searchTf.getText(), all_nameTf, all_groupTf, all_costTf, all_salepriceTf, all_quantityTf);
     }//GEN-LAST:event_all_searchTfActionPerformed
 
     private void delBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delBtnActionPerformed
-       deleteProduct();
-       tb_load();
+       reliapos.deleteRecord("products", "ID", edit_searchTf.getText());
+       reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query); 
     }//GEN-LAST:event_delBtnActionPerformed
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
-       updateProduct();
-       tb_load(); 
-       clearText(edit_nameTf, edit_groupTf, edit_costTf, edit_salepriceTf, edit_quantityTf);
+       String name = edit_nameTf.getText();
+       String group = edit_groupTf.getText();
+       String cost = edit_costTf.getText();
+       String saleprice = edit_salepriceTf.getText();
+       String quantity = edit_quantityTf.getText();
+       String id = edit_searchTf.getText();
+       
+       reliapos.updateProduct(name, group, cost, saleprice, quantity, id);
+       reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);  
+       reliapos.clearText(edit_nameTf, edit_groupTf, edit_costTf, edit_salepriceTf, edit_quantityTf);
     }//GEN-LAST:event_saveBtnActionPerformed
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
-        addProduct();
-        tb_load();   
-        clearText(edit_nameTf, edit_groupTf, edit_costTf, edit_salepriceTf, edit_quantityTf);
+        String name = add_nameTf.getText();
+        String group = add_groupTf.getText();
+        String cost = add_costTf.getText();
+        String saleprice = add_salepriceTf.getText();
+        String quantity = add_quantityTf.getText();
+        
+        reliapos.addProduct(name, group, cost, saleprice, quantity);
+        reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);    
+        reliapos.clearText(edit_nameTf, edit_groupTf, edit_costTf, edit_salepriceTf, edit_quantityTf);
     }//GEN-LAST:event_addBtnActionPerformed
 
     private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
-        clearText(edit_nameTf, edit_groupTf, edit_costTf, edit_salepriceTf, edit_quantityTf);
+        reliapos.clearText(edit_nameTf, edit_groupTf, edit_costTf, edit_salepriceTf, edit_quantityTf);
     }//GEN-LAST:event_clearBtnActionPerformed
 
     private void edit_searchTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_searchTfActionPerformed
-        edit_SearchProduct();
+        reliapos.searchRecord("products", "ID", edit_searchTf.getText(), edit_nameTf, edit_groupTf, edit_costTf, edit_salepriceTf, edit_quantityTf);
     }//GEN-LAST:event_edit_searchTfActionPerformed
 
     private void savePDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savePDFActionPerformed
 
     }//GEN-LAST:event_savePDFActionPerformed
 
-    public void all_SearchProduct() {
-        
-        String search = all_searchTf.getText();
-        Statement s = null;
-        ResultSet rs = null;
-        
-        try {
-            
-            s = DB.connect().createStatement();
-            
-            rs = s.executeQuery("SELECT * FROM products WHERE ID = '" +search+ "'");
-           
-            if (rs.next()) {
-            all_nameTf.setText(rs.getString("Name"));
-            all_groupTf.setText(rs.getString("Group"));
-            all_costTf.setText(rs.getString("Cost"));
-            all_salepriceTf.setText(rs.getString("SalePrice"));
-            all_quantityTf.setText(rs.getString("Quantity"));
-            
-            }
-            
-        } catch (SQLException e) {
-          System.out.println(e); 
-        } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-             if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
-             
-        }
-    }
     
-    public void edit_SearchProduct() {
-        
-        String search = edit_searchTf.getText();
-        Statement s = null;
-        ResultSet rs = null;
-        
-        try {
-            
-            s = DB.connect().createStatement();
-            
-            rs = s.executeQuery("SELECT * FROM products WHERE ID = '" +search+ "'");
-           
-            if (rs.next()) {
-            edit_nameTf.setText(rs.getString("Name"));
-            edit_groupTf.setText(rs.getString("Group"));
-            edit_costTf.setText(rs.getString("Cost"));
-            edit_salepriceTf.setText(rs.getString("SalePrice"));            
-            edit_quantityTf.setText(rs.getString("Quantity")); 
-            }
-            
-        } catch (SQLException e) {
-          System.out.println(e);
-        } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-             if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
-             
-        }
-    }
-    
-    
-    
-    public void addProduct() {
-        String name = add_nameTf.getText();
-        String group = add_groupTf.getText();
-        String cost = add_costTf.getText();
-        String saleprice = add_salepriceTf.getText();
-        String quantity = add_quantityTf.getText();
-                   
-        Statement s = null;
-                
-        try {
-            
-            s = DB.connect().createStatement();
-            s.executeUpdate("INSERT INTO products (Name, \"Group\", Cost, SalePrice, Quantity) VALUES ('" + name + "', '" + group + "', '" + cost + "', '" + saleprice + "', '" + quantity + "')");
-           
-            JOptionPane.showMessageDialog(p_addEmp, "Product sucessfully added !");
-            
-        } catch (SQLException e) {
-          System.out.println(e);
-        } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-    }
-    
-    public void clearText(JTextField... textFields) {
-    for (JTextField tf : textFields) {
-        tf.setText("");
-    }
-}
-    
-    public void tb_load() {
-        
-        Statement s = null;
-        ResultSet rs = null;
-        
-        try {
-            
-            DefaultTableModel dt = (DefaultTableModel) dbTable.getModel();
-            dt.setRowCount(0);
-            
-            s = DB.connect().createStatement();
-            rs = s.executeQuery("SELECT * FROM products");
-           
-            while (rs.next()) {
-                
-                Vector v = new Vector();
-                
-                v.add(rs.getString(1));
-                v.add(rs.getString(2));
-                v.add(rs.getString(3));
-                v.add(rs.getString(4));
-                v.add(rs.getString(5));
-                v.add(rs.getString(6));
-                                
-                dt.addRow(v);
-                       
-            }
-                
-            
-        } catch (SQLException e) {
-          System.out.println(e);
-        }  finally {
-        if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
-        if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-    }
-
-   public void updateProduct() {     
-       
-        String name = edit_nameTf.getText();
-        String group = edit_groupTf.getText();
-        String cost = edit_costTf.getText();
-        String saleprice = edit_salepriceTf.getText();
-        String quantity = edit_quantityTf.getText();
-        String id = edit_searchTf.getText();
-        
-        
-        Statement s = null;
-       
-        try {
-            
-        s = DB.connect().createStatement();
-        s.executeUpdate("UPDATE products SET Name = '" + name + "', \"Group\" = '" + group + "', Cost =  '" + cost + "', SalePrice = '" + saleprice + "', Quantity = '" + quantity + "' WHERE ID = '" + id + "'");
-           
-        JOptionPane.showMessageDialog(p_editEmp, "Product sucessfully updated !");
-        
-        } catch (SQLException e) {
-          System.out.println(e);
-        } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-       
-       
-   }
-   
-   public void deleteProduct() {
-       String id = edit_searchTf.getText();
-       Statement s = null;
-       
-       try {
-           
-       s = DB.connect().createStatement();
-       s.executeUpdate("DELETE FROM products WHERE ID = '" + id + "'");
-       
-       JOptionPane.showMessageDialog(p_editEmp, "Product sucessfully deleted !");
-       
-       } catch (SQLException e) {
-        System.out.println(e);
-       } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-}   
-   
-   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
     private javax.swing.JTextField add_costTf;
