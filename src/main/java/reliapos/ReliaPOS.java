@@ -1,9 +1,11 @@
 package reliapos;
 
+import java.awt.HeadlessException;
 import java.sql.*;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 
 
 public class ReliaPOS {
@@ -165,5 +167,39 @@ public class ReliaPOS {
             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
         }
     }
+      
+      public void addCustomer(String name, String address, String email, String phnumber) {
+        Statement s = null;
+                
+        try {
+            
+            s = DB.connect().createStatement();
+            s.executeUpdate("INSERT INTO customers (Name, Address, `E-mail`, `Phone number`) VALUES ('" + name + "', '" + address + "', '" + email + "', '" + phnumber + "')");
+           
+            JOptionPane.showMessageDialog(null, "Customer sucessfully added !");
+            
+        } catch (SQLException e) {
+          System.out.println(e);
+        } finally {
+             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
+        }
+    }
+      
+    public void updateCustomer(String name, String address, String email, String phnumber, String id) {      
+        Statement s = null;
+       
+        try {
+            
+        s = DB.connect().createStatement();
+        s.executeUpdate("UPDATE customers SET Name = '" + name + "', Address = '" + address + "', `E-mail` =  '" + email + "', `Phone number` = '" + phnumber + "' WHERE ID = '" + id + "'");
+           
+        JOptionPane.showMessageDialog(null, "Customer sucessfully updated !");
+        
+        } catch (SQLException e) {
+          System.out.println(e);
+        } finally {
+             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
+        }       
+   }
 }
 
