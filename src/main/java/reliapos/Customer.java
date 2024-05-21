@@ -10,11 +10,13 @@ import javax.swing.table.DefaultTableModel;
 
 public class Customer extends javax.swing.JPanel{
 
-    
+    private ReliaPOS reliapos;
+    private String query = "SELECT * FROM customers";
    
     public Customer() {
         initComponents();       
-        tb_load();
+        reliapos = new ReliaPOS();
+        reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);
     }
 
     
@@ -38,6 +40,7 @@ public class Customer extends javax.swing.JPanel{
         jLabel7 = new javax.swing.JLabel();
         all_addressTf = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        savePDF = new javax.swing.JButton();
         p_manageEmp = new javax.swing.JPanel();
         p_addEmp = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -188,7 +191,7 @@ public class Customer extends javax.swing.JPanel{
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(all_addressTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 92, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,6 +216,13 @@ public class Customer extends javax.swing.JPanel{
                         .addComponent(all_addressTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
+        savePDF.setText("Save PDF");
+        savePDF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                savePDFActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -223,6 +233,8 @@ public class Customer extends javax.swing.JPanel{
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(all_searchTf, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(savePDF, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -232,11 +244,14 @@ public class Customer extends javax.swing.JPanel{
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(all_searchTf, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(savePDF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(all_searchTf))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addGap(10, 10, 10))
         );
 
         all_searchTf.getAccessibleContext().setAccessibleName("");
@@ -535,181 +550,50 @@ public class Customer extends javax.swing.JPanel{
     }// </editor-fold>//GEN-END:initComponents
 
     private void all_searchTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_all_searchTfActionPerformed
-       all_SearchCustomer();
+       reliapos.searchRecord("customers", "ID", all_searchTf.getText(), all_nameTf, all_mailTf, all_addressTf, all_numberTf );
     }//GEN-LAST:event_all_searchTfActionPerformed
 
     private void delBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delBtnActionPerformed
-       deleteCustomer();
-       tb_load();
+       reliapos.deleteRecord("customers", "ID", edit_searchTf.getText());
+       reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);
+       reliapos.clearText(edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf);
     }//GEN-LAST:event_delBtnActionPerformed
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
-       updateCustomer();
-       tb_load(); 
-       clearText(edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf);
+       String name = edit_nameTf.getText();
+       String email = edit_emailTf.getText();
+       String address = edit_addressTf.getText();
+       String phnumber = edit_numberTf.getText();        
+       String id = edit_searchTf.getText();
+       
+       reliapos.updateCustomer(name, address, email, phnumber, id);
+       reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query); 
+       reliapos.clearText(edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf);
     }//GEN-LAST:event_saveBtnActionPerformed
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
-        addCustomer();
-        tb_load();   
-        clearText(add_nameTf, add_mailTf, add_adressTf, add_numberTF);
-    }//GEN-LAST:event_addBtnActionPerformed
-
-    private void edit_searchTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_searchTfActionPerformed
-       edit_SearchCustomer();
-    }//GEN-LAST:event_edit_searchTfActionPerformed
-
-    private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
-        clearText(add_nameTf, add_mailTf, add_adressTf, add_numberTF );
-    }//GEN-LAST:event_clearBtnActionPerformed
-
-    public void all_SearchCustomer() {
-        
-        String search = all_searchTf.getText();
-        Statement s = null;
-        ResultSet rs = null;
-        
-        try {
-            
-            s = DB.connect().createStatement();
-            
-            rs = s.executeQuery("SELECT * FROM customers WHERE ID = '" +search+ "'");
-           
-            if (rs.next()) {
-            all_nameTf.setText(rs.getString("Name"));
-            all_mailTf.setText(rs.getString("E-mail"));
-            all_numberTf.setText(rs.getString("Phone number"));
-            all_addressTf.setText(rs.getString("Address"));
-            
-            }
-            
-        } catch (SQLException e) {
-          System.out.println(e); 
-        } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-             if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
-             
-        }
-    }
-    
-    public void edit_SearchCustomer() {
-        
-        String search = edit_searchTf.getText();
-        Statement s = null;
-        ResultSet rs = null;
-        
-        try {
-            
-            s = DB.connect().createStatement();
-            
-            rs = s.executeQuery("SELECT * FROM customers WHERE ID = '" +search+ "'");
-           
-            if (rs.next()) {
-            edit_nameTf.setText(rs.getString("Name"));
-            edit_emailTf.setText(rs.getString("E-mail"));
-            edit_numberTf.setText(rs.getString("Phone number"));
-            edit_addressTf.setText(rs.getString("Address"));            
-            }
-            
-        } catch (SQLException e) {
-          System.out.println(e);
-        } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-             if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
-             
-        }
-    }
-    
-    
-    
-    public void addCustomer() {
         String name = add_nameTf.getText();
         String email = add_mailTf.getText();
         String address = add_adressTf.getText();
         String phnumber = add_numberTF.getText();
-                   
-        Statement s = null;
-                
-        try {
-            
-            s = DB.connect().createStatement();
-            s.executeUpdate("INSERT INTO customers (Name, Address, `E-mail`, `Phone number`) VALUES ('" + name + "', '" + address + "', '" + email + "', '" + phnumber + "')");
-           
-            JOptionPane.showMessageDialog(p_addEmp, "Customer sucessfully added !");
-            
-        } catch (SQLException e) {
-          System.out.println(e);
-        } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-    }
-    
-    public void clearText(JTextField... textFields) {
-    for (JTextField tf : textFields) {
-        tf.setText("");
-    }
-}
-    
-    public void tb_load() {
         
-        Statement s = null;
-        ResultSet rs = null;
-        
-        try {
-            
-            DefaultTableModel dt = (DefaultTableModel) dbTable.getModel();
-            dt.setRowCount(0);
-            
-            s = DB.connect().createStatement();
-            rs = s.executeQuery("SELECT * FROM customers");
-           
-            while (rs.next()) {
-                
-                Vector v = new Vector();
-                
-                v.add(rs.getString(1));
-                v.add(rs.getString(2));
-                v.add(rs.getString(3));
-                v.add(rs.getString(4));
-                v.add(rs.getString(5));
-                                
-                dt.addRow(v);
-                       
-            }
-                
-            
-        } catch (SQLException e) {
-          System.out.println(e);
-        }  finally {
-        if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
-        if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-    }
+        reliapos.addCustomer(name, address, email, phnumber);
+        reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);   
+        reliapos.clearText(add_nameTf, add_mailTf, add_adressTf, add_numberTF);
+    }//GEN-LAST:event_addBtnActionPerformed
 
-   public void updateCustomer() {      
-        String name = edit_nameTf.getText();
-        String email = edit_emailTf.getText();
-        String address = edit_addressTf.getText();
-        String phnumber = edit_numberTf.getText();        
-        String id = edit_searchTf.getText();
+    private void edit_searchTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_searchTfActionPerformed
+       reliapos.searchRecord("customers", "ID", edit_searchTf.getText(), edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf);
+    }//GEN-LAST:event_edit_searchTfActionPerformed
+
+    private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
         
-        Statement s = null;
-       
-        try {
-            
-        s = DB.connect().createStatement();
-        s.executeUpdate("UPDATE customers SET Name = '" + name + "', Address = '" + address + "', `E-mail` =  '" + email + "', `Phone number` = '" + phnumber + "' WHERE ID = '" + id + "'");
-           
-        JOptionPane.showMessageDialog(p_editEmp, "Customer sucessfully updated !");
-        
-        } catch (SQLException e) {
-          System.out.println(e);
-        } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-       
-       
-   }
+    }//GEN-LAST:event_clearBtnActionPerformed
+
+    private void savePDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savePDFActionPerformed
+
+    }//GEN-LAST:event_savePDFActionPerformed
+
    
    public void deleteCustomer() {
        String id = edit_searchTf.getText();
@@ -774,5 +658,6 @@ public class Customer extends javax.swing.JPanel{
     private javax.swing.JPanel p_editEmp;
     private javax.swing.JPanel p_manageEmp;
     private javax.swing.JButton saveBtn;
+    private javax.swing.JButton savePDF;
     // End of variables declaration//GEN-END:variables
 }
