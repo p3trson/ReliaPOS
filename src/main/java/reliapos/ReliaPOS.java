@@ -9,10 +9,40 @@ import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 
 
 public class ReliaPOS {
+        
+    public void addEmployee(String name, String email, String address, String phnumber, String bankacc, String taxn) {        
+        String namePattern = "^[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+$";
+        String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
+        String phonePattern = "^\\+\\d{9,}$";
+        String bankPattern = "^\\d{6,}/\\d{4}$";
+        String taxPattern = "^CZ\\d{8}$";
     
-   
     
-    public void addEmployee(String name, String email, String address, String phnumber, String bankacc, String taxn) {              
+        if (!name.matches(namePattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid name format. Format should be: First Name - Last Name");
+        return;
+        }
+        
+        if (!email.matches(emailPattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid email format. Format should be: example@example.com");
+        return;
+        }
+        
+        if (!phnumber.matches(phonePattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid phone number format. Format should be: +000000000");
+        return;
+        }
+        
+        if (!bankacc.matches(bankPattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid bank account format. Format should be: 000000000/0000");
+        return;
+        }
+        
+        if (!taxn.matches(taxPattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid tax number format. Format should be: CZ00000000");
+        return;
+        }
+        
         Statement s = null;
                 
         try {
@@ -65,7 +95,39 @@ public class ReliaPOS {
         }
     }
     
-    public void updateEmployee(String name, String email, String address, String phnumber, String bankacc, String taxn, String id) {                      
+    public void updateEmployee(String name, String email, String address, String phnumber, String bankacc, String taxn, String id) {     
+        String namePattern = "^[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+$";
+        String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
+        String phonePattern = "^\\+\\d{9,}$";
+        String bankPattern = "^\\d{6,}/\\d{4}$";
+        String taxPattern = "^CZ\\d{8}$";
+    
+    
+        if (!name.matches(namePattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid name format. Format should be: First Name - Last Name");
+        return;
+        }
+        
+        if (!email.matches(emailPattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid email format. Format should be: example@example.com");
+        return;
+        }
+        
+        if (!phnumber.matches(phonePattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid phone number format. Format should be: +000000000");
+        return;
+        }
+        
+        if (!bankacc.matches(bankPattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid bank account format. Format should be: 000000000/0000");
+        return;
+        }
+        
+        if (!taxn.matches(taxPattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid tax number format. Format should be: CZ00000000");
+        return;
+        }
+        
         Statement s = null;
        
         try {
@@ -116,7 +178,39 @@ public class ReliaPOS {
         }
     }
      
-     public void addProduct(String name, String group, String cost, String saleprice, String quantity) {                           
+     public void addProduct(String name, String group, String cost, String saleprice, String quantity) {  
+        String namePattern = "^[A-Z][a-zA-Z0-9 ]*$";
+        String groupPattern = "^[A-Z][a-zA-Z ]*$";  
+        String costPattern = "^[0-9]+(\\.[0-9]{1,2})?$";
+        String salepricePattern = "^[0-9]+(\\.[0-9]{1,2})?$";
+        String quantityPattern = "^[0-9]+$";
+    
+        
+        if (!name.matches(namePattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid product name format.");
+        return;
+        }
+        
+        if (!group.matches(groupPattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid product group format. Group cannot contain numbers.");
+        return;
+        }
+        
+        if (!cost.matches(costPattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid cost format. Format should be a number with up to 2 decimal places.");
+        return;
+        }
+        
+        if (!saleprice.matches(salepricePattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid sale price format. Format should be a number with up to 2 decimal places.");
+        return;
+        }
+        
+        if (!quantity.matches(quantityPattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid quantity format. Format should be an integer.");
+        return;
+        }
+        
         Statement s = null;
                 
         try {
@@ -133,7 +227,39 @@ public class ReliaPOS {
         }
     }
      
-     public void updateProduct(String name, String group, String cost, String saleprice, String quantity, String id) {                                  
+     public void updateProduct(String name, String group, String cost, String saleprice, String quantity, String id) {
+        String namePattern = "^[A-Z][a-zA-Z0-9 ]*$";
+        String groupPattern = "^[A-Z][a-zA-Z ]*$";  
+        String costPattern = "^[0-9]+(\\.[0-9]{1,2})?$";
+        String salepricePattern = "^[0-9]+(\\.[0-9]{1,2})?$";
+        String quantityPattern = "^[0-9]+$";
+    
+        
+        if (!name.matches(namePattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid product name format.");
+        return;
+        }
+        
+        if (!group.matches(groupPattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid product group format. Group cannot contain numbers.");
+        return;
+        }
+        
+        if (!cost.matches(costPattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid cost format. Format should be a number with up to 2 decimal places.");
+        return;
+        }
+        
+        if (!saleprice.matches(salepricePattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid sale price format. Format should be a number with up to 2 decimal places.");
+        return;
+        }
+        
+        if (!quantity.matches(quantityPattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid quantity format. Format should be an integer.");
+        return;
+        }
+        
         Statement s = null;
        
         try {
@@ -169,6 +295,26 @@ public class ReliaPOS {
     }
       
       public void addCustomer(String name, String address, String email, String phnumber) {
+        String namePattern = "^[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+$";
+        String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
+        String phonePattern = "^\\+\\d{9,}$";
+        
+        
+        if (!name.matches(namePattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid name format. Format should be: First Name - Last Name");
+        return;
+        }
+        
+        if (!email.matches(emailPattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid email format. Format should be: example@example.com");
+        return;
+        }
+        
+        if (!phnumber.matches(phonePattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid phone number format. Format should be: +000000000");
+        return;
+        }
+        
         Statement s = null;
                 
         try {
@@ -185,7 +331,27 @@ public class ReliaPOS {
         }
     }
       
-    public void updateCustomer(String name, String address, String email, String phnumber, String id) {      
+    public void updateCustomer(String name, String address, String email, String phnumber, String id) {   
+        String namePattern = "^[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+$";
+        String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
+        String phonePattern = "^\\+\\d{9,}$";
+        
+        
+        if (!name.matches(namePattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid name format. Format should be: First Name - Last Name");
+        return;
+        }
+        
+        if (!email.matches(emailPattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid email format. Format should be: example@example.com");
+        return;
+        }
+        
+        if (!phnumber.matches(phonePattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid phone number format. Format should be: +000000000");
+        return;
+        }
+        
         Statement s = null;
        
         try {
