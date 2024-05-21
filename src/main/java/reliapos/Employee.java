@@ -38,6 +38,7 @@ public class Employee extends javax.swing.JPanel{
         jLabel7 = new javax.swing.JLabel();
         all_addressTf = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        savePDF = new javax.swing.JButton();
         p_manageEmp = new javax.swing.JPanel();
         p_addEmp = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -196,7 +197,7 @@ public class Employee extends javax.swing.JPanel{
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(all_addressTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 92, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,6 +222,13 @@ public class Employee extends javax.swing.JPanel{
                         .addComponent(all_addressTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
+        savePDF.setText("Save PDF");
+        savePDF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                savePDFActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -231,6 +239,8 @@ public class Employee extends javax.swing.JPanel{
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(all_searchTf, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(savePDF, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -241,10 +251,11 @@ public class Employee extends javax.swing.JPanel{
                 .addGap(13, 13, 13)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(all_searchTf, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
+                    .addComponent(all_searchTf, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(savePDF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
         all_searchTf.getAccessibleContext().setAccessibleName("");
@@ -267,7 +278,7 @@ public class Employee extends javax.swing.JPanel{
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 549, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -631,6 +642,10 @@ public class Employee extends javax.swing.JPanel{
         clearText(add_nameTf, add_mailTf, add_adressTf, add_numberTF, add_bankTf, add_taxTf );
     }//GEN-LAST:event_clearBtnActionPerformed
 
+    private void savePDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savePDFActionPerformed
+
+    }//GEN-LAST:event_savePDFActionPerformed
+
     public void all_SearchEmployee() {
         
         String search = all_searchTf.getText();
@@ -861,5 +876,6 @@ public class Employee extends javax.swing.JPanel{
     private javax.swing.JPanel p_editEmp;
     private javax.swing.JPanel p_manageEmp;
     private javax.swing.JButton saveBtn;
+    private javax.swing.JButton savePDF;
     // End of variables declaration//GEN-END:variables
 }
