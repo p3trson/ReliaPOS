@@ -10,11 +10,15 @@ import javax.swing.table.DefaultTableModel;
 
 public class Employee extends javax.swing.JPanel{
 
+    private ReliaPOS reliapos;
+    private String query = "SELECT * FROM employees";
+    
     
    
-    public Employee() {
-        initComponents();       
-        tb_load();
+    public Employee() {   
+        reliapos = new ReliaPOS();
+        initComponents();             
+        reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);        
     }
 
     
@@ -614,101 +618,31 @@ public class Employee extends javax.swing.JPanel{
     }// </editor-fold>//GEN-END:initComponents
 
     private void all_searchTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_all_searchTfActionPerformed
-       all_SearchEmployee();
+       reliapos.searchRecord("employees", "ID", all_searchTf.getText(), all_nameTf, all_mailTf, all_numberTf, all_addressTf);
     }//GEN-LAST:event_all_searchTfActionPerformed
 
     private void delBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delBtnActionPerformed
-       deleteEmployee();
-       tb_load();
+       String id = edit_searchTf.getText();
+        
+       reliapos.deleteEmployee(id);
+       reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query); 
     }//GEN-LAST:event_delBtnActionPerformed
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
-       updateEmployee();
-       tb_load(); 
-       clearText(edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf, edit_bankTf, edit_taxTf );
+       String name = edit_nameTf.getText();
+       String email = edit_emailTf.getText();
+       String address = edit_addressTf.getText();
+       String phnumber = edit_numberTf.getText();
+       String bankacc = edit_bankTf.getText();
+       String taxn = edit_taxTf.getText();
+       String id = edit_searchTf.getText();
+       
+       reliapos.updateEmployee(name, email, address, phnumber, bankacc, taxn, id);
+       reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query); 
+       reliapos.clearText(edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf, edit_bankTf, edit_taxTf );
     }//GEN-LAST:event_saveBtnActionPerformed
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
-        addEmployee();
-        tb_load();   
-        clearText(add_nameTf, add_mailTf, add_adressTf, add_numberTF, add_bankTf, add_taxTf );
-    }//GEN-LAST:event_addBtnActionPerformed
-
-    private void edit_searchTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_searchTfActionPerformed
-       edit_SearchEmployee();
-    }//GEN-LAST:event_edit_searchTfActionPerformed
-
-    private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
-        clearText(add_nameTf, add_mailTf, add_adressTf, add_numberTF, add_bankTf, add_taxTf );
-    }//GEN-LAST:event_clearBtnActionPerformed
-
-    private void savePDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savePDFActionPerformed
-
-    }//GEN-LAST:event_savePDFActionPerformed
-
-    public void all_SearchEmployee() {
-        
-        String search = all_searchTf.getText();
-        Statement s = null;
-        ResultSet rs = null;
-        
-        try {
-            
-            s = DB.connect().createStatement();
-            
-            rs = s.executeQuery("SELECT * FROM employees WHERE ID = '" +search+ "'");
-           
-            if (rs.next()) {
-            all_nameTf.setText(rs.getString("Name"));
-            all_mailTf.setText(rs.getString("E-mail"));
-            all_numberTf.setText(rs.getString("Phone number"));
-            all_addressTf.setText(rs.getString("Address"));
-            
-            }
-            
-        } catch (SQLException e) {
-          System.out.println(e); 
-        } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-             if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
-             
-        }
-    }
-    
-    public void edit_SearchEmployee() {
-        
-        String search = edit_searchTf.getText();
-        Statement s = null;
-        ResultSet rs = null;
-        
-        try {
-            
-            s = DB.connect().createStatement();
-            
-            rs = s.executeQuery("SELECT * FROM employees WHERE ID = '" +search+ "'");
-           
-            if (rs.next()) {
-            edit_nameTf.setText(rs.getString("Name"));
-            edit_emailTf.setText(rs.getString("E-mail"));
-            edit_numberTf.setText(rs.getString("Phone number"));
-            edit_addressTf.setText(rs.getString("Address"));
-            edit_bankTf.setText(rs.getString("Bank account"));
-            edit_taxTf.setText(rs.getString("Tax number"));
-            
-            }
-            
-        } catch (SQLException e) {
-          System.out.println(e);
-        } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-             if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
-             
-        }
-    }
-    
-    
-    
-    public void addEmployee() {
         String name = add_nameTf.getText();
         String email = add_mailTf.getText();
         String address = add_adressTf.getText();
@@ -716,112 +650,25 @@ public class Employee extends javax.swing.JPanel{
         String bankacc = add_bankTf.getText();
         String taxn = add_taxTf.getText();
         
-       
-        Statement s = null;
         
-        
-        try {
-            
-            s = DB.connect().createStatement();
-            s.executeUpdate("INSERT INTO employees (Name, Address, `E-mail`, `Phone number`, `Bank account`, `Tax number` ) VALUES ('" + name + "', '" + address + "', '" + email + "', '" + phnumber + "', '" + bankacc + "', '" + taxn + "')");
-           
-            JOptionPane.showMessageDialog(p_addEmp, "Employee sucessfully added !");
-            
-        } catch (SQLException e) {
-          System.out.println(e);
-        } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-    }
-    
-    public void clearText(JTextField... textFields) {
-    for (JTextField tf : textFields) {
-        tf.setText("");
-    }
-}
-    
-    public void tb_load() {
-        
-        Statement s = null;
-        ResultSet rs = null;
-        
-        try {
-            
-            DefaultTableModel dt = (DefaultTableModel) dbTable.getModel();
-            dt.setRowCount(0);
-            
-            s = DB.connect().createStatement();
-            rs = s.executeQuery("SELECT * FROM employees");
-           
-            while (rs.next()) {
-                
-                Vector v = new Vector();
-                
-                v.add(rs.getString(1));
-                v.add(rs.getString(2));
-                v.add(rs.getString(3));
-                v.add(rs.getString(4));
-                v.add(rs.getString(5));
-                v.add(rs.getString(6));
-                v.add(rs.getString(7));
-                
-                dt.addRow(v);
-                       
-            }
-                
-            
-        } catch (SQLException e) {
-          System.out.println(e);
-        }  finally {
-        if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
-        if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-    }
+        reliapos.addEmployee(name, email, address, phnumber, bankacc, taxn);
+        reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query); 
+        reliapos.clearText(add_nameTf, add_mailTf, add_adressTf, add_numberTF, add_bankTf, add_taxTf);
+    }//GEN-LAST:event_addBtnActionPerformed
 
-   public void updateEmployee() {      
-        String name = edit_nameTf.getText();
-        String email = edit_emailTf.getText();
-        String address = edit_addressTf.getText();
-        String phnumber = edit_numberTf.getText();
-        String bankacc = edit_bankTf.getText();
-        String taxn = edit_taxTf.getText();
-        String id = edit_searchTf.getText();
-        
-        Statement s = null;
-       
-        try {
-            
-        s = DB.connect().createStatement();
-        s.executeUpdate("UPDATE employees SET Name = '" + name + "', Address = '" + address + "', `E-mail` =  '" + email + "', `Phone number` = '" + phnumber + "', `Bank account` = '" +bankacc + "', `Tax number` = '" + taxn + "' WHERE ID = '" + id + "'");
-           
-        JOptionPane.showMessageDialog(p_editEmp, "Employee sucessfully updated !");
-        
-        } catch (SQLException e) {
-          System.out.println(e);
-        } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-       
-       
-   }
-   
-   public void deleteEmployee() {
-       String id = edit_searchTf.getText();
-       Statement s = null;
-       
-       try {
-           
-       s = DB.connect().createStatement();
-       s.executeUpdate("DELETE FROM employees WHERE ID = '" + id + "'");
-       
-       JOptionPane.showMessageDialog(p_editEmp, "Employee sucessfully deleted !");
-       
-       } catch (SQLException e) {
-        System.out.println(e);
-       } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-}   
+    private void edit_searchTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_searchTfActionPerformed
+       reliapos.searchRecord("employees", "ID", edit_searchTf.getText(), edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf, edit_bankTf, edit_taxTf);
+    }//GEN-LAST:event_edit_searchTfActionPerformed
+
+    private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
+       reliapos.clearText(add_nameTf, add_mailTf, add_adressTf, add_numberTF, add_bankTf, add_taxTf);
+    }//GEN-LAST:event_clearBtnActionPerformed
+
+    private void savePDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savePDFActionPerformed
+
+    }//GEN-LAST:event_savePDFActionPerformed
+
+    
    
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
