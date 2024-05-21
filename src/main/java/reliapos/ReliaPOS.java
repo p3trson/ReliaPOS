@@ -10,11 +10,9 @@ public class ReliaPOS {
     
    
     
-    public void addEmployee(String name, String email, String address, String phnumber, String bankacc, String taxn) {
-               
+    public void addEmployee(String name, String email, String address, String phnumber, String bankacc, String taxn) {              
         Statement s = null;
-        
-        
+                
         try {
             
             s = DB.connect().createStatement();
@@ -35,8 +33,7 @@ public class ReliaPOS {
             }
         }
      
-    public void tb_load(DefaultTableModel tableModel, String query) {
-        
+    public void tb_load(DefaultTableModel tableModel, String query) {        
         Statement s = null;
         ResultSet rs = null;
         
@@ -46,6 +43,7 @@ public class ReliaPOS {
             rs = s.executeQuery(query);
 
             int columnCount = rs.getMetaData().getColumnCount();
+            
             while (rs.next()) {
                 Vector<String> row = new Vector<>();
                 for (int i = 1; i <= columnCount; i++) {
@@ -65,9 +63,7 @@ public class ReliaPOS {
         }
     }
     
-    public void updateEmployee(String name, String email, String address, String phnumber, String bankacc, String taxn, String id) {      
-        
-        
+    public void updateEmployee(String name, String email, String address, String phnumber, String bankacc, String taxn, String id) {                      
         Statement s = null;
        
         try {
@@ -81,27 +77,8 @@ public class ReliaPOS {
           System.out.println(e);
         } finally {
              if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-       
-       
+        }              
    }
-    
-     public void deleteEmployee(String id) {
-       Statement s = null;
-       
-       try {
-           
-       s = DB.connect().createStatement();
-       s.executeUpdate("DELETE FROM employees WHERE ID = '" + id + "'");
-       
-       JOptionPane.showMessageDialog(null, "Employee sucessfully deleted !");
-       
-       } catch (SQLException e) {
-        System.out.println(e);
-       } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-}
      
      public void searchRecord(String tableName, String columnName, String searchValue, JTextField... textFields) {
         Connection conn = null;
@@ -136,4 +113,57 @@ public class ReliaPOS {
             }
         }
     }
+     
+     public void addProduct(String name, String group, String cost, String saleprice, String quantity) {                           
+        Statement s = null;
+                
+        try {
+            
+            s = DB.connect().createStatement();
+            s.executeUpdate("INSERT INTO products (Name, \"Group\", Cost, SalePrice, Quantity) VALUES ('" + name + "', '" + group + "', '" + cost + "', '" + saleprice + "', '" + quantity + "')");
+           
+            JOptionPane.showMessageDialog(null, "Product sucessfully added !");
+            
+        } catch (SQLException e) {
+          System.out.println(e);
+        } finally {
+             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
+        }
+    }
+     
+     public void updateProduct(String name, String group, String cost, String saleprice, String quantity, String id) {                                  
+        Statement s = null;
+       
+        try {
+            
+        s = DB.connect().createStatement();
+        s.executeUpdate("UPDATE products SET Name = '" + name + "', \"Group\" = '" + group + "', Cost =  '" + cost + "', SalePrice = '" + saleprice + "', Quantity = '" + quantity + "' WHERE ID = '" + id + "'");
+           
+        JOptionPane.showMessageDialog(null, "Product sucessfully updated !");
+        
+        } catch (SQLException e) {
+          System.out.println(e);
+        } finally {
+             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
+        }              
+   }
+     
+      public void deleteRecord(String tableName, String columnName, String columnValue) {
+        Statement s = null;
+        
+        try {
+            Connection conn = DB.connect();                                
+            s = conn.createStatement();
+            String query = "DELETE FROM " + tableName + " WHERE " + columnName + " = '" + columnValue + "'";
+            s.executeUpdate(query);
+            
+            JOptionPane.showMessageDialog(null, "Record successfully deleted from " + tableName + "!");
+            
+        } catch (SQLException e) {
+            e.printStackTrace();           
+        } finally {
+            if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
+        }
+    }
 }
+
