@@ -1,5 +1,7 @@
 package reliapos;
 
+import com.formdev.flatlaf.FlatDarkLaf;
+
 public class Home extends javax.swing.JFrame {
     
     JpanelLoader panelLoader = new JpanelLoader();
@@ -247,6 +249,10 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_paymentBtnActionPerformed
 
     public static void main(String args[]) {
+        
+        FlatDarkLaf.setup();
+            
+       
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Home().setVisible(true);
