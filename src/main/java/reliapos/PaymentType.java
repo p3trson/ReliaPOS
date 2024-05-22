@@ -13,6 +13,7 @@ public class PaymentType extends javax.swing.JPanel {
     private String query = "SELECT * FROM paymenttypes";
     
     public PaymentType() {
+        reliapos = new ReliaPOS();
         initComponents();
         reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);
         
@@ -215,7 +216,7 @@ public class PaymentType extends javax.swing.JPanel {
     }//GEN-LAST:event_searchTfActionPerformed
 
     private void savePDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savePDFActionPerformed
-        
+        reliapos.exportPDF(dbTable, "Payment types");
     }//GEN-LAST:event_savePDFActionPerformed
 
     private void idTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idTfActionPerformed
