@@ -2,7 +2,10 @@ package reliapos;
 
 import java.awt.*;
 import java.sql.*;
-import java.util.Vector;
+import java.text.MessageFormat;
+import javax.print.attribute.HashPrintRequestAttributeSet;
+import javax.print.attribute.PrintRequestAttributeSet;
+import javax.print.attribute.standard.OrientationRequested;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
@@ -300,6 +303,11 @@ public class Employee extends javax.swing.JPanel{
         add_nameTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         add_nameTf.setForeground(new java.awt.Color(255, 255, 255));
         add_nameTf.setCaretColor(new java.awt.Color(255, 255, 255));
+        add_nameTf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_nameTfActionPerformed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -622,9 +630,7 @@ public class Employee extends javax.swing.JPanel{
     }//GEN-LAST:event_all_searchTfActionPerformed
 
     private void delBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delBtnActionPerformed
-       String id = edit_searchTf.getText();
-        
-       reliapos.deleteEmployee(id);
+       reliapos.deleteRecord("employees", "ID", edit_searchTf.getText());
        reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query); 
     }//GEN-LAST:event_delBtnActionPerformed
 
@@ -665,10 +671,13 @@ public class Employee extends javax.swing.JPanel{
     }//GEN-LAST:event_clearBtnActionPerformed
 
     private void savePDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savePDFActionPerformed
-
+      reliapos.exportPDF(dbTable, "Employees");
     }//GEN-LAST:event_savePDFActionPerformed
 
-    
+    private void add_nameTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_nameTfActionPerformed
+       
+    }//GEN-LAST:event_add_nameTfActionPerformed
+
    
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
