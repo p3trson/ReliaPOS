@@ -31,7 +31,7 @@ public class Dashboard extends javax.swing.JPanel {
         panel_dashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
 
         jLabel1.setFont(new java.awt.Font("Verdana", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -55,7 +55,7 @@ public class Dashboard extends javax.swing.JPanel {
         );
 
         jPanel5.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -79,7 +79,7 @@ public class Dashboard extends javax.swing.JPanel {
         );
 
         jPanel6.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 0, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,7 +103,7 @@ public class Dashboard extends javax.swing.JPanel {
         );
 
         jPanel7.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 0, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -127,7 +127,7 @@ public class Dashboard extends javax.swing.JPanel {
         );
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 0, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));

@@ -83,20 +83,22 @@ public class Register extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Password");
 
-        loginBtn.setBackground(new java.awt.Color(102, 102, 102));
+        loginBtn.setBackground(new java.awt.Color(52, 52, 52));
         loginBtn.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         loginBtn.setForeground(new java.awt.Color(255, 255, 255));
         loginBtn.setText("Login");
+        loginBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         loginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginBtnActionPerformed(evt);
             }
         });
 
-        registerBtn.setBackground(new java.awt.Color(102, 102, 102));
+        registerBtn.setBackground(new java.awt.Color(52, 52, 52));
         registerBtn.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         registerBtn.setForeground(new java.awt.Color(255, 255, 255));
         registerBtn.setText("Sign Up");
+        registerBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         registerBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registerBtnActionPerformed(evt);
@@ -280,7 +282,7 @@ public class Register extends javax.swing.JFrame {
 
     } catch (HeadlessException | SQLException e) {
         e.printStackTrace();
-    }
+    } 
 }
     
 

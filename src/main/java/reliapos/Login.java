@@ -12,7 +12,7 @@ public class Login extends javax.swing.JFrame {
     JpanelLoader panelLoader = new JpanelLoader();
     
     Connection con = null;
-    PreparedStatement stmt = null;
+    PreparedStatement s = null;
     ResultSet rs = null;
 
     public Login() {
@@ -84,20 +84,22 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Password");
 
-        sgnBtn.setBackground(new java.awt.Color(102, 102, 102));
+        sgnBtn.setBackground(new java.awt.Color(52, 52, 52));
         sgnBtn.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         sgnBtn.setForeground(new java.awt.Color(255, 255, 255));
         sgnBtn.setText("Sign Up");
+        sgnBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         sgnBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sgnBtnActionPerformed(evt);
             }
         });
 
-        lgnBtn.setBackground(new java.awt.Color(102, 102, 102));
+        lgnBtn.setBackground(new java.awt.Color(52, 52, 52));
         lgnBtn.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         lgnBtn.setForeground(new java.awt.Color(255, 255, 255));
         lgnBtn.setText("Login");
+        lgnBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         lgnBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lgnBtnActionPerformed(evt);
@@ -188,10 +190,10 @@ public class Login extends javax.swing.JFrame {
 
     try {
         String sql = "SELECT * FROM users WHERE Name=?";
-        stmt = con.prepareStatement(sql);
+        s = con.prepareStatement(sql);
         
-        stmt.setString(1, name);
-        rs = stmt.executeQuery();
+        s.setString(1, name);
+        rs = s.executeQuery();
         
         if (rs.next()) {
             String storedEncodedPassword = rs.getString("Password");
@@ -209,7 +211,14 @@ public class Login extends javax.swing.JFrame {
         }
     } catch (HeadlessException | SQLException e) {
         e.printStackTrace();
-    }     
+    } finally {
+            try {
+                if (rs != null) rs.close();
+                if (s != null) s.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }    
 }
 
     public static void main(String args[]) {

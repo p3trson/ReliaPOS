@@ -18,13 +18,13 @@ public class Home extends javax.swing.JFrame {
 
         main_panel = new javax.swing.JPanel();
         panel_categories = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        dashboardBtn = new javax.swing.JButton();
+        employeeBtn = new javax.swing.JButton();
+        customerBtn = new javax.swing.JButton();
+        productBtn = new javax.swing.JButton();
+        reportBtn = new javax.swing.JButton();
+        paymentBtn = new javax.swing.JButton();
+        cashBtn = new javax.swing.JButton();
         panel_load = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
 
@@ -34,77 +34,77 @@ public class Home extends javax.swing.JFrame {
         main_panel.setBackground(new java.awt.Color(72, 72, 72));
 
         panel_categories.setBackground(new java.awt.Color(51, 51, 51));
-        panel_categories.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        panel_categories.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
 
-        jButton4.setBackground(new java.awt.Color(72, 72, 72));
-        jButton4.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Employees");
-        jButton4.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        dashboardBtn.setBackground(new java.awt.Color(72, 72, 72));
+        dashboardBtn.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        dashboardBtn.setForeground(new java.awt.Color(255, 255, 255));
+        dashboardBtn.setText("Dashboard");
+        dashboardBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
+        dashboardBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                dashboardBtnActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(72, 72, 72));
-        jButton1.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Customers");
-        jButton1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        employeeBtn.setBackground(new java.awt.Color(72, 72, 72));
+        employeeBtn.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        employeeBtn.setForeground(new java.awt.Color(255, 255, 255));
+        employeeBtn.setText("Employees");
+        employeeBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
+        employeeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                employeeBtnActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(72, 72, 72));
-        jButton3.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Products");
-        jButton3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        customerBtn.setBackground(new java.awt.Color(72, 72, 72));
+        customerBtn.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        customerBtn.setForeground(new java.awt.Color(255, 255, 255));
+        customerBtn.setText("Customers");
+        customerBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
+        customerBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                customerBtnActionPerformed(evt);
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(72, 72, 72));
-        jButton6.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("Dashboard");
-        jButton6.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        productBtn.setBackground(new java.awt.Color(72, 72, 72));
+        productBtn.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        productBtn.setForeground(new java.awt.Color(255, 255, 255));
+        productBtn.setText("Products");
+        productBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
+        productBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                productBtnActionPerformed(evt);
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(72, 72, 72));
-        jButton7.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Report");
-        jButton7.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        reportBtn.setBackground(new java.awt.Color(72, 72, 72));
+        reportBtn.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        reportBtn.setForeground(new java.awt.Color(255, 255, 255));
+        reportBtn.setText("Report");
+        reportBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
 
-        jButton9.setBackground(new java.awt.Color(72, 72, 72));
-        jButton9.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setText("Cash Register");
-        jButton9.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        paymentBtn.setBackground(new java.awt.Color(72, 72, 72));
+        paymentBtn.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        paymentBtn.setForeground(new java.awt.Color(255, 255, 255));
+        paymentBtn.setText("Payment types");
+        paymentBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
+        paymentBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                paymentBtnActionPerformed(evt);
             }
         });
 
-        jButton10.setBackground(new java.awt.Color(72, 72, 72));
-        jButton10.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jButton10.setText("Payment types");
-        jButton10.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        cashBtn.setBackground(new java.awt.Color(72, 72, 72));
+        cashBtn.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        cashBtn.setForeground(new java.awt.Color(255, 255, 255));
+        cashBtn.setText("Cash Register");
+        cashBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
+        cashBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                cashBtnActionPerformed(evt);
             }
         });
 
@@ -115,44 +115,44 @@ public class Home extends javax.swing.JFrame {
             .addGroup(panel_categoriesLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(panel_categoriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(paymentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                    .addComponent(cashBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(employeeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(reportBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(dashboardBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(productBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(customerBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         panel_categoriesLayout.setVerticalGroup(
             panel_categoriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_categoriesLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dashboardBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(employeeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(customerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(productBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(reportBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(paymentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(262, Short.MAX_VALUE))
+                .addComponent(cashBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(266, Short.MAX_VALUE))
         );
 
         panel_load.setBackground(new java.awt.Color(51, 51, 51));
-        panel_load.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        panel_load.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         panel_load.setPreferredSize(new java.awt.Dimension(1200, 0));
 
         javax.swing.GroupLayout panel_loadLayout = new javax.swing.GroupLayout(panel_load);
         panel_load.setLayout(panel_loadLayout);
         panel_loadLayout.setHorizontalGroup(
             panel_loadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1066, Short.MAX_VALUE)
+            .addGap(0, 1074, Short.MAX_VALUE)
         );
         panel_loadLayout.setVerticalGroup(
             panel_loadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,7 +183,7 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(main_panelLayout.createSequentialGroup()
                         .addComponent(panel_categories, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(panel_load, javax.swing.GroupLayout.DEFAULT_SIZE, 1072, Short.MAX_VALUE)))
+                        .addComponent(panel_load, javax.swing.GroupLayout.DEFAULT_SIZE, 1076, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         main_panelLayout.setVerticalGroup(
@@ -217,34 +217,34 @@ public class Home extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void cashBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashBtnActionPerformed
         
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_cashBtnActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void employeeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeBtnActionPerformed
         Employee em = new Employee();
         panelLoader.jPanelLoader(panel_load, em);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_employeeBtnActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void customerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerBtnActionPerformed
         Customer cs = new Customer();
         panelLoader.jPanelLoader(panel_load, cs);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_customerBtnActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void dashboardBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashboardBtnActionPerformed
         Dashboard ds = new Dashboard();
         panelLoader.jPanelLoader(panel_load, ds);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_dashboardBtnActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void productBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productBtnActionPerformed
         Product pr = new Product();
         panelLoader.jPanelLoader(panel_load, pr);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_productBtnActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void paymentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paymentBtnActionPerformed
        PaymentType pt = new PaymentType();
         panelLoader.jPanelLoader(panel_load, pt);
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_paymentBtnActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -255,16 +255,16 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton cashBtn;
+    private javax.swing.JButton customerBtn;
+    private javax.swing.JButton dashboardBtn;
+    private javax.swing.JButton employeeBtn;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel main_panel;
     private javax.swing.JPanel panel_categories;
     private javax.swing.JPanel panel_load;
+    private javax.swing.JButton paymentBtn;
+    private javax.swing.JButton productBtn;
+    private javax.swing.JButton reportBtn;
     // End of variables declaration//GEN-END:variables
 }

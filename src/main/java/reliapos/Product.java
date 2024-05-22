@@ -122,6 +122,7 @@ public class Product extends javax.swing.JPanel {
         all_searchTf.setBackground(new java.awt.Color(72, 72, 72));
         all_searchTf.setForeground(new java.awt.Color(255, 255, 255));
         all_searchTf.setToolTipText("");
+        all_searchTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         all_searchTf.setCaretColor(new java.awt.Color(255, 255, 255));
         all_searchTf.setName(""); // NOI18N
         all_searchTf.addActionListener(new java.awt.event.ActionListener() {
@@ -151,6 +152,7 @@ public class Product extends javax.swing.JPanel {
         all_nameTf.setBackground(new java.awt.Color(72, 72, 72));
         all_nameTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         all_nameTf.setForeground(new java.awt.Color(255, 255, 255));
+        all_nameTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         all_nameTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
@@ -161,6 +163,7 @@ public class Product extends javax.swing.JPanel {
         all_groupTf.setBackground(new java.awt.Color(72, 72, 72));
         all_groupTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         all_groupTf.setForeground(new java.awt.Color(255, 255, 255));
+        all_groupTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         all_groupTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
@@ -171,6 +174,7 @@ public class Product extends javax.swing.JPanel {
         all_costTf.setBackground(new java.awt.Color(72, 72, 72));
         all_costTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         all_costTf.setForeground(new java.awt.Color(255, 255, 255));
+        all_costTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         all_costTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
@@ -181,6 +185,7 @@ public class Product extends javax.swing.JPanel {
         all_salepriceTf.setBackground(new java.awt.Color(72, 72, 72));
         all_salepriceTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         all_salepriceTf.setForeground(new java.awt.Color(255, 255, 255));
+        all_salepriceTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         all_salepriceTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
@@ -191,6 +196,7 @@ public class Product extends javax.swing.JPanel {
         all_quantityTf.setBackground(new java.awt.Color(72, 72, 72));
         all_quantityTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         all_quantityTf.setForeground(new java.awt.Color(255, 255, 255));
+        all_quantityTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         all_quantityTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel15.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
@@ -309,6 +315,7 @@ public class Product extends javax.swing.JPanel {
         p_manageEmp.setBackground(new java.awt.Color(72, 72, 72));
 
         p_addEmp.setBackground(new java.awt.Color(51, 51, 51));
+        p_addEmp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
 
         jLabel9.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -317,6 +324,7 @@ public class Product extends javax.swing.JPanel {
         add_nameTf.setBackground(new java.awt.Color(72, 72, 72));
         add_nameTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         add_nameTf.setForeground(new java.awt.Color(255, 255, 255));
+        add_nameTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         add_nameTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel11.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -326,6 +334,7 @@ public class Product extends javax.swing.JPanel {
         add_groupTf.setBackground(new java.awt.Color(72, 72, 72));
         add_groupTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         add_groupTf.setForeground(new java.awt.Color(255, 255, 255));
+        add_groupTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         add_groupTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel12.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -335,6 +344,7 @@ public class Product extends javax.swing.JPanel {
         add_costTf.setBackground(new java.awt.Color(72, 72, 72));
         add_costTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         add_costTf.setForeground(new java.awt.Color(255, 255, 255));
+        add_costTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         add_costTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel13.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -344,6 +354,7 @@ public class Product extends javax.swing.JPanel {
         add_salepriceTf.setBackground(new java.awt.Color(72, 72, 72));
         add_salepriceTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         add_salepriceTf.setForeground(new java.awt.Color(255, 255, 255));
+        add_salepriceTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         add_salepriceTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel14.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -367,6 +378,7 @@ public class Product extends javax.swing.JPanel {
         add_quantityTf.setBackground(new java.awt.Color(72, 72, 72));
         add_quantityTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         add_quantityTf.setForeground(new java.awt.Color(255, 255, 255));
+        add_quantityTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         add_quantityTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel16.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -395,7 +407,7 @@ public class Product extends javax.swing.JPanel {
                         .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(add_quantityTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16))
-                .addContainerGap(289, Short.MAX_VALUE))
+                .addContainerGap(287, Short.MAX_VALUE))
         );
         p_addEmpLayout.setVerticalGroup(
             p_addEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -430,6 +442,7 @@ public class Product extends javax.swing.JPanel {
         );
 
         p_editEmp.setBackground(new java.awt.Color(51, 51, 51));
+        p_editEmp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
 
         jLabel10.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -442,6 +455,7 @@ public class Product extends javax.swing.JPanel {
         edit_searchTf.setBackground(new java.awt.Color(72, 72, 72));
         edit_searchTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         edit_searchTf.setForeground(new java.awt.Color(255, 255, 255));
+        edit_searchTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         edit_searchTf.setCaretColor(new java.awt.Color(255, 255, 255));
         edit_searchTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -470,6 +484,7 @@ public class Product extends javax.swing.JPanel {
         edit_nameTf.setBackground(new java.awt.Color(72, 72, 72));
         edit_nameTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         edit_nameTf.setForeground(new java.awt.Color(255, 255, 255));
+        edit_nameTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         edit_nameTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel22.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -479,6 +494,7 @@ public class Product extends javax.swing.JPanel {
         edit_groupTf.setBackground(new java.awt.Color(72, 72, 72));
         edit_groupTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         edit_groupTf.setForeground(new java.awt.Color(255, 255, 255));
+        edit_groupTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         edit_groupTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel24.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -488,6 +504,7 @@ public class Product extends javax.swing.JPanel {
         edit_costTf.setBackground(new java.awt.Color(72, 72, 72));
         edit_costTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         edit_costTf.setForeground(new java.awt.Color(255, 255, 255));
+        edit_costTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         edit_costTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel25.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -497,6 +514,7 @@ public class Product extends javax.swing.JPanel {
         edit_salepriceTf.setBackground(new java.awt.Color(72, 72, 72));
         edit_salepriceTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         edit_salepriceTf.setForeground(new java.awt.Color(255, 255, 255));
+        edit_salepriceTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         edit_salepriceTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel26.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -506,6 +524,7 @@ public class Product extends javax.swing.JPanel {
         edit_quantityTf.setBackground(new java.awt.Color(72, 72, 72));
         edit_quantityTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         edit_quantityTf.setForeground(new java.awt.Color(255, 255, 255));
+        edit_quantityTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         edit_quantityTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout p_editEmpLayout = new javax.swing.GroupLayout(p_editEmp);
@@ -532,7 +551,7 @@ public class Product extends javax.swing.JPanel {
                         .addComponent(saveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(delBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(288, Short.MAX_VALUE))
+                .addContainerGap(286, Short.MAX_VALUE))
         );
         p_editEmpLayout.setVerticalGroup(
             p_editEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -567,7 +586,7 @@ public class Product extends javax.swing.JPanel {
                 .addGroup(p_editEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(delBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout p_manageEmpLayout = new javax.swing.GroupLayout(p_manageEmp);

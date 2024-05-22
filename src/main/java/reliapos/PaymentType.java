@@ -82,6 +82,7 @@ public class PaymentType extends javax.swing.JPanel {
         searchTf.setBackground(new java.awt.Color(72, 72, 72));
         searchTf.setForeground(new java.awt.Color(255, 255, 255));
         searchTf.setToolTipText("");
+        searchTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         searchTf.setCaretColor(new java.awt.Color(255, 255, 255));
         searchTf.setName(""); // NOI18N
         searchTf.addActionListener(new java.awt.event.ActionListener() {
@@ -98,6 +99,7 @@ public class PaymentType extends javax.swing.JPanel {
         idTf.setBackground(new java.awt.Color(72, 72, 72));
         idTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         idTf.setForeground(new java.awt.Color(255, 255, 255));
+        idTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         idTf.setCaretColor(new java.awt.Color(255, 255, 255));
         idTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,6 +111,7 @@ public class PaymentType extends javax.swing.JPanel {
         nameTf.setBackground(new java.awt.Color(72, 72, 72));
         nameTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         nameTf.setForeground(new java.awt.Color(255, 255, 255));
+        nameTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         nameTf.setCaretColor(new java.awt.Color(255, 255, 255));
         nameTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

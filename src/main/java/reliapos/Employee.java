@@ -88,6 +88,8 @@ public class Employee extends javax.swing.JPanel{
         jTabbedPane1.setBackground(new java.awt.Color(72, 72, 72));
         jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
         jTabbedPane1.setToolTipText("");
+        jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTabbedPane1.setName(""); // NOI18N
 
         p_allEmp.setBackground(new java.awt.Color(72, 72, 72));
         p_allEmp.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -96,6 +98,7 @@ public class Employee extends javax.swing.JPanel{
 
         dbTable.setAutoCreateRowSorter(true);
         dbTable.setBackground(new java.awt.Color(51, 51, 51));
+        dbTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         dbTable.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         dbTable.setForeground(new java.awt.Color(255, 255, 255));
         dbTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -130,6 +133,7 @@ public class Employee extends javax.swing.JPanel{
         all_searchTf.setBackground(new java.awt.Color(72, 72, 72));
         all_searchTf.setForeground(new java.awt.Color(255, 255, 255));
         all_searchTf.setToolTipText("");
+        all_searchTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         all_searchTf.setCaretColor(new java.awt.Color(255, 255, 255));
         all_searchTf.setName(""); // NOI18N
         all_searchTf.addActionListener(new java.awt.event.ActionListener() {
@@ -148,6 +152,7 @@ public class Employee extends javax.swing.JPanel{
         all_nameTf.setBackground(new java.awt.Color(72, 72, 72));
         all_nameTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         all_nameTf.setForeground(new java.awt.Color(255, 255, 255));
+        all_nameTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         all_nameTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
@@ -158,6 +163,7 @@ public class Employee extends javax.swing.JPanel{
         all_mailTf.setBackground(new java.awt.Color(72, 72, 72));
         all_mailTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         all_mailTf.setForeground(new java.awt.Color(255, 255, 255));
+        all_mailTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         all_mailTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
@@ -168,6 +174,7 @@ public class Employee extends javax.swing.JPanel{
         all_numberTf.setBackground(new java.awt.Color(72, 72, 72));
         all_numberTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         all_numberTf.setForeground(new java.awt.Color(255, 255, 255));
+        all_numberTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         all_numberTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
@@ -178,6 +185,7 @@ public class Employee extends javax.swing.JPanel{
         all_addressTf.setBackground(new java.awt.Color(72, 72, 72));
         all_addressTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         all_addressTf.setForeground(new java.awt.Color(255, 255, 255));
+        all_addressTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         all_addressTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
@@ -204,7 +212,7 @@ public class Employee extends javax.swing.JPanel{
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(all_addressTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 92, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,12 +221,13 @@ public class Employee extends javax.swing.JPanel{
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(all_nameTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(35, 35, 35))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(all_mailTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(all_mailTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(all_nameTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -275,7 +284,7 @@ public class Employee extends javax.swing.JPanel{
                 .addContainerGap()
                 .addGroup(p_allEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(p_allEmpLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1196, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1)
                         .addContainerGap())
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
@@ -294,6 +303,7 @@ public class Employee extends javax.swing.JPanel{
         p_manageEmp.setBackground(new java.awt.Color(72, 72, 72));
 
         p_addEmp.setBackground(new java.awt.Color(51, 51, 51));
+        p_addEmp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
 
         jLabel9.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -302,6 +312,7 @@ public class Employee extends javax.swing.JPanel{
         add_nameTf.setBackground(new java.awt.Color(72, 72, 72));
         add_nameTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         add_nameTf.setForeground(new java.awt.Color(255, 255, 255));
+        add_nameTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         add_nameTf.setCaretColor(new java.awt.Color(255, 255, 255));
         add_nameTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -316,6 +327,7 @@ public class Employee extends javax.swing.JPanel{
         add_mailTf.setBackground(new java.awt.Color(72, 72, 72));
         add_mailTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         add_mailTf.setForeground(new java.awt.Color(255, 255, 255));
+        add_mailTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         add_mailTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel12.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -325,6 +337,7 @@ public class Employee extends javax.swing.JPanel{
         add_adressTf.setBackground(new java.awt.Color(72, 72, 72));
         add_adressTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         add_adressTf.setForeground(new java.awt.Color(255, 255, 255));
+        add_adressTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         add_adressTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel13.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -334,6 +347,7 @@ public class Employee extends javax.swing.JPanel{
         add_numberTF.setBackground(new java.awt.Color(72, 72, 72));
         add_numberTF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         add_numberTF.setForeground(new java.awt.Color(255, 255, 255));
+        add_numberTF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         add_numberTF.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel14.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -343,6 +357,7 @@ public class Employee extends javax.swing.JPanel{
         add_bankTf.setBackground(new java.awt.Color(72, 72, 72));
         add_bankTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         add_bankTf.setForeground(new java.awt.Color(255, 255, 255));
+        add_bankTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         add_bankTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel15.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -352,6 +367,7 @@ public class Employee extends javax.swing.JPanel{
         add_taxTf.setBackground(new java.awt.Color(72, 72, 72));
         add_taxTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         add_taxTf.setForeground(new java.awt.Color(255, 255, 255));
+        add_taxTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         add_taxTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel16.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -396,7 +412,7 @@ public class Employee extends javax.swing.JPanel{
                         .addGap(18, 18, 18)
                         .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(add_taxTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(289, Short.MAX_VALUE))
+                .addContainerGap(308, Short.MAX_VALUE))
         );
         p_addEmpLayout.setVerticalGroup(
             p_addEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -435,6 +451,7 @@ public class Employee extends javax.swing.JPanel{
         );
 
         p_editEmp.setBackground(new java.awt.Color(51, 51, 51));
+        p_editEmp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
 
         jLabel10.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -443,6 +460,7 @@ public class Employee extends javax.swing.JPanel{
         edit_nameTf.setBackground(new java.awt.Color(72, 72, 72));
         edit_nameTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         edit_nameTf.setForeground(new java.awt.Color(255, 255, 255));
+        edit_nameTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         edit_nameTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel17.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -452,6 +470,7 @@ public class Employee extends javax.swing.JPanel{
         edit_emailTf.setBackground(new java.awt.Color(72, 72, 72));
         edit_emailTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         edit_emailTf.setForeground(new java.awt.Color(255, 255, 255));
+        edit_emailTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         edit_emailTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel18.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -465,6 +484,7 @@ public class Employee extends javax.swing.JPanel{
         edit_addressTf.setBackground(new java.awt.Color(72, 72, 72));
         edit_addressTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         edit_addressTf.setForeground(new java.awt.Color(255, 255, 255));
+        edit_addressTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         edit_addressTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel20.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -474,6 +494,7 @@ public class Employee extends javax.swing.JPanel{
         edit_numberTf.setBackground(new java.awt.Color(72, 72, 72));
         edit_numberTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         edit_numberTf.setForeground(new java.awt.Color(255, 255, 255));
+        edit_numberTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         edit_numberTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel21.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -483,6 +504,7 @@ public class Employee extends javax.swing.JPanel{
         edit_bankTf.setBackground(new java.awt.Color(72, 72, 72));
         edit_bankTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         edit_bankTf.setForeground(new java.awt.Color(255, 255, 255));
+        edit_bankTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         edit_bankTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel22.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -492,6 +514,7 @@ public class Employee extends javax.swing.JPanel{
         edit_taxTf.setBackground(new java.awt.Color(72, 72, 72));
         edit_taxTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         edit_taxTf.setForeground(new java.awt.Color(255, 255, 255));
+        edit_taxTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         edit_taxTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel23.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -501,6 +524,7 @@ public class Employee extends javax.swing.JPanel{
         edit_searchTf.setBackground(new java.awt.Color(72, 72, 72));
         edit_searchTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         edit_searchTf.setForeground(new java.awt.Color(255, 255, 255));
+        edit_searchTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
         edit_searchTf.setCaretColor(new java.awt.Color(255, 255, 255));
         edit_searchTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -548,7 +572,7 @@ public class Employee extends javax.swing.JPanel{
                         .addComponent(saveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(delBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(288, Short.MAX_VALUE))
+                .addContainerGap(308, Short.MAX_VALUE))
         );
         p_editEmpLayout.setVerticalGroup(
             p_editEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -587,7 +611,7 @@ public class Employee extends javax.swing.JPanel{
                 .addGroup(p_editEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(delBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout p_manageEmpLayout = new javax.swing.GroupLayout(p_manageEmp);
@@ -617,7 +641,7 @@ public class Employee extends javax.swing.JPanel{
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1251, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
