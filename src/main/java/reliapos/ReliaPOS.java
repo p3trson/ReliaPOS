@@ -1,6 +1,7 @@
 package reliapos;
 
-import java.awt.HeadlessException;
+
+import java.io.File;
 import java.sql.*;
 import java.text.MessageFormat;
 import java.util.*;
@@ -8,8 +9,8 @@ import javax.print.attribute.HashPrintRequestAttributeSet;
 import javax.print.attribute.PrintRequestAttributeSet;
 import javax.print.attribute.standard.OrientationRequested;
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
-
 
 
 public class ReliaPOS {
@@ -183,11 +184,12 @@ public class ReliaPOS {
     }
      
      public void addProduct(String name, String group, String cost, String saleprice, String quantity) {  
-        String namePattern = "^[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+$";
+        String namePattern = "^[a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+(?: [a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+)*$";
         String groupPattern = "^[A-Z][a-zA-Z ]*$";  
         String costPattern = "^[0-9]+(\\.[0-9]{1,2})?$";
         String salepricePattern = "^[0-9]+(\\.[0-9]{1,2})?$";
         String quantityPattern = "^[0-9]+$";
+      
     
         
         if (!name.matches(namePattern)) {
@@ -215,12 +217,20 @@ public class ReliaPOS {
         return;
         }
         
+        int option = JOptionPane.showConfirmDialog(null, "Do you want to add an image to the product?", "Add Image", JOptionPane.YES_NO_OPTION);
+
+        String imagePath = null;
+        if (option == JOptionPane.YES_OPTION) {
+        
+        imagePath = importImage();
+        }
+        
         Statement s = null;
                 
         try {
             
             s = DB.connect().createStatement();
-            s.executeUpdate("INSERT INTO products (Name, \"Group\", Cost, SalePrice, Quantity) VALUES ('" + name + "', '" + group + "', '" + cost + "', '" + saleprice + "', '" + quantity + "')");
+            s.executeUpdate("INSERT INTO products (Name, \"Group\", Cost, SalePrice, Quantity, ImagePath) VALUES ('" + name + "', '" + group + "', '" + cost + "', '" + saleprice + "', '" + quantity + "', '" + imagePath + "')");
            
             JOptionPane.showMessageDialog(null, "Product sucessfully added !");
             
@@ -232,7 +242,7 @@ public class ReliaPOS {
     }
      
      public void updateProduct(String name, String group, String cost, String saleprice, String quantity, String id) {
-        String namePattern = "^[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+$";
+        String namePattern = "^[a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+(?: [a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+)*$";
         String groupPattern = "^[A-Z][a-zA-Z ]*$";  
         String costPattern = "^[0-9]+(\\.[0-9]{1,2})?$";
         String salepricePattern = "^[0-9]+(\\.[0-9]{1,2})?$";
@@ -385,8 +395,26 @@ public class ReliaPOS {
         } catch (java.awt.print.PrinterException e) {
             JOptionPane.showMessageDialog(null, "\n" + "Failed to Print");
         }
-    }
+    } 
     
-   
+    public String importImage() {
+        
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Choose Image File");        
+
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Image Files", "jpg", "jpeg", "png", "gif");
+        fileChooser.setFileFilter(filter);
+                
+        int returnValue = fileChooser.showOpenDialog(null);
+        
+        if (returnValue == JFileChooser.APPROVE_OPTION) {           
+            File selectedFile = fileChooser.getSelectedFile();     
+            
+            return selectedFile.getAbsolutePath();
+        } else {
+            JOptionPane.showMessageDialog(null, "No file selected");
+            return null;
+        }
+    }
 }
 
