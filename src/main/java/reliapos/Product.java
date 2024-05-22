@@ -57,6 +57,7 @@ public class Product extends javax.swing.JPanel {
         clearBtn = new javax.swing.JButton();
         add_quantityTf = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
+        imageBtn = new javax.swing.JButton();
         p_editEmp = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
@@ -95,14 +96,14 @@ public class Product extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Name", "Group", "Cost", "SalePrice", "Quantity"
+                "ID", "Name", "Group", "Cost", "SalePrice", "Quantity", "ImagePath"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -385,13 +386,20 @@ public class Product extends javax.swing.JPanel {
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Quantity:");
 
+        imageBtn.setText("Upload image");
+        imageBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                imageBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout p_addEmpLayout = new javax.swing.GroupLayout(p_addEmp);
         p_addEmp.setLayout(p_addEmpLayout);
         p_addEmpLayout.setHorizontalGroup(
             p_addEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_addEmpLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(p_addEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(p_addEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel9)
                     .addComponent(add_nameTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11)
@@ -402,9 +410,11 @@ public class Product extends javax.swing.JPanel {
                     .addComponent(add_salepriceTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14)
                     .addGroup(p_addEmpLayout.createSequentialGroup()
-                        .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(imageBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(add_quantityTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16))
                 .addContainerGap(287, Short.MAX_VALUE))
@@ -437,8 +447,9 @@ public class Product extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(p_addEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(imageBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
 
         p_editEmp.setBackground(new java.awt.Color(51, 51, 51));
@@ -654,6 +665,7 @@ public class Product extends javax.swing.JPanel {
         String saleprice = add_salepriceTf.getText();
         String quantity = add_quantityTf.getText();
         
+        
         reliapos.addProduct(name, group, cost, saleprice, quantity);
         reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);    
         reliapos.clearText(edit_nameTf, edit_groupTf, edit_costTf, edit_salepriceTf, edit_quantityTf);
@@ -670,6 +682,10 @@ public class Product extends javax.swing.JPanel {
     private void savePDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savePDFActionPerformed
         reliapos.exportPDF(dbTable, "Products");
     }//GEN-LAST:event_savePDFActionPerformed
+
+    private void imageBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imageBtnActionPerformed
+        
+    }//GEN-LAST:event_imageBtnActionPerformed
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -694,6 +710,7 @@ public class Product extends javax.swing.JPanel {
     private javax.swing.JTextField edit_quantityTf;
     private javax.swing.JTextField edit_salepriceTf;
     private javax.swing.JTextField edit_searchTf;
+    private javax.swing.JButton imageBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

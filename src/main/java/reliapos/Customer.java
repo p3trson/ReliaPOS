@@ -90,7 +90,7 @@ public class Customer extends javax.swing.JPanel{
 
             },
             new String [] {
-                "ID", "Name", "Address", "E-mail", "Phone number"
+                "ID", "Name", "E-mail", "Address", "Phone number"
             }
         ) {
             Class[] types = new Class [] {
@@ -163,7 +163,7 @@ public class Customer extends javax.swing.JPanel{
 
         jLabel7.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Phone number :");
+        jLabel7.setText("Address :");
 
         all_addressTf.setEditable(false);
         all_addressTf.setBackground(new java.awt.Color(72, 72, 72));
@@ -174,7 +174,7 @@ public class Customer extends javax.swing.JPanel{
 
         jLabel8.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Address : ");
+        jLabel8.setText("Phone number : ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -566,7 +566,7 @@ public class Customer extends javax.swing.JPanel{
     }// </editor-fold>//GEN-END:initComponents
 
     private void all_searchTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_all_searchTfActionPerformed
-       reliapos.searchRecord("customers", "ID", all_searchTf.getText(), all_nameTf, all_mailTf, all_addressTf, all_numberTf );
+       reliapos.searchRecord("customers", "ID", all_searchTf.getText(), all_nameTf, all_mailTf, all_numberTf, all_addressTf );
     }//GEN-LAST:event_all_searchTfActionPerformed
 
     private void delBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delBtnActionPerformed
@@ -582,7 +582,7 @@ public class Customer extends javax.swing.JPanel{
        String phnumber = edit_numberTf.getText();        
        String id = edit_searchTf.getText();
        
-       reliapos.updateCustomer(name, address, email, phnumber, id);
+       reliapos.updateCustomer(name, email, address, phnumber, id);
        reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query); 
        reliapos.clearText(edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf);
     }//GEN-LAST:event_saveBtnActionPerformed
@@ -593,7 +593,7 @@ public class Customer extends javax.swing.JPanel{
         String address = add_adressTf.getText();
         String phnumber = add_numberTF.getText();
         
-        reliapos.addCustomer(name, address, email, phnumber);
+        reliapos.addCustomer(name, email, address, phnumber);
         reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);   
         reliapos.clearText(add_nameTf, add_mailTf, add_adressTf, add_numberTF);
     }//GEN-LAST:event_addBtnActionPerformed
@@ -610,24 +610,6 @@ public class Customer extends javax.swing.JPanel{
         reliapos.exportPDF(dbTable, "Customers");
     }//GEN-LAST:event_savePDFActionPerformed
 
-   
-   public void deleteCustomer() {
-       String id = edit_searchTf.getText();
-       Statement s = null;
-       
-       try {
-           
-       s = DB.connect().createStatement();
-       s.executeUpdate("DELETE FROM customers WHERE ID = '" + id + "'");
-       
-       JOptionPane.showMessageDialog(p_editEmp, "Customer sucessfully deleted !");
-       
-       } catch (SQLException e) {
-        System.out.println(e);
-       } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-}   
    
    
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -106,7 +106,7 @@ public class Employee extends javax.swing.JPanel{
 
             },
             new String [] {
-                "ID", "Name", "Address", "E-mail", "Phone number", "Bank account", "Tax number"
+                "ID", "Name", "E-mail", "Address", "Phone number", "Bank account", "Tax number"
             }
         ) {
             Class[] types = new Class [] {
@@ -179,7 +179,7 @@ public class Employee extends javax.swing.JPanel{
 
         jLabel7.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Phone number :");
+        jLabel7.setText("Address :");
 
         all_addressTf.setEditable(false);
         all_addressTf.setBackground(new java.awt.Color(72, 72, 72));
@@ -190,7 +190,7 @@ public class Employee extends javax.swing.JPanel{
 
         jLabel8.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Address : ");
+        jLabel8.setText("Phone number : ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -641,7 +641,7 @@ public class Employee extends javax.swing.JPanel{
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1251, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
