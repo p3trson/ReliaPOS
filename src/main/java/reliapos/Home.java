@@ -7,6 +7,9 @@ public class Home extends javax.swing.JFrame {
     public Home() {
         initComponents();
         this.setExtendedState(Home.MAXIMIZED_BOTH);
+        Dashboard ds = new Dashboard();
+        panelLoader.jPanelLoader(panel_load, ds);
+        
     }
    
     @SuppressWarnings("unchecked")
