@@ -99,7 +99,7 @@ public class Product extends javax.swing.JPanel {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false
@@ -612,6 +612,7 @@ public class Product extends javax.swing.JPanel {
     private void delBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delBtnActionPerformed
        reliapos.deleteRecord("products", "ID", edit_searchTf.getText());
        reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query); 
+       reliapos.clearText(edit_nameTf, edit_groupTf, edit_costTf, edit_salepriceTf, edit_quantityTf);
     }//GEN-LAST:event_delBtnActionPerformed
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
@@ -648,7 +649,7 @@ public class Product extends javax.swing.JPanel {
     }//GEN-LAST:event_edit_searchTfActionPerformed
 
     private void savePDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savePDFActionPerformed
-
+        reliapos.exportPDF(dbTable, "Products");
     }//GEN-LAST:event_savePDFActionPerformed
 
     
