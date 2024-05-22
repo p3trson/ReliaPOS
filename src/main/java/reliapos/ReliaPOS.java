@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
 public class ReliaPOS {
         
     public void addEmployee(String name, String email, String address, String phnumber, String bankacc, String taxn) {        
-        String namePattern = "^[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+$";
+        String namePattern = "^[a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+(?: [a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+)*$";
         String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
         String phonePattern = "^\\+\\d{9,}$";
         String bankPattern = "^\\d{6,}/\\d{4}$";
@@ -53,7 +53,7 @@ public class ReliaPOS {
         try {
             
             s = DB.connect().createStatement();
-            s.executeUpdate("INSERT INTO employees (Name, Address, `E-mail`, `Phone number`, `Bank account`, `Tax number` ) VALUES ('" + name + "', '" + address + "', '" + email + "', '" + phnumber + "', '" + bankacc + "', '" + taxn + "')");
+            s.executeUpdate("INSERT INTO employees (Name, `E-mail`, Address, `Phone number`, `Bank account`, `Tax number` ) VALUES ('" + name + "', '" + email + "', '" + address + "', '" + phnumber + "', '" + bankacc + "', '" + taxn + "')");
            
             JOptionPane.showMessageDialog(null, "Employee sucessfully added !");
             
@@ -101,7 +101,7 @@ public class ReliaPOS {
     }
     
     public void updateEmployee(String name, String email, String address, String phnumber, String bankacc, String taxn, String id) {     
-        String namePattern = "^[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+$";
+        String namePattern = "^[a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+(?: [a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+)*$";
         String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
         String phonePattern = "^\\+\\d{9,}$";
         String bankPattern = "^\\d{6,}/\\d{4}$";
@@ -138,7 +138,7 @@ public class ReliaPOS {
         try {
             
         s = DB.connect().createStatement();
-        s.executeUpdate("UPDATE employees SET Name = '" + name + "', Address = '" + address + "', `E-mail` =  '" + email + "', `Phone number` = '" + phnumber + "', `Bank account` = '" +bankacc + "', `Tax number` = '" + taxn + "' WHERE ID = '" + id + "'");
+        s.executeUpdate("UPDATE employees SET Name = '" + name + "', `E-mail` = '" + email + "', Address =  '" + address + "', `Phone number` = '" + phnumber + "', `Bank account` = '" +bankacc + "', `Tax number` = '" + taxn + "' WHERE ID = '" + id + "'");
            
         JOptionPane.showMessageDialog(null, "Employee sucessfully updated !");
         
@@ -164,8 +164,9 @@ public class ReliaPOS {
             rs = pstmt.executeQuery();
 
             if (rs.next()) {
+                              
                 for (int i = 0; i < textFields.length; i++) {
-                    textFields[i].setText(rs.getString(i + 1));
+                    textFields[i].setText(rs.getString(i + 2));
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Record not found in " + tableName + "!");
@@ -185,7 +186,7 @@ public class ReliaPOS {
      
      public void addProduct(String name, String group, String cost, String saleprice, String quantity) {  
         String namePattern = "^[a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+(?: [a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+)*$";
-        String groupPattern = "^[A-Z][a-zA-Z ]*$";  
+        String groupPattern = "^[a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+(?: [a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+)*$";
         String costPattern = "^[0-9]+(\\.[0-9]{1,2})?$";
         String salepricePattern = "^[0-9]+(\\.[0-9]{1,2})?$";
         String quantityPattern = "^[0-9]+$";
@@ -243,7 +244,7 @@ public class ReliaPOS {
      
      public void updateProduct(String name, String group, String cost, String saleprice, String quantity, String id) {
         String namePattern = "^[a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+(?: [a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+)*$";
-        String groupPattern = "^[A-Z][a-zA-Z ]*$";  
+        String groupPattern = "^[a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+(?: [a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+)*$";  
         String costPattern = "^[0-9]+(\\.[0-9]{1,2})?$";
         String salepricePattern = "^[0-9]+(\\.[0-9]{1,2})?$";
         String quantityPattern = "^[0-9]+$";
@@ -308,8 +309,8 @@ public class ReliaPOS {
         }
     }
       
-      public void addCustomer(String name, String address, String email, String phnumber) {
-        String namePattern = "^[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+$";
+      public void addCustomer(String name, String email, String address, String phnumber) {
+        String namePattern = "^[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+\\s*[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+$";
         String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
         String phonePattern = "^\\+\\d{9,}$";
         
@@ -334,7 +335,7 @@ public class ReliaPOS {
         try {
             
             s = DB.connect().createStatement();
-            s.executeUpdate("INSERT INTO customers (Name, Address, `E-mail`, `Phone number`) VALUES ('" + name + "', '" + address + "', '" + email + "', '" + phnumber + "')");
+            s.executeUpdate("INSERT INTO customers (Name,`E-mail`, Address, `Phone number`) VALUES ('" + name + "', '" + email + "', '" + address + "', '" + phnumber + "')");
            
             JOptionPane.showMessageDialog(null, "Customer sucessfully added !");
             
@@ -346,7 +347,7 @@ public class ReliaPOS {
     }
       
     public void updateCustomer(String name, String address, String email, String phnumber, String id) {   
-        String namePattern = "^[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+$";
+        String namePattern = "^[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+\\s*[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+$";
         String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
         String phonePattern = "^\\+\\d{9,}$";
         
@@ -371,7 +372,7 @@ public class ReliaPOS {
         try {
             
         s = DB.connect().createStatement();
-        s.executeUpdate("UPDATE customers SET Name = '" + name + "', Address = '" + address + "', `E-mail` =  '" + email + "', `Phone number` = '" + phnumber + "' WHERE ID = '" + id + "'");
+        s.executeUpdate("UPDATE customers SET Name = '" + name + "', `E-mail` = '" + email + "', Address =  '" + address + "', `Phone number` = '" + phnumber + "' WHERE ID = '" + id + "'");
            
         JOptionPane.showMessageDialog(null, "Customer sucessfully updated !");
         
@@ -391,9 +392,9 @@ public class ReliaPOS {
             PrintRequestAttributeSet set = new HashPrintRequestAttributeSet();
             set.add(OrientationRequested.LANDSCAPE);
             table.print(JTable.PrintMode.FIT_WIDTH, header, footer, true, set, true);
-            JOptionPane.showMessageDialog(null, "\n" + "Printed Successfully");
+            JOptionPane.showMessageDialog(null,"Printed Successfully");
         } catch (java.awt.print.PrinterException e) {
-            JOptionPane.showMessageDialog(null, "\n" + "Failed to Print");
+            JOptionPane.showMessageDialog(null,"Failed to Print");
         }
     } 
     
