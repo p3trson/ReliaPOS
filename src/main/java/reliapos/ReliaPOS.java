@@ -2,10 +2,14 @@ package reliapos;
 
 import java.awt.HeadlessException;
 import java.sql.*;
+import java.text.MessageFormat;
 import java.util.*;
+import javax.print.attribute.HashPrintRequestAttributeSet;
+import javax.print.attribute.PrintRequestAttributeSet;
+import javax.print.attribute.standard.OrientationRequested;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
+
 
 
 public class ReliaPOS {
@@ -179,7 +183,7 @@ public class ReliaPOS {
     }
      
      public void addProduct(String name, String group, String cost, String saleprice, String quantity) {  
-        String namePattern = "^[A-Z][a-zA-Z0-9 ]*$";
+        String namePattern = "^[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+$";
         String groupPattern = "^[A-Z][a-zA-Z ]*$";  
         String costPattern = "^[0-9]+(\\.[0-9]{1,2})?$";
         String salepricePattern = "^[0-9]+(\\.[0-9]{1,2})?$";
@@ -228,7 +232,7 @@ public class ReliaPOS {
     }
      
      public void updateProduct(String name, String group, String cost, String saleprice, String quantity, String id) {
-        String namePattern = "^[A-Z][a-zA-Z0-9 ]*$";
+        String namePattern = "^[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+$";
         String groupPattern = "^[A-Z][a-zA-Z ]*$";  
         String costPattern = "^[0-9]+(\\.[0-9]{1,2})?$";
         String salepricePattern = "^[0-9]+(\\.[0-9]{1,2})?$";
@@ -367,5 +371,22 @@ public class ReliaPOS {
              if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
         }       
    }
+    
+    public void exportPDF(JTable table, String className) {
+        String title = "" + className + " list";
+        MessageFormat header = new MessageFormat(title);
+        MessageFormat footer = new MessageFormat("{0}");
+
+        try {
+            PrintRequestAttributeSet set = new HashPrintRequestAttributeSet();
+            set.add(OrientationRequested.LANDSCAPE);
+            table.print(JTable.PrintMode.FIT_WIDTH, header, footer, true, set, true);
+            JOptionPane.showMessageDialog(null, "\n" + "Printed Successfully");
+        } catch (java.awt.print.PrinterException e) {
+            JOptionPane.showMessageDialog(null, "\n" + "Failed to Print");
+        }
+    }
+    
+   
 }
 
