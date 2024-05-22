@@ -591,7 +591,7 @@ public class Customer extends javax.swing.JPanel{
     }//GEN-LAST:event_clearBtnActionPerformed
 
     private void savePDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savePDFActionPerformed
-
+        reliapos.exportPDF(dbTable, "Customers");
     }//GEN-LAST:event_savePDFActionPerformed
 
    
