@@ -1,10 +1,21 @@
 package reliapos;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
+
 
 public class PaymentType extends javax.swing.JPanel {
     
+    private ReliaPOS reliapos;
+    private String query = "SELECT * FROM paymenttypes";
+    
     public PaymentType() {
         initComponents();
+        reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);
+        
     }
     
     @SuppressWarnings("unchecked")
@@ -13,13 +24,15 @@ public class PaymentType extends javax.swing.JPanel {
 
         panel_paymentTypes = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        dbTable = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        searchTf = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        idTf = new javax.swing.JTextField();
+        nameTf = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        savePDF = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(72, 72, 72));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -29,15 +42,12 @@ public class PaymentType extends javax.swing.JPanel {
 
         jScrollPane1.setBackground(new java.awt.Color(51, 51, 51));
 
-        jTable1.setAutoCreateRowSorter(true);
-        jTable1.setBackground(new java.awt.Color(51, 51, 51));
-        jTable1.setForeground(new java.awt.Color(255, 255, 255));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        dbTable.setAutoCreateRowSorter(true);
+        dbTable.setBackground(new java.awt.Color(51, 51, 51));
+        dbTable.setForeground(new java.awt.Color(255, 255, 255));
+        dbTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "Cash"},
-                {"2", "Credit Card"},
-                {"3", "Debit Card"},
-                {"4", "Check"}
+
             },
             new String [] {
                 "ID", "Name"
@@ -46,71 +56,119 @@ public class PaymentType extends javax.swing.JPanel {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
-        });
-        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable1.setName(""); // NOI18N
-        jScrollPane1.setViewportView(jTable1);
 
-        jTextField1.setBackground(new java.awt.Color(72, 72, 72));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setToolTipText("");
-        jTextField1.setName(""); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        dbTable.setGridColor(new java.awt.Color(255, 255, 255));
+        dbTable.setName(""); // NOI18N
+        jScrollPane1.setViewportView(dbTable);
+
+        jPanel1.setBackground(new java.awt.Color(72, 72, 72));
+
+        jLabel1.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Search by ID:");
+
+        searchTf.setBackground(new java.awt.Color(72, 72, 72));
+        searchTf.setForeground(new java.awt.Color(255, 255, 255));
+        searchTf.setToolTipText("");
+        searchTf.setCaretColor(new java.awt.Color(255, 255, 255));
+        searchTf.setName(""); // NOI18N
+        searchTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                searchTfActionPerformed(evt);
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(72, 72, 72));
+        jLabel5.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("ID :");
 
-        jToggleButton1.setText("Edit");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        idTf.setEditable(false);
+        idTf.setBackground(new java.awt.Color(72, 72, 72));
+        idTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        idTf.setForeground(new java.awt.Color(255, 255, 255));
+        idTf.setCaretColor(new java.awt.Color(255, 255, 255));
+        idTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                idTfActionPerformed(evt);
             }
         });
 
-        jToggleButton2.setText("Add");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        nameTf.setEditable(false);
+        nameTf.setBackground(new java.awt.Color(72, 72, 72));
+        nameTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        nameTf.setForeground(new java.awt.Color(255, 255, 255));
+        nameTf.setCaretColor(new java.awt.Color(255, 255, 255));
+        nameTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                nameTfActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Remove");
+        jLabel6.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Name :");
 
-        jButton2.setText("Save PDF");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        savePDF.setText("Save PDF");
+        savePDF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                savePDFActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(idTf, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(nameTf, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(searchTf)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(savePDF, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(searchTf, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1))
+                    .addComponent(savePDF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(idTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nameTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout panel_paymentTypesLayout = new javax.swing.GroupLayout(panel_paymentTypes);
@@ -120,27 +178,19 @@ public class PaymentType extends javax.swing.JPanel {
             .addGroup(panel_paymentTypesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panel_paymentTypesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_paymentTypesLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1188, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(panel_paymentTypesLayout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1188, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         panel_paymentTypesLayout.setVerticalGroup(
             panel_paymentTypesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_paymentTypesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
                 .addContainerGap())
         );
-
-        jTextField1.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -160,32 +210,34 @@ public class PaymentType extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void searchTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTfActionPerformed
+        reliapos.searchRecord("paymenttypes", "ID", searchTf.getText(), idTf, nameTf);
+    }//GEN-LAST:event_searchTfActionPerformed
+
+    private void savePDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savePDFActionPerformed
         
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_savePDFActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void idTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idTfActionPerformed
         
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_idTfActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nameTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTfActionPerformed
+        
+    }//GEN-LAST:event_nameTfActionPerformed
 
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-     
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTable dbTable;
+    private javax.swing.JTextField idTf;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JTextField nameTf;
     private javax.swing.JPanel panel_paymentTypes;
+    private javax.swing.JButton savePDF;
+    private javax.swing.JTextField searchTf;
     // End of variables declaration//GEN-END:variables
 }
