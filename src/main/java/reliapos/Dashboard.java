@@ -27,11 +27,11 @@ public class Dashboard extends javax.swing.JPanel {
         setBackground(new java.awt.Color(72, 72, 72));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        panel_dashboard.setBackground(new java.awt.Color(72, 72, 72));
+        panel_dashboard.setBackground(new java.awt.Color(52, 52, 52));
         panel_dashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        jPanel1.setBackground(new java.awt.Color(40, 40, 40));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
 
         jLabel1.setFont(new java.awt.Font("Verdana", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -54,7 +54,7 @@ public class Dashboard extends javax.swing.JPanel {
                 .addContainerGap(261, Short.MAX_VALUE))
         );
 
-        jPanel5.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel5.setBackground(new java.awt.Color(40, 40, 40));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 36)); // NOI18N
@@ -78,7 +78,7 @@ public class Dashboard extends javax.swing.JPanel {
                 .addContainerGap(261, Short.MAX_VALUE))
         );
 
-        jPanel6.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel6.setBackground(new java.awt.Color(40, 40, 40));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 0, 36)); // NOI18N
@@ -102,7 +102,7 @@ public class Dashboard extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel7.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel7.setBackground(new java.awt.Color(40, 40, 40));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 0, 36)); // NOI18N
@@ -126,7 +126,7 @@ public class Dashboard extends javax.swing.JPanel {
                 .addContainerGap(339, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel2.setBackground(new java.awt.Color(40, 40, 40));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 0, 36)); // NOI18N
