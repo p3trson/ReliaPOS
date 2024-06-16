@@ -50,12 +50,12 @@ public class PaymentType extends javax.swing.JPanel{
         edit_nameL = new javax.swing.JLabel();
         edit_saveBtn = new javax.swing.JButton();
         edit_cancelBtn = new javax.swing.JButton();
-        edit_backBtn = new javax.swing.JButton();
         edit_searchTf = new javax.swing.JTextField();
         edit_searchL = new javax.swing.JLabel();
         edit_deleteBtn = new javax.swing.JButton();
         edit_codeTf = new javax.swing.JTextField();
         edit_codeL = new javax.swing.JLabel();
+        edit_backBtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(52, 52, 52));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -64,13 +64,13 @@ public class PaymentType extends javax.swing.JPanel{
         layeredPane.setBackground(new java.awt.Color(52, 52, 52));
         layeredPane.setPreferredSize(new java.awt.Dimension(1280, 720));
 
-        mainPanel.setBackground(new java.awt.Color(52, 52, 52));
+        mainPanel.setBackground(new java.awt.Color(42, 42, 42));
 
         dbTablePane.setBackground(new java.awt.Color(51, 51, 51));
 
         dbTable.setAutoCreateRowSorter(true);
-        dbTable.setBackground(new java.awt.Color(40, 40, 40));
-        dbTable.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        dbTable.setBackground(new java.awt.Color(42, 42, 42));
+        dbTable.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         dbTable.setForeground(new java.awt.Color(255, 255, 255));
         dbTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -100,11 +100,12 @@ public class PaymentType extends javax.swing.JPanel{
         dbTable.setRowSelectionAllowed(false);
         dbTablePane.setViewportView(dbTable);
 
-        searchLabel.setFont(new java.awt.Font("Verdana", 0, 22)); // NOI18N
+        searchLabel.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         searchLabel.setForeground(new java.awt.Color(255, 255, 255));
         searchLabel.setText("Search :");
 
-        searchTf.setBackground(new java.awt.Color(52, 52, 52));
+        searchTf.setBackground(new java.awt.Color(40, 40, 40));
+        searchTf.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         searchTf.setForeground(new java.awt.Color(255, 255, 255));
         searchTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         searchTf.addActionListener(new java.awt.event.ActionListener() {
@@ -113,28 +114,36 @@ public class PaymentType extends javax.swing.JPanel{
             }
         });
 
-        refreshBtn.setText("Refresh");
+        refreshBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Refresh.png")); // NOI18N
+        refreshBtn.setBorder(null);
+        refreshBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover refresh.png")); // NOI18N
         refreshBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshBtnActionPerformed(evt);
             }
         });
 
-        addBtnPanel.setText("Add");
+        addBtnPanel.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\add.png")); // NOI18N
+        addBtnPanel.setBorder(null);
+        addBtnPanel.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover add.png")); // NOI18N
         addBtnPanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBtnPanelActionPerformed(evt);
             }
         });
 
-        editBtnPanel.setText("Edit");
+        editBtnPanel.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Edit.png")); // NOI18N
+        editBtnPanel.setBorder(null);
+        editBtnPanel.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover edit.png")); // NOI18N
         editBtnPanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editBtnPanelActionPerformed(evt);
             }
         });
 
-        savePdfBtn.setText("Save PDF");
+        savePdfBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Save PDF.png")); // NOI18N
+        savePdfBtn.setBorder(null);
+        savePdfBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover pdf.png")); // NOI18N
         savePdfBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 savePdfBtnActionPerformed(evt);
@@ -152,17 +161,17 @@ public class PaymentType extends javax.swing.JPanel{
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addComponent(searchLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(searchTf, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(refreshBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(addBtnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(editBtnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(savePdfBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addComponent(refreshBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(addBtnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(editBtnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(savePdfBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(searchLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(searchTf, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -170,63 +179,70 @@ public class PaymentType extends javax.swing.JPanel{
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(refreshBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addBtnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(editBtnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(savePdfBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(savePdfBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(refreshBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(searchTf)
-                    .addComponent(searchLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(dbTablePane, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
+                    .addComponent(searchLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(searchTf))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(dbTablePane, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        addPanel.setBackground(new java.awt.Color(40, 40, 40));
+        addPanel.setBackground(new java.awt.Color(42, 42, 42));
         addPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         addPanel.setVisible(false);
 
-        addPaymentType.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        addPaymentType.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         addPaymentType.setForeground(new java.awt.Color(255, 255, 255));
         addPaymentType.setText("Add Payment Type");
 
         add_nameTf.setBackground(new java.awt.Color(40, 40, 40));
-        add_nameTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        add_nameTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         add_nameTf.setForeground(new java.awt.Color(255, 255, 255));
         add_nameTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         add_nameTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
-        add_nameL.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        add_nameL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         add_nameL.setForeground(new java.awt.Color(255, 255, 255));
         add_nameL.setText("Name:");
 
         add_codeTf.setBackground(new java.awt.Color(40, 40, 40));
-        add_codeTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        add_codeTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         add_codeTf.setForeground(new java.awt.Color(255, 255, 255));
         add_codeTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         add_codeTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
-        add_codeL.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        add_codeL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         add_codeL.setForeground(new java.awt.Color(255, 255, 255));
         add_codeL.setText("Code:");
 
-        add_addBtn.setText("Add");
+        add_addBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\add.png")); // NOI18N
+        add_addBtn.setBorder(null);
+        add_addBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover add.png")); // NOI18N
         add_addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 add_addBtnActionPerformed(evt);
             }
         });
 
-        add_cancelBtn.setText("Cancel");
+        add_cancelBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Cancel.png")); // NOI18N
+        add_cancelBtn.setBorder(null);
+        add_cancelBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover Cancel.png")); // NOI18N
         add_cancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 add_cancelBtnActionPerformed(evt);
             }
         });
 
-        add_backBtn.setText("Back");
+        add_backBtn.setBackground(new java.awt.Color(42, 42, 42));
+        add_backBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Back.png")); // NOI18N
+        add_backBtn.setBorder(null);
+        add_backBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover back.png")); // NOI18N
         add_backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 add_backBtnActionPerformed(evt);
@@ -240,18 +256,21 @@ public class PaymentType extends javax.swing.JPanel{
             .addGroup(addPanelLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(add_nameTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add_nameL)
                     .addGroup(addPanelLayout.createSequentialGroup()
                         .addComponent(addPaymentType)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                        .addComponent(add_backBtn))
-                    .addComponent(add_codeTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add_codeL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(add_backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(addPanelLayout.createSequentialGroup()
-                        .addComponent(add_addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(add_cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(add_nameTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(add_nameL)
+                            .addComponent(add_codeTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(add_codeL)
+                            .addGroup(addPanelLayout.createSequentialGroup()
+                                .addComponent(add_addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(add_cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 66, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         addPanelLayout.setVerticalGroup(
@@ -260,7 +279,7 @@ public class PaymentType extends javax.swing.JPanel{
                 .addGap(12, 12, 12)
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addPaymentType, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add_backBtn))
+                    .addComponent(add_backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(add_nameL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -269,54 +288,51 @@ public class PaymentType extends javax.swing.JPanel{
                 .addComponent(add_codeL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(add_codeTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 424, Short.MAX_VALUE)
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(add_addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add_cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 426, Short.MAX_VALUE)
+                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(add_cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(add_addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17))
         );
 
-        editPanel.setBackground(new java.awt.Color(40, 40, 40));
+        editPanel.setBackground(new java.awt.Color(42, 42, 42));
         editPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         editPanel.setVisible(false);
 
-        editPaymentType.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        editPaymentType.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         editPaymentType.setForeground(new java.awt.Color(255, 255, 255));
         editPaymentType.setText("Edit Payment Type");
 
         edit_nameTf.setBackground(new java.awt.Color(40, 40, 40));
-        edit_nameTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        edit_nameTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         edit_nameTf.setForeground(new java.awt.Color(255, 255, 255));
         edit_nameTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         edit_nameTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
-        edit_nameL.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        edit_nameL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         edit_nameL.setForeground(new java.awt.Color(255, 255, 255));
         edit_nameL.setText("Name:");
 
-        edit_saveBtn.setText("Save");
+        edit_saveBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Save.png")); // NOI18N
+        edit_saveBtn.setBorder(null);
+        edit_saveBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover save.png")); // NOI18N
         edit_saveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edit_saveBtnActionPerformed(evt);
             }
         });
 
-        edit_cancelBtn.setText("Cancel");
+        edit_cancelBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Cancel.png")); // NOI18N
+        edit_cancelBtn.setBorder(null);
+        edit_cancelBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover Cancel.png")); // NOI18N
         edit_cancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edit_cancelBtnActionPerformed(evt);
             }
         });
 
-        edit_backBtn.setText("Back");
-        edit_backBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edit_backBtnActionPerformed(evt);
-            }
-        });
-
         edit_searchTf.setBackground(new java.awt.Color(40, 40, 40));
-        edit_searchTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        edit_searchTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         edit_searchTf.setForeground(new java.awt.Color(255, 255, 255));
         edit_searchTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         edit_searchTf.setCaretColor(new java.awt.Color(255, 255, 255));
@@ -326,11 +342,13 @@ public class PaymentType extends javax.swing.JPanel{
             }
         });
 
-        edit_searchL.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        edit_searchL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         edit_searchL.setForeground(new java.awt.Color(255, 255, 255));
         edit_searchL.setText("Search by name:");
 
-        edit_deleteBtn.setText("Delete");
+        edit_deleteBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Delete.png")); // NOI18N
+        edit_deleteBtn.setBorder(null);
+        edit_deleteBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover delete.png")); // NOI18N
         edit_deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edit_deleteBtnActionPerformed(evt);
@@ -338,14 +356,24 @@ public class PaymentType extends javax.swing.JPanel{
         });
 
         edit_codeTf.setBackground(new java.awt.Color(40, 40, 40));
-        edit_codeTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        edit_codeTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         edit_codeTf.setForeground(new java.awt.Color(255, 255, 255));
         edit_codeTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         edit_codeTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
-        edit_codeL.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        edit_codeL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         edit_codeL.setForeground(new java.awt.Color(255, 255, 255));
         edit_codeL.setText("Code:");
+
+        edit_backBtn.setBackground(new java.awt.Color(42, 42, 42));
+        edit_backBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Back.png")); // NOI18N
+        edit_backBtn.setBorder(null);
+        edit_backBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover back.png")); // NOI18N
+        edit_backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edit_backBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout editPanelLayout = new javax.swing.GroupLayout(editPanel);
         editPanel.setLayout(editPanelLayout);
@@ -356,8 +384,8 @@ public class PaymentType extends javax.swing.JPanel{
                 .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(editPanelLayout.createSequentialGroup()
                         .addComponent(editPaymentType, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                        .addComponent(edit_backBtn))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                        .addComponent(edit_backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(editPanelLayout.createSequentialGroup()
                         .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(edit_codeTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -367,11 +395,11 @@ public class PaymentType extends javax.swing.JPanel{
                             .addComponent(edit_nameTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(edit_nameL)
                             .addGroup(editPanelLayout.createSequentialGroup()
-                                .addComponent(edit_saveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(edit_saveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(edit_cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(edit_cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(edit_deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(edit_deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -381,7 +409,7 @@ public class PaymentType extends javax.swing.JPanel{
                 .addGap(12, 12, 12)
                 .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(editPaymentType, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edit_backBtn))
+                    .addComponent(edit_backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(edit_searchL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -394,11 +422,12 @@ public class PaymentType extends javax.swing.JPanel{
                 .addComponent(edit_codeL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(edit_codeTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 351, Short.MAX_VALUE)
-                .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edit_saveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edit_cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edit_deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 355, Short.MAX_VALUE)
+                .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(edit_deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(edit_cancelBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(edit_saveBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(17, 17, 17))
         );
 
@@ -463,10 +492,6 @@ public class PaymentType extends javax.swing.JPanel{
        editPanel.setVisible(false); 
     }//GEN-LAST:event_edit_cancelBtnActionPerformed
 
-    private void edit_backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_backBtnActionPerformed
-       editPanel.setVisible(false); 
-    }//GEN-LAST:event_edit_backBtnActionPerformed
-
     private void editBtnPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnPanelActionPerformed
        reliapos.slideInPanel(layeredPane, editPanel, dbTable);
     }//GEN-LAST:event_editBtnPanelActionPerformed
@@ -474,10 +499,6 @@ public class PaymentType extends javax.swing.JPanel{
     private void edit_searchTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_searchTfActionPerformed
        reliapos.searchRecord("paymenttypes", "Name", edit_searchTf.getText(), edit_nameTf, edit_codeTf);
     }//GEN-LAST:event_edit_searchTfActionPerformed
-
-    private void add_backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_backBtnActionPerformed
-        addPanel.setVisible(false);
-    }//GEN-LAST:event_add_backBtnActionPerformed
 
     private void add_cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_cancelBtnActionPerformed
         addPanel.setVisible(false);
@@ -505,6 +526,14 @@ public class PaymentType extends javax.swing.JPanel{
     private void savePdfBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savePdfBtnActionPerformed
         reliapos.exportPDF(dbTable, "paymenttypes");
     }//GEN-LAST:event_savePdfBtnActionPerformed
+
+    private void edit_backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_backBtnActionPerformed
+        editPanel.setVisible(false);
+    }//GEN-LAST:event_edit_backBtnActionPerformed
+
+    private void add_backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_backBtnActionPerformed
+        addPanel.setVisible(false);
+    }//GEN-LAST:event_add_backBtnActionPerformed
     
     
     

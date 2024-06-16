@@ -38,9 +38,9 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(40, 40, 40));
 
-        jLabel3.setFont(new java.awt.Font("Verdana", 0, 48)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Relia");
@@ -62,14 +62,16 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(72, 72, 72));
+        jPanel2.setBackground(new java.awt.Color(42, 42, 42));
 
-        jLabel2.setFont(new java.awt.Font("Verdana", 0, 48)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("LOGIN");
 
-        nameTf.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        nameTf.setBackground(new java.awt.Color(40, 40, 40));
+        nameTf.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        nameTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         nameTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameTfActionPerformed(evt);
@@ -77,16 +79,16 @@ public class Login extends javax.swing.JFrame {
         });
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Name");
 
-        jLabel4.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Password");
 
         sgnBtn.setBackground(new java.awt.Color(52, 52, 52));
-        sgnBtn.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        sgnBtn.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         sgnBtn.setForeground(new java.awt.Color(255, 255, 255));
         sgnBtn.setText("Sign Up");
         sgnBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
@@ -97,7 +99,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         lgnBtn.setBackground(new java.awt.Color(52, 52, 52));
-        lgnBtn.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        lgnBtn.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lgnBtn.setForeground(new java.awt.Color(255, 255, 255));
         lgnBtn.setText("Login");
         lgnBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 110, 110)));
@@ -106,6 +108,10 @@ public class Login extends javax.swing.JFrame {
                 lgnBtnActionPerformed(evt);
             }
         });
+
+        passTf.setBackground(new java.awt.Color(40, 40, 40));
+        passTf.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        passTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -127,7 +133,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(150, 150, 150)
                         .addComponent(jLabel2)))
-                .addGap(0, 26, Short.MAX_VALUE))
+                .addGap(0, 34, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,7 +152,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lgnBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sgnBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

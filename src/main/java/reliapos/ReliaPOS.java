@@ -1,7 +1,5 @@
 package reliapos;
 
-
-import java.io.File;
 import java.sql.*;
 import java.text.MessageFormat;
 import java.util.*;
@@ -9,12 +7,17 @@ import javax.print.attribute.HashPrintRequestAttributeSet;
 import javax.print.attribute.PrintRequestAttributeSet;
 import javax.print.attribute.standard.OrientationRequested;
 import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
 
 public class ReliaPOS {
+    
+    
+    public ReliaPOS() {
+             
         
+    }
+    
     public void addEmployee(String name, String email, String address, String phnumber, String bankacc, String taxn) {        
         String namePattern = "^[a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+(?: [a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+)*$";
         String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
@@ -113,80 +116,6 @@ public class ReliaPOS {
         }              
    }
     
-    public void addCustomer(String name, String email, String address, String phnumber) {
-        String namePattern = "^[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+\\s*[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+$";
-        String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
-        String phonePattern = "^\\+\\d{9,}$";
-        
-        
-        if (!name.matches(namePattern)) {
-        JOptionPane.showMessageDialog(null, "Invalid name format. Format should be: First Name - Last Name");
-        return;
-        }
-        
-        if (!email.matches(emailPattern)) {
-        JOptionPane.showMessageDialog(null, "Invalid email format. Format should be: example@example.com");
-        return;
-        }
-        
-        if (!phnumber.matches(phonePattern)) {
-        JOptionPane.showMessageDialog(null, "Invalid phone number format. Format should be: +000000000");
-        return;
-        }
-        
-        Statement s = null;
-                
-        try {
-            
-            s = DB.connect().createStatement();
-            s.executeUpdate("INSERT INTO customers (Name,`E-mail`, Address, `Phone number`) VALUES ('" + name + "', '" + email + "', '" + address + "', '" + phnumber + "')");
-           
-            JOptionPane.showMessageDialog(null, "Customer sucessfully added !");
-            
-        } catch (SQLException e) {
-          System.out.println(e);
-        } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-    }
-      
-    public void updateCustomer(String name, String address, String email, String phnumber, String id) {   
-        String namePattern = "^[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+\\s*[A-ZÁÉÍÓÚÝČĎĚŇŘŠŤŽ][a-záéíóúýčďěňřšťž]+$";
-        String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
-        String phonePattern = "^\\+\\d{9,}$";
-        
-        
-        if (!name.matches(namePattern)) {
-        JOptionPane.showMessageDialog(null, "Invalid name format. Format should be: First Name - Last Name");
-        return;
-        }
-        
-        if (!email.matches(emailPattern)) {
-        JOptionPane.showMessageDialog(null, "Invalid email format. Format should be: example@example.com");
-        return;
-        }
-        
-        if (!phnumber.matches(phonePattern)) {
-        JOptionPane.showMessageDialog(null, "Invalid phone number format. Format should be: +000000000");
-        return;
-        }
-        
-        Statement s = null;
-       
-        try {
-            
-        s = DB.connect().createStatement();
-        s.executeUpdate("UPDATE customers SET Name = '" + name + "', `E-mail` = '" + email + "', Address =  '" + address + "', `Phone number` = '" + phnumber + "' WHERE Name = '" + id + "'");
-           
-        JOptionPane.showMessageDialog(null, "Customer sucessfully updated !");
-        
-        } catch (SQLException e) {
-          System.out.println(e);
-        } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }       
-   }
-    
     public void addProduct(String name, String category, String cost, String saleprice, String quantity) {  
         String namePattern = "^[a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+(?: [a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+)*$";        
         String costPattern = "^[0-9]+(\\.[0-9]{1,2})?$";
@@ -216,20 +145,12 @@ public class ReliaPOS {
         return;
         }
         
-        int option = JOptionPane.showConfirmDialog(null, "Do you want to add an image to the product?", "Add Image", JOptionPane.YES_NO_OPTION);
-
-        String imagePath = null;
-        if (option == JOptionPane.YES_OPTION) {
-        
-        imagePath = importImage();
-        }
-        
         Statement s = null;
                 
         try {
             
             s = DB.connect().createStatement();
-            s.executeUpdate("INSERT INTO products (Name, Category, Cost, SalePrice, Quantity, ImagePath) VALUES ('" + name + "', '" + category + "', '" + cost + "', '" + saleprice + "', '" + quantity + "', '" + imagePath + "')");
+            s.executeUpdate("INSERT INTO products (Name, Category, Cost, SalePrice, Quantity) VALUES ('" + name + "', '" + category + "', '" + cost + "', '" + saleprice + "', '" + quantity + "')");
            
             JOptionPane.showMessageDialog(null, "Product sucessfully added !");
             
@@ -282,6 +203,74 @@ public class ReliaPOS {
              if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
         }              
    }
+    
+    public void addCategory (String name) { 
+        String namePattern = "^[a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+(?: [a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+)*$";
+      
+        if (!name.matches(namePattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid category name format.");
+        return;
+        }
+        
+        Statement s = null;
+                
+        try {
+            
+            s = DB.connect().createStatement();
+            s.executeUpdate("INSERT INTO categories (Name) VALUES ('" + name + "')");
+           
+            JOptionPane.showMessageDialog(null, "Category sucessfully added !");
+            
+        } catch (SQLException e) {
+          System.out.println(e);
+        } finally {
+             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
+        }
+    }
+    
+    public void updateCategory(String name,String id) {
+        String namePattern = "^[a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+(?: [a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+)*$";
+        
+        if (!name.matches(namePattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid category name format.");
+        return;
+        }
+            
+        Statement s = null;
+       
+        try {
+            
+        s = DB.connect().createStatement();
+        s.executeUpdate("UPDATE categories SET Name = '" + name + "' WHERE Name = '" + id + "'");
+           
+        JOptionPane.showMessageDialog(null, "Category sucessfully updated !");
+        
+        } catch (SQLException e) {
+          System.out.println(e);
+        } finally {
+             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
+        }              
+   }
+    
+    public void loadCategoriesIntoComboBox(JComboBox<String> comboBox) {
+        comboBox.removeAllItems();
+        Statement s = null;
+        ResultSet rs = null;
+
+        try {
+            s = DB.connect().createStatement();
+            rs = s.executeQuery("SELECT Name FROM categories");
+
+            while (rs.next()) {
+                comboBox.addItem(rs.getString("Name"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
+            if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
+        }
+    }
     
     public void addPaymentType(String name, String code) {        
         String namePattern = "^[a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+(?: [a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+)*$";
@@ -343,39 +332,14 @@ public class ReliaPOS {
         }              
    }
     
-    public void addCategory (String name) {  
-        String namePattern = "^[a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+(?: [a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+)*$";
-      
-        if (!name.matches(namePattern)) {
-        JOptionPane.showMessageDialog(null, "Invalid category name format.");
-        return;
-        }
-        
-        
-        Statement s = null;
-                
-        try {
-            
-            s = DB.connect().createStatement();
-            s.executeUpdate("INSERT INTO categories (Name) VALUES ('" + name + "')");
-           
-            JOptionPane.showMessageDialog(null, "Category sucessfully added !");
-            
-        } catch (SQLException e) {
-          System.out.println(e);
-        } finally {
-             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
-        }
-    }
-    
-    public void loadCategoriesIntoComboBox(JComboBox<String> comboBox) {
+    public void loadPaymentTypesIntoComboBox(JComboBox<String> comboBox) {
         comboBox.removeAllItems();
         Statement s = null;
         ResultSet rs = null;
 
         try {
             s = DB.connect().createStatement();
-            rs = s.executeQuery("SELECT Name FROM categories");
+            rs = s.executeQuery("SELECT Name FROM paymenttypes");
 
             while (rs.next()) {
                 comboBox.addItem(rs.getString("Name"));
@@ -427,26 +391,6 @@ public class ReliaPOS {
         }
     } 
     
-    public String importImage() {
-        
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Choose Image File");        
-
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Image Files", "jpg", "jpeg", "png", "gif");
-        fileChooser.setFileFilter(filter);
-                
-        int returnValue = fileChooser.showOpenDialog(null);
-        
-        if (returnValue == JFileChooser.APPROVE_OPTION) {           
-            File selectedFile = fileChooser.getSelectedFile();     
-            
-            return selectedFile.getAbsolutePath();
-        } else {
-            JOptionPane.showMessageDialog(null, "No file selected");
-            return null;
-        }
-    }
-     
     public void searchRecord(String tableName, String columnName, String searchValue,JTextField... textFields) {
         Connection conn = null;
         Statement stmt = null;
@@ -483,6 +427,42 @@ public class ReliaPOS {
             }
         }
     }
+    
+   public void searchRecord(String tableName, String columnName, String searchValue, JComboBox<String> categoryComboBox, JTextField... textFields) {
+    Connection conn = null;
+    Statement stmt = null;
+    ResultSet rs = null;
+
+    try {
+        conn = DB.connect();
+        stmt = conn.createStatement();
+
+        String query = "SELECT * FROM " + tableName + " WHERE " + columnName + " = ?";
+        PreparedStatement pstmt = conn.prepareStatement(query);
+        pstmt.setString(1, searchValue);
+        rs = pstmt.executeQuery();
+
+        if (rs.next()) {           
+            textFields[0].setText(rs.getString("Name"));
+            categoryComboBox.setSelectedItem(rs.getString("Category"));
+            textFields[1].setText(rs.getString("Cost")); 
+            textFields[2].setText(rs.getString("SalePrice"));
+            textFields[3].setText(rs.getString("Quantity"));
+        } else {
+            JOptionPane.showMessageDialog(null, "Record not found in " + tableName + "!");
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        try {
+            if (rs != null) rs.close();
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
     
     public void searchRecordInTable(String tableName, String columnName, String searchValue, JTable table) {
         Connection conn = null;
@@ -573,5 +553,9 @@ public class ReliaPOS {
         panel.setVisible(true);
     }
 }
+   
 }
+
+
+
 

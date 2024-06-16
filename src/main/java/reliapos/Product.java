@@ -18,7 +18,7 @@ public class Product extends javax.swing.JPanel{
         initComponents();        
         reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);
         reliapos.loadCategoriesIntoComboBox(add_categoryC);       
-        reliapos.loadCategoriesIntoComboBox(edit_categoryC);        
+        reliapos.loadCategoriesIntoComboBox(edit_categoryC);
     }
 
     
@@ -49,8 +49,8 @@ public class Product extends javax.swing.JPanel{
         add_quantityTf = new javax.swing.JTextField();
         add_quantityL = new javax.swing.JLabel();
         add_cancelBtn = new javax.swing.JButton();
-        add_backBtn = new javax.swing.JButton();
         add_categoryC = new javax.swing.JComboBox<>();
+        add_backBtn = new javax.swing.JButton();
         editPanel = new javax.swing.JPanel();
         editProduct = new javax.swing.JLabel();
         edit_nameTf = new javax.swing.JTextField();
@@ -64,11 +64,11 @@ public class Product extends javax.swing.JPanel{
         edit_quantityTf = new javax.swing.JTextField();
         edit_quantityL = new javax.swing.JLabel();
         edit_cancelBtn = new javax.swing.JButton();
-        edit_backBtn = new javax.swing.JButton();
         edit_searchTf = new javax.swing.JTextField();
         edit_searchL = new javax.swing.JLabel();
         edit_deleteBtn = new javax.swing.JButton();
         edit_categoryC = new javax.swing.JComboBox<>();
+        edit_backBtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(52, 52, 52));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -77,13 +77,13 @@ public class Product extends javax.swing.JPanel{
         layeredPane.setBackground(new java.awt.Color(52, 52, 52));
         layeredPane.setPreferredSize(new java.awt.Dimension(1280, 720));
 
-        mainPanel.setBackground(new java.awt.Color(52, 52, 52));
+        mainPanel.setBackground(new java.awt.Color(42, 42, 42));
 
         dbTablePane.setBackground(new java.awt.Color(51, 51, 51));
 
         dbTable.setAutoCreateRowSorter(true);
-        dbTable.setBackground(new java.awt.Color(40, 40, 40));
-        dbTable.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        dbTable.setBackground(new java.awt.Color(42, 42, 42));
+        dbTable.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         dbTable.setForeground(new java.awt.Color(255, 255, 255));
         dbTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -113,11 +113,12 @@ public class Product extends javax.swing.JPanel{
         dbTable.setRowSelectionAllowed(false);
         dbTablePane.setViewportView(dbTable);
 
-        searchLabel.setFont(new java.awt.Font("Verdana", 0, 22)); // NOI18N
+        searchLabel.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         searchLabel.setForeground(new java.awt.Color(255, 255, 255));
         searchLabel.setText("Search :");
 
-        searchTf.setBackground(new java.awt.Color(52, 52, 52));
+        searchTf.setBackground(new java.awt.Color(40, 40, 40));
+        searchTf.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         searchTf.setForeground(new java.awt.Color(255, 255, 255));
         searchTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         searchTf.addActionListener(new java.awt.event.ActionListener() {
@@ -126,28 +127,36 @@ public class Product extends javax.swing.JPanel{
             }
         });
 
-        refreshBtn.setText("Refresh");
+        refreshBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Refresh.png")); // NOI18N
+        refreshBtn.setBorder(null);
+        refreshBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover refresh.png")); // NOI18N
         refreshBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshBtnActionPerformed(evt);
             }
         });
 
-        addBtnPanel.setText("Add");
+        addBtnPanel.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\add.png")); // NOI18N
+        addBtnPanel.setBorder(null);
+        addBtnPanel.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover add.png")); // NOI18N
         addBtnPanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBtnPanelActionPerformed(evt);
             }
         });
 
-        editBtnPanel.setText("Edit");
+        editBtnPanel.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Edit.png")); // NOI18N
+        editBtnPanel.setBorder(null);
+        editBtnPanel.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover edit.png")); // NOI18N
         editBtnPanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editBtnPanelActionPerformed(evt);
             }
         });
 
-        savePdfBtn.setText("Save PDF");
+        savePdfBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Save PDF.png")); // NOI18N
+        savePdfBtn.setBorder(null);
+        savePdfBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover pdf.png")); // NOI18N
         savePdfBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 savePdfBtnActionPerformed(evt);
@@ -165,17 +174,17 @@ public class Product extends javax.swing.JPanel{
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addComponent(searchLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(searchTf, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(refreshBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(addBtnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(editBtnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(savePdfBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addComponent(refreshBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(addBtnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(editBtnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(savePdfBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(searchLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(searchTf, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -183,63 +192,65 @@ public class Product extends javax.swing.JPanel{
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(refreshBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addBtnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(editBtnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addBtnPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editBtnPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(savePdfBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(searchTf)
-                    .addComponent(searchLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(dbTablePane, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
+                    .addComponent(searchLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(searchTf))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(dbTablePane, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        addPanel.setBackground(new java.awt.Color(40, 40, 40));
+        addPanel.setBackground(new java.awt.Color(42, 42, 42));
         addPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         addPanel.setVisible(false);
 
-        addProduct.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        addProduct.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         addProduct.setForeground(new java.awt.Color(255, 255, 255));
         addProduct.setText("Add Product");
 
         add_nameTf.setBackground(new java.awt.Color(40, 40, 40));
-        add_nameTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        add_nameTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         add_nameTf.setForeground(new java.awt.Color(255, 255, 255));
         add_nameTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         add_nameTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
-        add_nameL.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        add_nameL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         add_nameL.setForeground(new java.awt.Color(255, 255, 255));
         add_nameL.setText("Name:");
 
-        add_categoryL.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        add_categoryL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         add_categoryL.setForeground(new java.awt.Color(255, 255, 255));
         add_categoryL.setText("Category:");
 
         add_costTf.setBackground(new java.awt.Color(40, 40, 40));
-        add_costTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        add_costTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         add_costTf.setForeground(new java.awt.Color(255, 255, 255));
         add_costTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         add_costTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
-        add_costL.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        add_costL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         add_costL.setForeground(new java.awt.Color(255, 255, 255));
         add_costL.setText("Cost:");
 
         add_salePriceTf.setBackground(new java.awt.Color(40, 40, 40));
-        add_salePriceTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        add_salePriceTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         add_salePriceTf.setForeground(new java.awt.Color(255, 255, 255));
         add_salePriceTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         add_salePriceTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
-        add_salePriceL.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        add_salePriceL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         add_salePriceL.setForeground(new java.awt.Color(255, 255, 255));
         add_salePriceL.setText("Sale Price:");
 
-        add_addBtn.setText("Add");
+        add_addBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\add.png")); // NOI18N
+        add_addBtn.setBorder(null);
+        add_addBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover add.png")); // NOI18N
         add_addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 add_addBtnActionPerformed(evt);
@@ -247,33 +258,42 @@ public class Product extends javax.swing.JPanel{
         });
 
         add_quantityTf.setBackground(new java.awt.Color(40, 40, 40));
-        add_quantityTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        add_quantityTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         add_quantityTf.setForeground(new java.awt.Color(255, 255, 255));
         add_quantityTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         add_quantityTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
-        add_quantityL.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        add_quantityL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         add_quantityL.setForeground(new java.awt.Color(255, 255, 255));
         add_quantityL.setText("Quantity:");
 
-        add_cancelBtn.setText("Cancel");
+        add_cancelBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Cancel.png")); // NOI18N
+        add_cancelBtn.setBorder(null);
+        add_cancelBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover Cancel.png")); // NOI18N
         add_cancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 add_cancelBtnActionPerformed(evt);
             }
         });
 
-        add_backBtn.setText("Back");
-        add_backBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_backBtnActionPerformed(evt);
-            }
-        });
-
+        add_categoryC.setBackground(new java.awt.Color(40, 40, 40));
+        add_categoryC.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        add_categoryC.setForeground(new java.awt.Color(255, 255, 255));
         add_categoryC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add_categoryC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         add_categoryC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 add_categoryCActionPerformed(evt);
+            }
+        });
+
+        add_backBtn.setBackground(new java.awt.Color(42, 42, 42));
+        add_backBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Back.png")); // NOI18N
+        add_backBtn.setBorder(null);
+        add_backBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover back.png")); // NOI18N
+        add_backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_backBtnActionPerformed(evt);
             }
         });
 
@@ -286,25 +306,23 @@ public class Product extends javax.swing.JPanel{
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(addPanelLayout.createSequentialGroup()
                         .addComponent(addProduct)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
-                        .addComponent(add_backBtn))
-                    .addGroup(addPanelLayout.createSequentialGroup()
-                        .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(add_quantityTf, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .addComponent(add_quantityL)
-                            .addComponent(add_nameTf, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .addComponent(add_nameL)
-                            .addComponent(add_categoryL)
-                            .addComponent(add_costTf, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .addComponent(add_costL)
-                            .addComponent(add_salePriceTf, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .addComponent(add_salePriceL)
-                            .addGroup(addPanelLayout.createSequentialGroup()
-                                .addComponent(add_addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(add_cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(add_categoryC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 182, Short.MAX_VALUE)
+                        .addComponent(add_backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(add_quantityTf, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                        .addComponent(add_quantityL)
+                        .addComponent(add_nameTf, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                        .addComponent(add_nameL)
+                        .addComponent(add_categoryL)
+                        .addComponent(add_costTf, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                        .addComponent(add_costL)
+                        .addComponent(add_salePriceTf, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                        .addComponent(add_salePriceL)
+                        .addGroup(addPanelLayout.createSequentialGroup()
+                            .addComponent(add_addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(add_cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(add_categoryC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         addPanelLayout.setVerticalGroup(
@@ -313,7 +331,7 @@ public class Product extends javax.swing.JPanel{
                 .addGap(12, 12, 12)
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add_backBtn))
+                    .addComponent(add_backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(add_nameL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -334,56 +352,58 @@ public class Product extends javax.swing.JPanel{
                 .addComponent(add_quantityL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(add_quantityTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 187, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 197, Short.MAX_VALUE)
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(add_addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add_cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(add_addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(add_cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17))
         );
 
-        editPanel.setBackground(new java.awt.Color(40, 40, 40));
+        editPanel.setBackground(new java.awt.Color(42, 42, 42));
         editPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         editPanel.setVisible(false);
 
-        editProduct.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        editProduct.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         editProduct.setForeground(new java.awt.Color(255, 255, 255));
         editProduct.setText("Edit Product");
 
         edit_nameTf.setBackground(new java.awt.Color(40, 40, 40));
-        edit_nameTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        edit_nameTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         edit_nameTf.setForeground(new java.awt.Color(255, 255, 255));
         edit_nameTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         edit_nameTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
-        edit_nameL.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        edit_nameL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         edit_nameL.setForeground(new java.awt.Color(255, 255, 255));
         edit_nameL.setText("Name:");
 
-        edit_categoryL.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        edit_categoryL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         edit_categoryL.setForeground(new java.awt.Color(255, 255, 255));
         edit_categoryL.setText("Category:");
 
         edit_costTf.setBackground(new java.awt.Color(40, 40, 40));
-        edit_costTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        edit_costTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         edit_costTf.setForeground(new java.awt.Color(255, 255, 255));
         edit_costTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         edit_costTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
-        edit_costL.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        edit_costL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         edit_costL.setForeground(new java.awt.Color(255, 255, 255));
         edit_costL.setText("Cost:");
 
         edit_salePriceTf.setBackground(new java.awt.Color(40, 40, 40));
-        edit_salePriceTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        edit_salePriceTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         edit_salePriceTf.setForeground(new java.awt.Color(255, 255, 255));
         edit_salePriceTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         edit_salePriceTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
-        edit_salePriceL.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        edit_salePriceL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         edit_salePriceL.setForeground(new java.awt.Color(255, 255, 255));
         edit_salePriceL.setText("Sale Price:");
 
-        edit_saveBtn.setText("Save");
+        edit_saveBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Save.png")); // NOI18N
+        edit_saveBtn.setBorder(null);
+        edit_saveBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover save.png")); // NOI18N
         edit_saveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edit_saveBtnActionPerformed(evt);
@@ -391,31 +411,26 @@ public class Product extends javax.swing.JPanel{
         });
 
         edit_quantityTf.setBackground(new java.awt.Color(40, 40, 40));
-        edit_quantityTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        edit_quantityTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         edit_quantityTf.setForeground(new java.awt.Color(255, 255, 255));
         edit_quantityTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         edit_quantityTf.setCaretColor(new java.awt.Color(255, 255, 255));
 
-        edit_quantityL.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        edit_quantityL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         edit_quantityL.setForeground(new java.awt.Color(255, 255, 255));
         edit_quantityL.setText("Quantity:");
 
-        edit_cancelBtn.setText("Cancel");
+        edit_cancelBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Cancel.png")); // NOI18N
+        edit_cancelBtn.setBorder(null);
+        edit_cancelBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover Cancel.png")); // NOI18N
         edit_cancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edit_cancelBtnActionPerformed(evt);
             }
         });
 
-        edit_backBtn.setText("Back");
-        edit_backBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edit_backBtnActionPerformed(evt);
-            }
-        });
-
         edit_searchTf.setBackground(new java.awt.Color(40, 40, 40));
-        edit_searchTf.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        edit_searchTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         edit_searchTf.setForeground(new java.awt.Color(255, 255, 255));
         edit_searchTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         edit_searchTf.setCaretColor(new java.awt.Color(255, 255, 255));
@@ -425,18 +440,34 @@ public class Product extends javax.swing.JPanel{
             }
         });
 
-        edit_searchL.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        edit_searchL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         edit_searchL.setForeground(new java.awt.Color(255, 255, 255));
         edit_searchL.setText("Search by name:");
 
-        edit_deleteBtn.setText("Delete");
+        edit_deleteBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Delete.png")); // NOI18N
+        edit_deleteBtn.setBorder(null);
+        edit_deleteBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover delete.png")); // NOI18N
         edit_deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edit_deleteBtnActionPerformed(evt);
             }
         });
 
+        edit_categoryC.setBackground(new java.awt.Color(40, 40, 40));
+        edit_categoryC.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        edit_categoryC.setForeground(new java.awt.Color(255, 255, 255));
         edit_categoryC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        edit_categoryC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
+
+        edit_backBtn.setBackground(new java.awt.Color(42, 42, 42));
+        edit_backBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Back.png")); // NOI18N
+        edit_backBtn.setBorder(null);
+        edit_backBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover back.png")); // NOI18N
+        edit_backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edit_backBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout editPanelLayout = new javax.swing.GroupLayout(editPanel);
         editPanel.setLayout(editPanelLayout);
@@ -447,29 +478,27 @@ public class Product extends javax.swing.JPanel{
                 .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(editPanelLayout.createSequentialGroup()
                         .addComponent(editProduct)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(edit_backBtn))
-                    .addGroup(editPanelLayout.createSequentialGroup()
-                        .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(edit_categoryC, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(edit_searchTf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .addComponent(edit_searchL, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(edit_quantityTf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .addComponent(edit_quantityL, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(edit_nameTf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .addComponent(edit_nameL, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(edit_categoryL, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(edit_costTf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .addComponent(edit_costL, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(edit_salePriceTf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .addComponent(edit_salePriceL, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, editPanelLayout.createSequentialGroup()
-                                .addComponent(edit_saveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(edit_cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(edit_deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 66, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
+                        .addComponent(edit_backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(edit_categoryC, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(edit_searchTf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                        .addComponent(edit_searchL, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(edit_quantityTf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                        .addComponent(edit_quantityL, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(edit_nameTf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                        .addComponent(edit_nameL, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(edit_categoryL, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(edit_costTf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                        .addComponent(edit_costL, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(edit_salePriceTf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                        .addComponent(edit_salePriceL, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, editPanelLayout.createSequentialGroup()
+                            .addComponent(edit_saveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(edit_cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(edit_deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         editPanelLayout.setVerticalGroup(
@@ -478,7 +507,7 @@ public class Product extends javax.swing.JPanel{
                 .addGap(12, 12, 12)
                 .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(editProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edit_backBtn))
+                    .addComponent(edit_backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(edit_searchL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -503,11 +532,11 @@ public class Product extends javax.swing.JPanel{
                 .addComponent(edit_quantityL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(edit_quantityTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
                 .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edit_saveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edit_cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edit_deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edit_saveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edit_cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edit_deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17))
         );
 
@@ -575,21 +604,13 @@ public class Product extends javax.swing.JPanel{
        editPanel.setVisible(false); 
     }//GEN-LAST:event_edit_cancelBtnActionPerformed
 
-    private void edit_backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_backBtnActionPerformed
-       editPanel.setVisible(false); 
-    }//GEN-LAST:event_edit_backBtnActionPerformed
-
     private void editBtnPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnPanelActionPerformed
        reliapos.slideInPanel(layeredPane, editPanel, dbTable);
     }//GEN-LAST:event_editBtnPanelActionPerformed
 
     private void edit_searchTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_searchTfActionPerformed
-       reliapos.searchRecord("products", "Name", edit_searchTf.getText(), edit_nameTf, edit_costTf, edit_salePriceTf, edit_quantityTf);
+       reliapos.searchRecord("products", "Name", edit_searchTf.getText(), edit_categoryC, edit_nameTf, edit_costTf, edit_salePriceTf, edit_quantityTf);
     }//GEN-LAST:event_edit_searchTfActionPerformed
-
-    private void add_backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_backBtnActionPerformed
-        addPanel.setVisible(false);
-    }//GEN-LAST:event_add_backBtnActionPerformed
 
     private void add_cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_cancelBtnActionPerformed
         addPanel.setVisible(false);
@@ -624,6 +645,14 @@ public class Product extends javax.swing.JPanel{
     private void add_categoryCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_categoryCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_add_categoryCActionPerformed
+
+    private void add_backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_backBtnActionPerformed
+        addPanel.setVisible(false);
+    }//GEN-LAST:event_add_backBtnActionPerformed
+
+    private void edit_backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_backBtnActionPerformed
+        editPanel.setVisible(false);
+    }//GEN-LAST:event_edit_backBtnActionPerformed
     
     
     
