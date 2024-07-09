@@ -164,23 +164,17 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="7" rowCount="0">
+                      <Table columnCount="6" rowCount="0">
                         <Column editable="false" title="ID" type="java.lang.String"/>
                         <Column editable="false" title="Name" type="java.lang.String"/>
                         <Column editable="false" title="E-mail" type="java.lang.String"/>
                         <Column editable="false" title="Address" type="java.lang.String"/>
                         <Column editable="false" title="Phone Number" type="java.lang.String"/>
                         <Column editable="false" title="Bank Account" type="java.lang.String"/>
-                        <Column editable="false" title="Tax Number" type="java.lang.String"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0">
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                           <Title/>
                           <Editor/>
@@ -359,8 +353,6 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="add_bankTf" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                                   <Component id="add_bankL" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="add_taxTf" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
-                                  <Component id="add_taxL" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="add_nameTf" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                                   <Component id="add_nameL" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="add_mailTf" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
@@ -415,11 +407,7 @@
                       <Component id="add_bankL" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="add_bankTf" min="-2" pref="29" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="add_taxL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="add_taxTf" min="-2" pref="29" max="-2" attributes="0"/>
-                      <EmptySpace pref="108" max="32767" attributes="0"/>
+                      <EmptySpace pref="185" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="add_cancelBtn" pref="0" max="32767" attributes="0"/>
                           <Component id="add_addBtn" min="-2" pref="77" max="-2" attributes="0"/>
@@ -593,40 +581,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="add_addBtnActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="add_taxTf">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="28" green="28" red="28" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder>
-                      <Color PropertyName="color" blue="5c" green="5c" red="5c" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                </Property>
-                <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="add_taxL">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="20" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Tax number:"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JTextField" name="add_bankTf">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -736,8 +690,6 @@
                                   <Component id="edit_searchL" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="edit_bankTf" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                                   <Component id="edit_bankL" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="edit_taxTf" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
-                                  <Component id="edit_taxL" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="edit_nameTf" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                                   <Component id="edit_nameL" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="edit_emailTf" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
@@ -793,11 +745,7 @@
                       <Component id="edit_bankL" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="edit_bankTf" min="-2" pref="29" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="edit_taxL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="edit_taxTf" min="-2" pref="29" max="-2" attributes="0"/>
-                      <EmptySpace pref="47" max="32767" attributes="0"/>
+                      <EmptySpace pref="124" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="edit_saveBtn" alignment="1" min="-2" pref="77" max="-2" attributes="0"/>
                           <Component id="edit_cancelBtn" alignment="1" min="-2" pref="77" max="-2" attributes="0"/>
@@ -971,40 +919,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edit_saveBtnActionPerformed"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="edit_taxTf">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="28" green="28" red="28" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder>
-                      <Color PropertyName="color" blue="5c" green="5c" red="5c" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                </Property>
-                <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="edit_taxL">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="20" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Tax number:"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="edit_bankTf">
               <Properties>

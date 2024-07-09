@@ -643,7 +643,7 @@ public class Product extends javax.swing.JPanel{
     }//GEN-LAST:event_savePdfBtnActionPerformed
 
     private void add_categoryCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_categoryCActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_add_categoryCActionPerformed
 
     private void add_backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_backBtnActionPerformed
@@ -654,9 +654,6 @@ public class Product extends javax.swing.JPanel{
         editPanel.setVisible(false);
     }//GEN-LAST:event_edit_backBtnActionPerformed
     
-    
-    
- 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtnPanel;
     private javax.swing.JPanel addPanel;

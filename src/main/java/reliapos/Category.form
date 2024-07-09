@@ -532,10 +532,12 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="edit_nameTf" min="-2" pref="29" max="-2" attributes="0"/>
                       <EmptySpace pref="428" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="edit_saveBtn" alignment="3" min="-2" pref="77" max="-2" attributes="0"/>
-                          <Component id="edit_cancelBtn" alignment="3" min="-2" pref="77" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="edit_deleteBtn" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="edit_saveBtn" alignment="3" min="-2" pref="77" max="-2" attributes="0"/>
+                              <Component id="edit_cancelBtn" alignment="3" min="-2" pref="77" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   </Group>

@@ -11,7 +11,6 @@ public class Home extends javax.swing.JFrame {
         this.setExtendedState(Home.MAXIMIZED_BOTH);
         Employee emp = new Employee();
         panelLoader.jPanelLoader(loadPanel, emp);
-        
     }
    
     @SuppressWarnings("unchecked")
@@ -219,7 +218,7 @@ public class Home extends javax.swing.JFrame {
     private void employeeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeBtnActionPerformed
         Employee em = new Employee();
         panelLoader.jPanelLoader(loadPanel, em);
-         updateTabName("Employees");
+        updateTabName("Employees");
     }//GEN-LAST:event_employeeBtnActionPerformed
 
     private void productBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productBtnActionPerformed
@@ -250,11 +249,9 @@ public class Home extends javax.swing.JFrame {
         tabName.setText(panelName);
     }
     
-    public static void main(String args[]) {
-        
+    public static void main(String args[]) {        
         FlatDarkLaf.setup();
-            
-       
+                   
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Home().setVisible(true);

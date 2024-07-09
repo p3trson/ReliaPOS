@@ -9,7 +9,7 @@ public class DB {
     private static String url;
 
     public static Connection connect() {
-         url = "jdbc:sqlite:POS.db";
+        url = "jdbc:sqlite:POS.db";
         Connection conn = null;
         try {
 

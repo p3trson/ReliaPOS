@@ -12,18 +12,11 @@ import javax.swing.table.DefaultTableModel;
 
 public class ReliaPOS {
     
-    
-    public ReliaPOS() {
-             
-        
-    }
-    
-    public void addEmployee(String name, String email, String address, String phnumber, String bankacc, String taxn) {        
+    public void addEmployee(String name, String email, String address, String phnumber, String bankacc) {        
         String namePattern = "^[a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+(?: [a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+)*$";
         String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
         String phonePattern = "^\\+\\d{9,}$";
         String bankPattern = "^\\d{6,}/\\d{4}$";
-        String taxPattern = "^CZ\\d{8}$";
     
     
         if (!name.matches(namePattern)) {
@@ -44,19 +37,14 @@ public class ReliaPOS {
         if (!bankacc.matches(bankPattern)) {
         JOptionPane.showMessageDialog(null, "Invalid bank account format. Format should be: 000000000/0000");
         return;
-        }
-        
-        if (!taxn.matches(taxPattern)) {
-        JOptionPane.showMessageDialog(null, "Invalid tax number format. Format should be: CZ00000000");
-        return;
-        }
+        }      
         
         Statement s = null;
                 
         try {
             
             s = DB.connect().createStatement();
-            s.executeUpdate("INSERT INTO employees (Name, `E-mail`, Address, `Phone number`, `Bank account`, `Tax number` ) VALUES ('" + name + "', '" + email + "', '" + address + "', '" + phnumber + "', '" + bankacc + "', '" + taxn + "')");
+            s.executeUpdate("INSERT INTO employees (Name, `E-mail`, Address, `Phone number`, `Bank account`) VALUES ('" + name + "', '" + email + "', '" + address + "', '" + phnumber + "', '" + bankacc + "')");
            
             JOptionPane.showMessageDialog(null, "Employee sucessfully added !");
             
@@ -67,12 +55,11 @@ public class ReliaPOS {
         }
     }
     
-    public void updateEmployee(String name, String email, String address, String phnumber, String bankacc, String taxn, String id) {     
+    public void updateEmployee(String name, String email, String address, String phnumber, String bankacc, String id) {     
         String namePattern = "^[a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+(?: [a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+)*$";
         String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
         String phonePattern = "^\\+\\d{9,}$";
         String bankPattern = "^\\d{6,}/\\d{4}$";
-        String taxPattern = "^CZ\\d{8}$";
     
     
         if (!name.matches(namePattern)) {
@@ -95,17 +82,12 @@ public class ReliaPOS {
         return;
         }
         
-        if (!taxn.matches(taxPattern)) {
-        JOptionPane.showMessageDialog(null, "Invalid tax number format. Format should be: CZ00000000");
-        return;
-        }
-        
         Statement s = null;
        
         try {
             
         s = DB.connect().createStatement();
-        s.executeUpdate("UPDATE employees SET Name = '" + name + "', `E-mail` = '" + email + "', Address =  '" + address + "', `Phone number` = '" + phnumber + "', `Bank account` = '" +bankacc + "', `Tax number` = '" + taxn + "' WHERE Name = '" + id + "'");
+        s.executeUpdate("UPDATE employees SET Name = '" + name + "', `E-mail` = '" + email + "', Address =  '" + address + "', `Phone number` = '" + phnumber + "', `Bank account` = '" +bankacc + "' WHERE Name = '" + id + "'");
            
         JOptionPane.showMessageDialog(null, "Employee sucessfully updated !");
         

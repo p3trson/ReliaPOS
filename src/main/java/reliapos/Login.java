@@ -7,11 +7,8 @@ import javax.swing.JOptionPane;
 import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 
 
-public class Login extends javax.swing.JFrame {
-  
-    
+public class Login extends javax.swing.JFrame {    
     JpanelLoader panelLoader = new JpanelLoader();
-    
     Connection con = null;
     PreparedStatement s = null;
     ResultSet rs = null;
@@ -182,14 +179,12 @@ public class Login extends javax.swing.JFrame {
         Register registerFrame = new Register();
         registerFrame.setVisible(true);
         this.dispose();
-       
     }//GEN-LAST:event_sgnBtnActionPerformed
 
     private void lgnBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lgnBtnActionPerformed
         login();   
     }//GEN-LAST:event_lgnBtnActionPerformed
 
-    
     public void login() {
     String name = nameTf.getText();
     char[] passwordChars = passTf.getPassword();
@@ -228,11 +223,9 @@ public class Login extends javax.swing.JFrame {
         }    
 }
 
-    public static void main(String args[]) {
-        
+    public static void main(String args[]) {       
         FlatDarkLaf.setup();
-            
-       
+                   
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login().setVisible(true);

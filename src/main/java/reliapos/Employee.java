@@ -11,13 +11,10 @@ public class Employee extends javax.swing.JPanel{
     private ReliaPOS reliapos;
     private String query = "SELECT * FROM employees";
     
-    
-     
     public Employee() {   
         reliapos = new ReliaPOS();
         initComponents();        
-        reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);
-                
+        reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);               
     }
 
     
@@ -46,8 +43,6 @@ public class Employee extends javax.swing.JPanel{
         add_numberTf = new javax.swing.JTextField();
         add_numberL = new javax.swing.JLabel();
         add_addBtn = new javax.swing.JButton();
-        add_taxTf = new javax.swing.JTextField();
-        add_taxL = new javax.swing.JLabel();
         add_bankTf = new javax.swing.JTextField();
         add_bankL = new javax.swing.JLabel();
         add_cancelBtn = new javax.swing.JButton();
@@ -63,8 +58,6 @@ public class Employee extends javax.swing.JPanel{
         edit_numberTf = new javax.swing.JTextField();
         edit_numberL = new javax.swing.JLabel();
         edit_saveBtn = new javax.swing.JButton();
-        edit_taxTf = new javax.swing.JTextField();
-        edit_taxL = new javax.swing.JLabel();
         edit_bankTf = new javax.swing.JTextField();
         edit_bankL = new javax.swing.JLabel();
         edit_cancelBtn = new javax.swing.JButton();
@@ -93,14 +86,14 @@ public class Employee extends javax.swing.JPanel{
 
             },
             new String [] {
-                "ID", "Name", "E-mail", "Address", "Phone Number", "Bank Account", "Tax Number"
+                "ID", "Name", "E-mail", "Address", "Phone Number", "Bank Account"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -267,16 +260,6 @@ public class Employee extends javax.swing.JPanel{
             }
         });
 
-        add_taxTf.setBackground(new java.awt.Color(40, 40, 40));
-        add_taxTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        add_taxTf.setForeground(new java.awt.Color(255, 255, 255));
-        add_taxTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
-        add_taxTf.setCaretColor(new java.awt.Color(255, 255, 255));
-
-        add_taxL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        add_taxL.setForeground(new java.awt.Color(255, 255, 255));
-        add_taxL.setText("Tax number:");
-
         add_bankTf.setBackground(new java.awt.Color(40, 40, 40));
         add_bankTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         add_bankTf.setForeground(new java.awt.Color(255, 255, 255));
@@ -317,8 +300,6 @@ public class Employee extends javax.swing.JPanel{
                         .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(add_bankTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(add_bankL)
-                            .addComponent(add_taxTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(add_taxL)
                             .addComponent(add_nameTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(add_nameL)
                             .addComponent(add_mailTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -365,11 +346,7 @@ public class Employee extends javax.swing.JPanel{
                 .addComponent(add_bankL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(add_bankTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(add_taxL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(add_taxTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(add_cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(add_addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -433,16 +410,6 @@ public class Employee extends javax.swing.JPanel{
                 edit_saveBtnActionPerformed(evt);
             }
         });
-
-        edit_taxTf.setBackground(new java.awt.Color(40, 40, 40));
-        edit_taxTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        edit_taxTf.setForeground(new java.awt.Color(255, 255, 255));
-        edit_taxTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
-        edit_taxTf.setCaretColor(new java.awt.Color(255, 255, 255));
-
-        edit_taxL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        edit_taxL.setForeground(new java.awt.Color(255, 255, 255));
-        edit_taxL.setText("Tax number:");
 
         edit_bankTf.setBackground(new java.awt.Color(40, 40, 40));
         edit_bankTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -514,8 +481,6 @@ public class Employee extends javax.swing.JPanel{
                             .addComponent(edit_searchL)
                             .addComponent(edit_bankTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(edit_bankL)
-                            .addComponent(edit_taxTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(edit_taxL)
                             .addComponent(edit_nameTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(edit_nameL)
                             .addComponent(edit_emailTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -564,11 +529,7 @@ public class Employee extends javax.swing.JPanel{
                 .addComponent(edit_bankL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(edit_bankTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(edit_taxL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(edit_taxTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
                 .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(edit_saveBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(edit_cancelBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -628,13 +589,12 @@ public class Employee extends javax.swing.JPanel{
         String email = edit_emailTf.getText();
         String address = edit_addressTf.getText();
         String number = edit_numberTf.getText();
-        String bank = edit_bankTf.getText();
-        String tax = edit_taxTf.getText();
+        String bank = edit_bankTf.getText();        
         String id = edit_searchTf.getText();
         
-        reliapos.updateEmployee(name, email, address, number, bank, tax, id);
+        reliapos.updateEmployee(name, email, address, number, bank, id);
         reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);
-        reliapos.clearText(edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf, edit_bankTf, edit_taxTf);
+        reliapos.clearText(edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf, edit_bankTf);
     }//GEN-LAST:event_edit_saveBtnActionPerformed
 
     private void edit_cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_cancelBtnActionPerformed
@@ -646,7 +606,7 @@ public class Employee extends javax.swing.JPanel{
     }//GEN-LAST:event_editBtnPanelActionPerformed
 
     private void edit_searchTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_searchTfActionPerformed
-       reliapos.searchRecord("employees", "Name", edit_searchTf.getText(), edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf, edit_bankTf, edit_taxTf);
+       reliapos.searchRecord("employees", "Name", edit_searchTf.getText(), edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf, edit_bankTf);
     }//GEN-LAST:event_edit_searchTfActionPerformed
 
     private void add_backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_backBtnActionPerformed
@@ -663,17 +623,16 @@ public class Employee extends javax.swing.JPanel{
         String address = add_addressTf.getText();
         String phnumber = add_numberTf.getText();
         String bankAcc = add_bankTf.getText();
-        String tax = add_taxTf.getText();
 
-        reliapos.addEmployee(name, email, address, phnumber, bankAcc, tax);
+        reliapos.addEmployee(name, email, address, phnumber, bankAcc);
         reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);
-        reliapos.clearText(add_nameTf, add_mailTf, add_addressTf, add_numberTf, add_bankTf, add_taxTf);
+        reliapos.clearText(add_nameTf, add_mailTf, add_addressTf, add_numberTf, add_bankTf);
     }//GEN-LAST:event_add_addBtnActionPerformed
 
     private void edit_deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_deleteBtnActionPerformed
         reliapos.deleteRecord("employees", "Name", edit_searchTf.getText());
         reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);
-        reliapos.clearText(edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf, edit_bankTf, edit_taxTf);
+        reliapos.clearText(edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf, edit_bankTf);
     }//GEN-LAST:event_edit_deleteBtnActionPerformed
 
     private void searchTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTfActionPerformed
@@ -708,8 +667,6 @@ public class Employee extends javax.swing.JPanel{
     private javax.swing.JTextField add_nameTf;
     private javax.swing.JLabel add_numberL;
     private javax.swing.JTextField add_numberTf;
-    private javax.swing.JLabel add_taxL;
-    private javax.swing.JTextField add_taxTf;
     private javax.swing.JTable dbTable;
     private javax.swing.JScrollPane dbTablePane;
     private javax.swing.JButton editBtnPanel;
@@ -731,8 +688,6 @@ public class Employee extends javax.swing.JPanel{
     private javax.swing.JButton edit_saveBtn;
     private javax.swing.JLabel edit_searchL;
     private javax.swing.JTextField edit_searchTf;
-    private javax.swing.JLabel edit_taxL;
-    private javax.swing.JTextField edit_taxTf;
     private javax.swing.JLayeredPane layeredPane;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JButton refreshBtn;
