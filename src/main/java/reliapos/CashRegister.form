@@ -61,7 +61,7 @@
                   <Component id="invoiceLable" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="invoiceID" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="533" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -137,7 +137,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="categoryTabbedPane" alignment="0" max="32767" attributes="0"/>
+              <Component id="categoryTabbedPane" alignment="0" pref="727" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -169,11 +169,11 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="productScrollPane" alignment="0" max="32767" attributes="0"/>
+              <Component id="productScrollPane" alignment="0" min="-2" pref="531" max="-2" attributes="0"/>
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="paymentLabel" pref="249" max="32767" attributes="0"/>
+                      <Component id="paymentLabel" max="32767" attributes="0"/>
                       <Component id="paymentC" alignment="0" max="32767" attributes="0"/>
                       <Component id="changeTf" alignment="0" max="32767" attributes="0"/>
                       <Component id="paidamountTf" alignment="1" max="32767" attributes="0"/>

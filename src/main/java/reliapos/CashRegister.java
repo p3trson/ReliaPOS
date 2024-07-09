@@ -100,7 +100,7 @@ public class CashRegister extends javax.swing.JPanel {
                 .addComponent(invoiceLable)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(invoiceID)
-                .addContainerGap(533, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         backgroundPanelLayout.setVerticalGroup(
             backgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,7 +132,7 @@ public class CashRegister extends javax.swing.JPanel {
         categoryListPanel.setLayout(categoryListPanelLayout);
         categoryListPanelLayout.setHorizontalGroup(
             categoryListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(categoryTabbedPane)
+            .addComponent(categoryTabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 727, Short.MAX_VALUE)
         );
         categoryListPanelLayout.setVerticalGroup(
             categoryListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -415,11 +415,11 @@ public class CashRegister extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(productScrollPane)
+            .addComponent(productScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(paymentLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
+                    .addComponent(paymentLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(paymentC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(changeTf)
                     .addComponent(paidamountTf, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -508,17 +508,16 @@ public class CashRegister extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) productsTable.getModel();
         model.setRowCount(0);
         reliapos.clearText(totalpriceTf, paidamountTf, changeTf);
-        updateInvoiceID(currentInvoiceID);
         currentInvoiceID++;
         invoiceID.setText(String.format("%02d", currentInvoiceID));
     }//GEN-LAST:event_payBtnActionPerformed
 
     private void changeTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeTfActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_changeTfActionPerformed
 
     private void totalpriceTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalpriceTfActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_totalpriceTfActionPerformed
 
     private void sevenBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sevenBtnActionPerformed
@@ -701,7 +700,6 @@ public class CashRegister extends javax.swing.JPanel {
     return productPanel;
     }
     
-
     private int getProductQuantity(String productName) {
     Statement s = null;
     ResultSet rs = null;
@@ -739,8 +737,6 @@ public class CashRegister extends javax.swing.JPanel {
     }
     }
     
-    
-
     private void handleProductClick(String productName, String salePrice) {
     int currentQuantity = getProductQuantity(productName);
 
@@ -768,10 +764,8 @@ public class CashRegister extends javax.swing.JPanel {
             model.addRow(new Object[]{invoiceId, productName, "1", salePrice});
         }
 
-       
         updateProductQuantity(productName, currentQuantity - 1);
 
-       
         updateTotalPrice();
 
     } else {
@@ -800,6 +794,7 @@ public class CashRegister extends javax.swing.JPanel {
 }
  
     private void updateChange() {
+        
     try {
         String totalText = totalpriceTf.getText();
         String paidAmountText = paidamountTf.getText();
@@ -814,17 +809,16 @@ public class CashRegister extends javax.swing.JPanel {
         changeTf.setText("Invalid input");
     }
 }
-
-    
+ 
     private void setPaidAmountFromTotalPrice(String paymentType) {
       
     if (paymentType.equals("Credit Card") || paymentType.equals("Debit Card") || paymentType.equals("Check")) {
         
-        String totalText = totalpriceTf.getText().trim();
+        String totalPrice = totalpriceTf.getText().trim();
 
-        if (!totalText.isEmpty()) {
+        if (!totalPrice.isEmpty()) {
 
-            paidamountTf.setText(totalText);
+            paidamountTf.setText(totalPrice);
         }
     }
 }
@@ -836,30 +830,38 @@ public class CashRegister extends javax.swing.JPanel {
         }
     }
     
-    
-    public void addCartToDatabase() {
+   public void addCartToDatabase() {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+
         try {
             DefaultTableModel model = (DefaultTableModel) productsTable.getModel();
             int rc = model.getRowCount();
-            
+
+            conn = DB.connect();
+            pstmt = conn.prepareStatement("INSERT INTO cart (InvoiceID, ProductName, Quantity, Price, TotalPrice) VALUES (?, ?, ?, ?, ?)");
+
             for (int i = 0; i < rc; i++) {
-                String invoiceID = model.getValueAt(i, 0).toString();
-                String name = model.getValueAt(i, 1).toString();
-                String quantity = model.getValueAt(i, 2).toString();
-                String price = model.getValueAt(i, 3).toString();
-                String totalPrice = model.getValueAt(i, 4).toString();
-            
-            
-            Statement s = DB.connect().createStatement();
-            
-            s.executeUpdate("INSERT INTO cart (InvoiceID, ProductName, Quantity, Price, TotalPrice) VALUES ('" + invoiceID + "', '" + name + "', '" + quantity + "', '" + price + "', '" + totalPrice + "')");
-            
+                pstmt.setInt(1, currentInvoiceID);
+                pstmt.setString(2, model.getValueAt(i, 1).toString());
+                pstmt.setInt(3, Integer.parseInt(model.getValueAt(i, 2).toString()));
+                pstmt.setDouble(4, Double.parseDouble(model.getValueAt(i, 3).toString()));
+                pstmt.setDouble(5, Double.parseDouble(model.getValueAt(i, 4).toString()));
+                pstmt.addBatch();
             }
-            
-            JOptionPane.showMessageDialog(null, "Sucessfuly paid");
-            
-        } catch (SQLException e ) {
-            
+
+            pstmt.executeBatch();
+            JOptionPane.showMessageDialog(null, "Successfully paid");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (pstmt != null) pstmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
     
@@ -868,55 +870,33 @@ public class CashRegister extends javax.swing.JPanel {
         paidamountTf.setText(currentText + number);
     }
     
-    public int getLastInvoiceID() {
-    int lastInvoiceID = 1;
-    Connection conn = null;
-    Statement stmt = null;
-    ResultSet rs = null;
+     public int getLastInvoiceID() {
+        int lastInvoiceID = 1;
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
 
-    try {
-        conn = DB.connect();
-        stmt = conn.createStatement();
-        rs = stmt.executeQuery("SELECT MAX(InvoiceID) FROM cart");
-
-        if (rs.next()) {
-            lastInvoiceID = rs.getInt(1);
-        }
-    } catch (SQLException e) {
-        e.printStackTrace();
-    } finally {
         try {
-            if (rs != null) rs.close();
-            if (stmt != null) stmt.close();
-            if (conn != null) conn.close();
+            conn = DB.connect();
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT MAX(InvoiceID) FROM cart");
+
+            if (rs.next()) {
+                lastInvoiceID = rs.getInt(1);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
+        return lastInvoiceID;
     }
-    return lastInvoiceID;
-}
-
-    public void updateInvoiceID(int newInvoiceID) {
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-
-    try {
-        conn = DB.connect();
-        pstmt = conn.prepareStatement("UPDATE cart SET InvoiceID = ?");
-
-        pstmt.setInt(1, newInvoiceID);
-        pstmt.executeUpdate();
-    } catch (SQLException e) {
-        e.printStackTrace();
-    } finally {
-        try {
-            if (pstmt != null) pstmt.close();
-            if (conn != null) conn.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-}
      
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel backgroundPanel;
