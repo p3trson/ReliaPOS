@@ -191,9 +191,9 @@ public class Login extends javax.swing.JFrame {
     String pass = new String(passwordChars); 
 
     try {
+
         String sql = "SELECT * FROM users WHERE Name=?";
         s = con.prepareStatement(sql);
-        
         s.setString(1, name);
         rs = s.executeQuery();
         
@@ -205,6 +205,31 @@ public class Login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Logged in");
                 new Home().setVisible(true);
                 this.dispose();
+                return;
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Your login failed");
+                return;
+            }
+        }
+        
+        sql = "SELECT * FROM employees WHERE Name=?";
+        s = con.prepareStatement(sql);
+        s.setString(1, name);
+        rs = s.executeQuery();
+        
+        if (rs.next()) {
+            String storedPassword = rs.getString("Password");
+            
+            if (pass.equals(storedPassword)) {
+                JOptionPane.showMessageDialog(rootPane, "Logged in");
+                
+                Home hm = new Home();
+                CashRegister cr = new CashRegister(true);
+                hm.setVisible(true);
+                
+                panelLoader.jPanelLoader(hm.mainPanel, cr);
+                
+                this.dispose();
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Your login failed");
             }
@@ -214,13 +239,13 @@ public class Login extends javax.swing.JFrame {
     } catch (HeadlessException | SQLException e) {
         e.printStackTrace();
     } finally {
-            try {
-                if (rs != null) rs.close();
-                if (s != null) s.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }    
+        try {
+            if (rs != null) rs.close();
+            if (s != null) s.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
     public static void main(String args[]) {       

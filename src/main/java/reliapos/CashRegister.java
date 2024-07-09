@@ -19,15 +19,22 @@ public class CashRegister extends javax.swing.JPanel {
     JpanelLoader panelLoader = new JpanelLoader();
     private ReliaPOS reliapos;
     private int currentInvoiceID;
+    private boolean isEmployee;
 
-    public CashRegister() {
+    public CashRegister(boolean isEmployee) {
+        this.isEmployee = isEmployee;
         reliapos = new ReliaPOS();
         initComponents();
         generateTabsFromDatabase();
         reliapos.loadPaymentTypesIntoComboBox(paymentC); 
         currentInvoiceID = getLastInvoiceID() + 1;
         invoiceID.setText(String.format("%02d", currentInvoiceID));
+        
+         if (isEmployee) {
+            edit_backBtn.setVisible(true); 
+        }
     }
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -581,8 +588,12 @@ public class CashRegister extends javax.swing.JPanel {
     }//GEN-LAST:event_paymentCItemStateChanged
 
     private void edit_backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_backBtnActionPerformed
+        if (!isEmployee) { 
         Home home = new Home();
         panelLoader.jPanelLoader(this, home.mainPanel);
+    } else {
+        JOptionPane.showMessageDialog(this, "Access Denied: Employees cannot access the Home panel.");
+    }
     }//GEN-LAST:event_edit_backBtnActionPerformed
 
     private void removeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeBtnActionPerformed

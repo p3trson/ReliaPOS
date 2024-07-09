@@ -12,11 +12,12 @@ import javax.swing.table.DefaultTableModel;
 
 public class ReliaPOS {
     
-    public void addEmployee(String name, String email, String address, String phnumber, String bankacc) {        
+    public void addEmployee(String name, String email, String address, String phnumber, String bankacc, String password) {        
         String namePattern = "^[a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+(?: [a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+)*$";
         String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
         String phonePattern = "^\\+\\d{9,}$";
         String bankPattern = "^\\d{6,}/\\d{4}$";
+        String passwordPattern = "^[a-zA-Z0-9]{8,}$";
     
     
         if (!name.matches(namePattern)) {
@@ -39,14 +40,20 @@ public class ReliaPOS {
         return;
         }      
         
+        if (!password.matches(passwordPattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid password format. Password should contain atleast 8 characters");
+        return;
+        }      
+        
         Statement s = null;
                 
         try {
             
             s = DB.connect().createStatement();
-            s.executeUpdate("INSERT INTO employees (Name, `E-mail`, Address, `Phone number`, `Bank account`) VALUES ('" + name + "', '" + email + "', '" + address + "', '" + phnumber + "', '" + bankacc + "')");
+            s.executeUpdate("INSERT INTO employees (Name, `E-mail`, Address, `Phone number`, `Bank account`, Password) VALUES ('" + name + "', '" + email + "', '" + address + "', '" + phnumber + "', '" + bankacc + "', '" + password + "')");
            
             JOptionPane.showMessageDialog(null, "Employee sucessfully added !");
+            
             
         } catch (SQLException e) {
           System.out.println(e);
@@ -55,12 +62,12 @@ public class ReliaPOS {
         }
     }
     
-    public void updateEmployee(String name, String email, String address, String phnumber, String bankacc, String id) {     
+    public void updateEmployee(String name, String email, String address, String phnumber, String bankacc, String id, String password) {     
         String namePattern = "^[a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+(?: [a-zA-ZáéíóúýčďěňřšťžÁÉÍÓÚÝČĎĚŇŘŠŤŽ]+)*$";
         String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
         String phonePattern = "^\\+\\d{9,}$";
         String bankPattern = "^\\d{6,}/\\d{4}$";
-    
+        String passwordPattern = "^[a-zA-Z0-9]{8,}$";
     
         if (!name.matches(namePattern)) {
         JOptionPane.showMessageDialog(null, "Invalid name format. Format should be: First Name - Last Name");
@@ -82,12 +89,17 @@ public class ReliaPOS {
         return;
         }
         
+        if (!password.matches(passwordPattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid password format. Password should contain atleast 8 characters");
+        return;
+        }      
+        
         Statement s = null;
        
         try {
             
         s = DB.connect().createStatement();
-        s.executeUpdate("UPDATE employees SET Name = '" + name + "', `E-mail` = '" + email + "', Address =  '" + address + "', `Phone number` = '" + phnumber + "', `Bank account` = '" +bankacc + "' WHERE Name = '" + id + "'");
+        s.executeUpdate("UPDATE employees SET Name = '" + name + "', `E-mail` = '" + email + "', Address =  '" + address + "', `Phone number` = '" + phnumber + "', `Bank account` = '" +bankacc + "', Password = '" + password + "'WHERE Name = '" + id + "'");
            
         JOptionPane.showMessageDialog(null, "Employee sucessfully updated !");
         

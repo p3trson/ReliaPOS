@@ -47,6 +47,8 @@ public class Employee extends javax.swing.JPanel{
         add_bankL = new javax.swing.JLabel();
         add_cancelBtn = new javax.swing.JButton();
         add_backBtn = new javax.swing.JButton();
+        add_passwordTf = new javax.swing.JTextField();
+        add_passwordL = new javax.swing.JLabel();
         editPanel = new javax.swing.JPanel();
         editEmployee = new javax.swing.JLabel();
         edit_nameTf = new javax.swing.JTextField();
@@ -65,6 +67,8 @@ public class Employee extends javax.swing.JPanel{
         edit_searchL = new javax.swing.JLabel();
         edit_deleteBtn = new javax.swing.JButton();
         edit_backBtn = new javax.swing.JButton();
+        edit_passwordTf = new javax.swing.JTextField();
+        edit_passwordL = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(52, 52, 52));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -86,14 +90,14 @@ public class Employee extends javax.swing.JPanel{
 
             },
             new String [] {
-                "ID", "Name", "E-mail", "Address", "Phone Number", "Bank Account"
+                "ID", "Name", "E-mail", "Address", "Phone Number", "Bank Account", "Password"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -289,6 +293,16 @@ public class Employee extends javax.swing.JPanel{
             }
         });
 
+        add_passwordTf.setBackground(new java.awt.Color(40, 40, 40));
+        add_passwordTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        add_passwordTf.setForeground(new java.awt.Color(255, 255, 255));
+        add_passwordTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
+        add_passwordTf.setCaretColor(new java.awt.Color(255, 255, 255));
+
+        add_passwordL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        add_passwordL.setForeground(new java.awt.Color(255, 255, 255));
+        add_passwordL.setText("Password:");
+
         javax.swing.GroupLayout addPanelLayout = new javax.swing.GroupLayout(addPanel);
         addPanel.setLayout(addPanelLayout);
         addPanelLayout.setHorizontalGroup(
@@ -297,7 +311,13 @@ public class Employee extends javax.swing.JPanel{
                 .addGap(16, 16, 16)
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(addPanelLayout.createSequentialGroup()
+                        .addComponent(addEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+                        .addGap(111, 111, 111)
+                        .addComponent(add_backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(addPanelLayout.createSequentialGroup()
                         .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(add_passwordTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(add_passwordL)
                             .addComponent(add_bankTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(add_bankL)
                             .addComponent(add_nameTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -312,11 +332,7 @@ public class Employee extends javax.swing.JPanel{
                                 .addComponent(add_addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(add_cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 66, Short.MAX_VALUE))
-                    .addGroup(addPanelLayout.createSequentialGroup()
-                        .addComponent(addEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(111, 111, 111)
-                        .addComponent(add_backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         addPanelLayout.setVerticalGroup(
@@ -346,7 +362,11 @@ public class Employee extends javax.swing.JPanel{
                 .addComponent(add_bankL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(add_bankTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(add_passwordL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(add_passwordTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(add_cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(add_addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -464,6 +484,16 @@ public class Employee extends javax.swing.JPanel{
             }
         });
 
+        edit_passwordTf.setBackground(new java.awt.Color(40, 40, 40));
+        edit_passwordTf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        edit_passwordTf.setForeground(new java.awt.Color(255, 255, 255));
+        edit_passwordTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
+        edit_passwordTf.setCaretColor(new java.awt.Color(255, 255, 255));
+
+        edit_passwordL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        edit_passwordL.setForeground(new java.awt.Color(255, 255, 255));
+        edit_passwordL.setText("Password:");
+
         javax.swing.GroupLayout editPanelLayout = new javax.swing.GroupLayout(editPanel);
         editPanel.setLayout(editPanelLayout);
         editPanelLayout.setHorizontalGroup(
@@ -477,6 +507,8 @@ public class Employee extends javax.swing.JPanel{
                         .addComponent(edit_backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(editPanelLayout.createSequentialGroup()
                         .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(edit_passwordTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edit_passwordL)
                             .addComponent(edit_searchTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(edit_searchL)
                             .addComponent(edit_bankTf, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -529,7 +561,11 @@ public class Employee extends javax.swing.JPanel{
                 .addComponent(edit_bankL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(edit_bankTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(edit_passwordL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(edit_passwordTf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(edit_saveBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(edit_cancelBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -591,10 +627,11 @@ public class Employee extends javax.swing.JPanel{
         String number = edit_numberTf.getText();
         String bank = edit_bankTf.getText();        
         String id = edit_searchTf.getText();
+        String password = edit_passwordTf.getText();
         
-        reliapos.updateEmployee(name, email, address, number, bank, id);
+        reliapos.updateEmployee(name, email, address, number, bank, id, password);
         reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);
-        reliapos.clearText(edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf, edit_bankTf);
+        reliapos.clearText(edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf, edit_bankTf, edit_passwordTf);
     }//GEN-LAST:event_edit_saveBtnActionPerformed
 
     private void edit_cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_cancelBtnActionPerformed
@@ -606,7 +643,7 @@ public class Employee extends javax.swing.JPanel{
     }//GEN-LAST:event_editBtnPanelActionPerformed
 
     private void edit_searchTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_searchTfActionPerformed
-       reliapos.searchRecord("employees", "Name", edit_searchTf.getText(), edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf, edit_bankTf);
+       reliapos.searchRecord("employees", "Name", edit_searchTf.getText(), edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf, edit_bankTf, edit_passwordTf);
     }//GEN-LAST:event_edit_searchTfActionPerformed
 
     private void add_backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_backBtnActionPerformed
@@ -623,16 +660,17 @@ public class Employee extends javax.swing.JPanel{
         String address = add_addressTf.getText();
         String phnumber = add_numberTf.getText();
         String bankAcc = add_bankTf.getText();
+        String password = add_passwordTf.getText();
 
-        reliapos.addEmployee(name, email, address, phnumber, bankAcc);
+        reliapos.addEmployee(name, email, address, phnumber, bankAcc, password);
         reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);
-        reliapos.clearText(add_nameTf, add_mailTf, add_addressTf, add_numberTf, add_bankTf);
+        reliapos.clearText(add_nameTf, add_mailTf, add_addressTf, add_numberTf, add_bankTf, add_passwordTf);
     }//GEN-LAST:event_add_addBtnActionPerformed
 
     private void edit_deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_deleteBtnActionPerformed
         reliapos.deleteRecord("employees", "Name", edit_searchTf.getText());
         reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);
-        reliapos.clearText(edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf, edit_bankTf);
+        reliapos.clearText(edit_nameTf, edit_emailTf, edit_addressTf, edit_numberTf, edit_bankTf, add_passwordTf);
     }//GEN-LAST:event_edit_deleteBtnActionPerformed
 
     private void searchTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTfActionPerformed
@@ -647,9 +685,6 @@ public class Employee extends javax.swing.JPanel{
         editPanel.setVisible(false);
     }//GEN-LAST:event_edit_backBtnActionPerformed
     
-    
-    
- 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtnPanel;
     private javax.swing.JLabel addEmployee;
@@ -667,6 +702,8 @@ public class Employee extends javax.swing.JPanel{
     private javax.swing.JTextField add_nameTf;
     private javax.swing.JLabel add_numberL;
     private javax.swing.JTextField add_numberTf;
+    private javax.swing.JLabel add_passwordL;
+    private javax.swing.JTextField add_passwordTf;
     private javax.swing.JTable dbTable;
     private javax.swing.JScrollPane dbTablePane;
     private javax.swing.JButton editBtnPanel;
@@ -685,6 +722,8 @@ public class Employee extends javax.swing.JPanel{
     private javax.swing.JTextField edit_nameTf;
     private javax.swing.JLabel edit_numberL;
     private javax.swing.JTextField edit_numberTf;
+    private javax.swing.JLabel edit_passwordL;
+    private javax.swing.JTextField edit_passwordTf;
     private javax.swing.JButton edit_saveBtn;
     private javax.swing.JLabel edit_searchL;
     private javax.swing.JTextField edit_searchTf;

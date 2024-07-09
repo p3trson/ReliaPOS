@@ -240,7 +240,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_paymentBtnActionPerformed
 
     private void cashierBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashierBtnActionPerformed
-        CashRegister cr = new CashRegister();
+        CashRegister cr = new CashRegister(false);
         panelLoader.jPanelLoader(mainPanel, cr);
     }//GEN-LAST:event_cashierBtnActionPerformed
 
