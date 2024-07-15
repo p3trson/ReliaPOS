@@ -1,6 +1,5 @@
 package reliapos;
 
-
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -12,16 +11,16 @@ import java.sql.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-
-
 public class CashRegister extends javax.swing.JPanel {
     
-    JpanelLoader panelLoader = new JpanelLoader();
+    private JpanelLoader panelLoader;
     private ReliaPOS reliapos;
+    private Home home;
     private int currentInvoiceID;
     private boolean isEmployee;
 
     public CashRegister(boolean isEmployee) {
+        panelLoader = new JpanelLoader();
         this.isEmployee = isEmployee;
         reliapos = new ReliaPOS();
         initComponents();
@@ -34,7 +33,6 @@ public class CashRegister extends javax.swing.JPanel {
             edit_backBtn.setVisible(true); 
         }
     }
-    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -589,8 +587,8 @@ public class CashRegister extends javax.swing.JPanel {
 
     private void edit_backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_backBtnActionPerformed
         if (!isEmployee) { 
-        Home home = new Home();
-        panelLoader.jPanelLoader(this, home.mainPanel);
+        home = new Home();
+        panelLoader.jPanelLoader(this, home.jLayeredPane);
     } else {
         JOptionPane.showMessageDialog(this, "Access Denied: Employees cannot access the Home panel.");
     }
@@ -605,7 +603,7 @@ public class CashRegister extends javax.swing.JPanel {
             model.removeRow(row);
 
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
     }//GEN-LAST:event_removeBtnActionPerformed
 
@@ -821,8 +819,7 @@ public class CashRegister extends javax.swing.JPanel {
     }
 }
  
-    private void setPaidAmountFromTotalPrice(String paymentType) {
-      
+    private void setPaidAmountFromTotalPrice(String paymentType) {      
     if (paymentType.equals("Credit Card") || paymentType.equals("Debit Card") || paymentType.equals("Check")) {
         
         String totalPrice = totalpriceTf.getText().trim();

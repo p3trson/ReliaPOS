@@ -1,10 +1,6 @@
 package reliapos;
 
-
-
 import javax.swing.table.DefaultTableModel;
-
-
 
 public class Employee extends javax.swing.JPanel{
 
@@ -16,8 +12,7 @@ public class Employee extends javax.swing.JPanel{
         initComponents();        
         reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);               
     }
-
-    
+  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -424,7 +419,7 @@ public class Employee extends javax.swing.JPanel{
 
         edit_saveBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Save.png")); // NOI18N
         edit_saveBtn.setBorder(null);
-        edit_saveBtn.setSelectedIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover save.png")); // NOI18N
+        edit_saveBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover save.png")); // NOI18N
         edit_saveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edit_saveBtnActionPerformed(evt);

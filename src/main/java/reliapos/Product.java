@@ -1,18 +1,12 @@
 package reliapos;
 
-
-
 import javax.swing.table.DefaultTableModel;
-
-
 
 public class Product extends javax.swing.JPanel{
 
     private ReliaPOS reliapos;
     private String query = "SELECT * FROM products";
     
-    
-     
     public Product() {   
         reliapos = new ReliaPOS();
         initComponents();        
@@ -21,7 +15,6 @@ public class Product extends javax.swing.JPanel{
         reliapos.loadCategoriesIntoComboBox(edit_categoryC);
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

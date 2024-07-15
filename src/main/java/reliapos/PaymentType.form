@@ -586,10 +586,8 @@
                       <EmptySpace pref="355" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="edit_deleteBtn" pref="0" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="edit_cancelBtn" alignment="1" pref="0" max="32767" attributes="0"/>
-                              <Component id="edit_saveBtn" alignment="1" min="-2" pref="77" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="edit_cancelBtn" alignment="1" pref="0" max="32767" attributes="0"/>
+                          <Component id="edit_saveBtn" alignment="1" min="-2" pref="77" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   </Group>

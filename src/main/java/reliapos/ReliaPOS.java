@@ -115,15 +115,12 @@ public class ReliaPOS {
         String costPattern = "^[0-9]+(\\.[0-9]{1,2})?$";
         String salepricePattern = "^[0-9]+(\\.[0-9]{1,2})?$";
         String quantityPattern = "^[0-9]+$";
-      
-    
-        
+           
         if (!name.matches(namePattern)) {
         JOptionPane.showMessageDialog(null, "Invalid product name format.");
         return;
         }
-                
-        
+                     
         if (!cost.matches(costPattern)) {
         JOptionPane.showMessageDialog(null, "Invalid cost format. Format should be a number with up to 2 decimal places.");
         return;
@@ -547,6 +544,71 @@ public class ReliaPOS {
         panel.setVisible(true);
     }
 }
+     public void slideInPanel2(JLayeredPane layeredPane, JPanel panel) {
+    if (!panel.isVisible()) {               
+        layeredPane.setLayer(panel, JLayeredPane.PALETTE_LAYER);
+        panel.setVisible(true);
+    } else { 
+        panel.setVisible(false);
+    }    
+}
+    
+    public void companySettings(String name, String email, String address, String phnumber) {        
+        String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
+        String phonePattern = "^\\+\\d{9,}$";
+        
+        if (!email.matches(emailPattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid email format. Format should be: example@example.com");
+        return;
+        }
+        
+        if (!phnumber.matches(phonePattern)) {
+        JOptionPane.showMessageDialog(null, "Invalid phone number format. Format should be: +000000000");
+        return;
+        }     
+        
+        Statement s = null;
+                
+        try {           
+            s = DB.connect().createStatement();
+            s.executeUpdate("INSERT INTO company (Name, `E-mail`, Address, `Phone number`) VALUES ('" + name + "', '" + email + "', '" + address + "', '" + phnumber + "')");
+           
+            JOptionPane.showMessageDialog(null, "Company information sucessfully updated !");
+            
+            
+        } catch (SQLException e) {
+          System.out.println(e);
+        } finally {
+             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
+        }
+    }
+    
+    public void LoadCompanySettings(JTextField nameTf, JTextField emailTf, JTextField addressTf, JTextField phoneNumberTf) {                 
+        Statement s = null;
+        ResultSet rs = null;
+                
+        try {           
+            s = DB.connect().createStatement();
+            rs = s.executeQuery("SELECT * FROM company ");
+
+            if (rs.next()) {
+            String name = rs.getString("Name");
+            String email = rs.getString("E-mail");
+            String address = rs.getString("Address");
+            String phoneNumber = rs.getString("Phone number");
+            
+
+            nameTf.setText(name);
+            emailTf.setText(email);
+            addressTf.setText(address);
+            phoneNumberTf.setText(phoneNumber);            
+          }  
+        } catch (SQLException e) {
+          System.out.println(e);
+        } finally {
+             if (s != null) try { s.close(); } catch (SQLException e) { e.printStackTrace(); }
+        }
+    }
    
 }
 

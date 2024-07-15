@@ -1,26 +1,18 @@
 package reliapos;
 
-
-
 import javax.swing.table.DefaultTableModel;
-
-
 
 public class PaymentType extends javax.swing.JPanel{
 
     private ReliaPOS reliapos;
     private String query = "SELECT * FROM paymenttypes";
-    
-    
      
     public PaymentType() {   
         reliapos = new ReliaPOS();
         initComponents();        
-        reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);
-                
+        reliapos.tb_load((DefaultTableModel) dbTable.getModel(), query);          
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -535,9 +527,6 @@ public class PaymentType extends javax.swing.JPanel{
         addPanel.setVisible(false);
     }//GEN-LAST:event_add_backBtnActionPerformed
     
-    
-    
- 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtnPanel;
     private javax.swing.JPanel addPanel;

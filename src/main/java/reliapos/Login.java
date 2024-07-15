@@ -68,6 +68,7 @@ public class Login extends javax.swing.JFrame {
 
         nameTf.setBackground(new java.awt.Color(40, 40, 40));
         nameTf.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        nameTf.setForeground(new java.awt.Color(255, 255, 255));
         nameTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
         nameTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +109,7 @@ public class Login extends javax.swing.JFrame {
 
         passTf.setBackground(new java.awt.Color(40, 40, 40));
         passTf.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        passTf.setForeground(new java.awt.Color(255, 255, 255));
         passTf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(92, 92, 92)));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -135,9 +137,9 @@ public class Login extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(36, 36, 36)
                 .addComponent(jLabel2)
-                .addGap(57, 57, 57)
+                .addGap(47, 47, 47)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nameTf, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)

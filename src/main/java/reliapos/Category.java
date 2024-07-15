@@ -1,10 +1,6 @@
 package reliapos;
 
-
-
 import javax.swing.table.DefaultTableModel;
-
-
 
 public class Category extends javax.swing.JPanel{
 
