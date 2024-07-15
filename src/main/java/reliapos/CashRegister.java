@@ -179,7 +179,7 @@ public class CashRegister extends javax.swing.JPanel {
 
         payBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Pay.png")); // NOI18N
         payBtn.setBorder(null);
-        payBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover pay.png")); // NOI18N
+        payBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/reliapos/Rollover pay.png"))); // NOI18N
         payBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 payBtnActionPerformed(evt);

@@ -319,7 +319,7 @@
               <Border info="null"/>
             </Property>
             <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover pay.png"/>
+              <Image iconType="3" name="/reliapos/Rollover pay.png"/>
             </Property>
           </Properties>
           <Events>
