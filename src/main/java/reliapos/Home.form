@@ -84,6 +84,7 @@
             </Property>
           </Properties>
           <AuxValues>
+            <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="company.setVisible(false);"/>
           </AuxValues>
 
@@ -536,6 +537,12 @@
                     <Property name="selected" type="boolean" value="true"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
+                    </Property>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/icons/Rollover employees.png"/>
+                    </Property>
+                    <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/icons/Rollover employees.png"/>
                     </Property>
                   </Properties>
                   <Events>

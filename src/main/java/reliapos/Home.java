@@ -250,6 +250,8 @@ public class Home extends javax.swing.JFrame {
         employeeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Employee.png"))); // NOI18N
         employeeBtn.setSelected(true);
         employeeBtn.setBorder(null);
+        employeeBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover employees.png"))); // NOI18N
+        employeeBtn.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover employees.png"))); // NOI18N
         employeeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 employeeBtnActionPerformed(evt);
@@ -372,7 +374,7 @@ public class Home extends javax.swing.JFrame {
                 .addGap(0, 0, 0))
         );
 
-        jLayeredPane.setLayer(company, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane.setLayer(company, javax.swing.JLayeredPane.PALETTE_LAYER);
         jLayeredPane.setLayer(mainPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPaneLayout = new javax.swing.GroupLayout(jLayeredPane);
