@@ -110,9 +110,9 @@ public class Home extends javax.swing.JFrame {
         numberL.setForeground(new java.awt.Color(255, 255, 255));
         numberL.setText("Phone number:");
 
-        cancelBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Cancel.png")); // NOI18N
+        cancelBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Cancel.png"))); // NOI18N
         cancelBtn.setBorder(null);
-        cancelBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover Cancel.png")); // NOI18N
+        cancelBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover Cancel.png"))); // NOI18N
         cancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelBtnActionPerformed(evt);
@@ -120,18 +120,18 @@ public class Home extends javax.swing.JFrame {
         });
 
         backBtn.setBackground(new java.awt.Color(42, 42, 42));
-        backBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Back.png")); // NOI18N
+        backBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Back.png"))); // NOI18N
         backBtn.setBorder(null);
-        backBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover back.png")); // NOI18N
+        backBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover back.png"))); // NOI18N
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);
             }
         });
 
-        saveBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Save.png")); // NOI18N
+        saveBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Save.png"))); // NOI18N
         saveBtn.setBorder(null);
-        saveBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover save.png")); // NOI18N
+        saveBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover save.png"))); // NOI18N
         saveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveBtnActionPerformed(evt);
@@ -202,16 +202,16 @@ public class Home extends javax.swing.JFrame {
 
         homeIcon.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         homeIcon.setForeground(new java.awt.Color(255, 255, 255));
-        homeIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Downloads\\system-solid-41-home (2).png")); // NOI18N
+        homeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Home.png"))); // NOI18N
 
         tabName.setBackground(new java.awt.Color(42, 42, 42));
         tabName.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         tabName.setForeground(new java.awt.Color(255, 255, 255));
         tabName.setText("Employees");
 
-        settingsBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Settings.png")); // NOI18N
+        settingsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Settings.png"))); // NOI18N
         settingsBtn.setBorder(null);
-        settingsBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Settings rollover.png")); // NOI18N
+        settingsBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Settings rollover.png"))); // NOI18N
         settingsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 settingsBtnActionPerformed(evt);
@@ -245,25 +245,23 @@ public class Home extends javax.swing.JFrame {
 
         categoryPanel.setBackground(new java.awt.Color(42, 42, 42));
 
-        employeeBtn.setBackground(new java.awt.Color(52, 52, 52));
+        employeeBtn.setBackground(new java.awt.Color(42, 42, 42));
         buttonGroup1.add(employeeBtn);
-        employeeBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Employee.png")); // NOI18N
+        employeeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Employee.png"))); // NOI18N
         employeeBtn.setSelected(true);
         employeeBtn.setBorder(null);
-        employeeBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover employees.png")); // NOI18N
-        employeeBtn.setSelectedIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover employees.png")); // NOI18N
         employeeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 employeeBtnActionPerformed(evt);
             }
         });
 
-        productBtn.setBackground(new java.awt.Color(52, 52, 52));
+        productBtn.setBackground(new java.awt.Color(42, 42, 42));
         buttonGroup1.add(productBtn);
-        productBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Products.png")); // NOI18N
+        productBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Products.png"))); // NOI18N
         productBtn.setBorder(null);
-        productBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover products.png")); // NOI18N
-        productBtn.setSelectedIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover products.png")); // NOI18N
+        productBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover products.png"))); // NOI18N
+        productBtn.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover products.png"))); // NOI18N
         productBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 productBtnActionPerformed(evt);
@@ -272,22 +270,22 @@ public class Home extends javax.swing.JFrame {
 
         categoryBtn.setBackground(new java.awt.Color(52, 52, 52));
         buttonGroup1.add(categoryBtn);
-        categoryBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Categories.png")); // NOI18N
+        categoryBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Categories.png"))); // NOI18N
         categoryBtn.setBorder(null);
-        categoryBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover categories.png")); // NOI18N
-        categoryBtn.setSelectedIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover categories.png")); // NOI18N
+        categoryBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover categories.png"))); // NOI18N
+        categoryBtn.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover categories.png"))); // NOI18N
         categoryBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 categoryBtnActionPerformed(evt);
             }
         });
 
-        paymentBtn.setBackground(new java.awt.Color(52, 52, 52));
+        paymentBtn.setBackground(new java.awt.Color(42, 42, 42));
         buttonGroup1.add(paymentBtn);
-        paymentBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Payments.png")); // NOI18N
+        paymentBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Payments.png"))); // NOI18N
         paymentBtn.setBorder(null);
-        paymentBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover payments.png")); // NOI18N
-        paymentBtn.setSelectedIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover payments.png")); // NOI18N
+        paymentBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover payments.png"))); // NOI18N
+        paymentBtn.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover payments.png"))); // NOI18N
         paymentBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 paymentBtnActionPerformed(evt);
@@ -296,10 +294,10 @@ public class Home extends javax.swing.JFrame {
 
         cashierBtn.setBackground(new java.awt.Color(52, 52, 52));
         buttonGroup1.add(cashierBtn);
-        cashierBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Cashier.png")); // NOI18N
+        cashierBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Cashier.png"))); // NOI18N
         cashierBtn.setBorder(null);
-        cashierBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover cashier.png")); // NOI18N
-        cashierBtn.setSelectedIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover cashier.png")); // NOI18N
+        cashierBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover cashier.png"))); // NOI18N
+        cashierBtn.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover cashier.png"))); // NOI18N
         cashierBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cashierBtnActionPerformed(evt);
@@ -313,17 +311,17 @@ public class Home extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, categoryPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(categoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(productBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(employeeBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(categoryBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(paymentBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cashierBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(38, 38, 38))
+                    .addComponent(cashierBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(productBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(employeeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
         );
         categoryPanelLayout.setVerticalGroup(
             categoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(categoryPanelLayout.createSequentialGroup()
-                .addComponent(employeeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(employeeBtn)
                 .addGap(0, 0, 0)
                 .addComponent(productBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
@@ -332,7 +330,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(paymentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(cashierBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(420, Short.MAX_VALUE))
         );
 
         loadPanel.setBackground(new java.awt.Color(42, 42, 42));
@@ -342,7 +340,7 @@ public class Home extends javax.swing.JFrame {
         loadPanel.setLayout(loadPanelLayout);
         loadPanelLayout.setHorizontalGroup(
             loadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1029, Short.MAX_VALUE)
+            .addGap(0, 1028, Short.MAX_VALUE)
         );
         loadPanelLayout.setVerticalGroup(
             loadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,9 +356,9 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(topPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addComponent(categoryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(categoryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)
-                        .addComponent(loadPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1029, Short.MAX_VALUE)))
+                        .addComponent(loadPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1028, Short.MAX_VALUE)))
                 .addGap(0, 0, 0))
         );
         mainPanelLayout.setVerticalGroup(

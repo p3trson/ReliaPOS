@@ -122,36 +122,36 @@ public class Employee extends javax.swing.JPanel{
             }
         });
 
-        refreshBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Refresh.png")); // NOI18N
+        refreshBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Refresh.png"))); // NOI18N
         refreshBtn.setBorder(null);
-        refreshBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover refresh.png")); // NOI18N
+        refreshBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover refresh.png"))); // NOI18N
         refreshBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshBtnActionPerformed(evt);
             }
         });
 
-        addBtnPanel.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\add.png")); // NOI18N
+        addBtnPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/add.png"))); // NOI18N
         addBtnPanel.setBorder(null);
-        addBtnPanel.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover add.png")); // NOI18N
+        addBtnPanel.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover add.png"))); // NOI18N
         addBtnPanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBtnPanelActionPerformed(evt);
             }
         });
 
-        editBtnPanel.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Edit.png")); // NOI18N
+        editBtnPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Edit.png"))); // NOI18N
         editBtnPanel.setBorder(null);
-        editBtnPanel.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover edit.png")); // NOI18N
+        editBtnPanel.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover edit.png"))); // NOI18N
         editBtnPanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editBtnPanelActionPerformed(evt);
             }
         });
 
-        savePdfBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Save PDF.png")); // NOI18N
+        savePdfBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Save PDF.png"))); // NOI18N
         savePdfBtn.setBorder(null);
-        savePdfBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover pdf.png")); // NOI18N
+        savePdfBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover pdf.png"))); // NOI18N
         savePdfBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 savePdfBtnActionPerformed(evt);
@@ -250,9 +250,9 @@ public class Employee extends javax.swing.JPanel{
         add_numberL.setForeground(new java.awt.Color(255, 255, 255));
         add_numberL.setText("Phone number:");
 
-        add_addBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\add.png")); // NOI18N
+        add_addBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/add.png"))); // NOI18N
         add_addBtn.setBorder(null);
-        add_addBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover add.png")); // NOI18N
+        add_addBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover add.png"))); // NOI18N
         add_addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 add_addBtnActionPerformed(evt);
@@ -269,9 +269,9 @@ public class Employee extends javax.swing.JPanel{
         add_bankL.setForeground(new java.awt.Color(255, 255, 255));
         add_bankL.setText("Bank account:");
 
-        add_cancelBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Cancel.png")); // NOI18N
+        add_cancelBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Cancel.png"))); // NOI18N
         add_cancelBtn.setBorder(null);
-        add_cancelBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover Cancel.png")); // NOI18N
+        add_cancelBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover Cancel.png"))); // NOI18N
         add_cancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 add_cancelBtnActionPerformed(evt);
@@ -279,9 +279,7 @@ public class Employee extends javax.swing.JPanel{
         });
 
         add_backBtn.setBackground(new java.awt.Color(42, 42, 42));
-        add_backBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Back.png")); // NOI18N
         add_backBtn.setBorder(null);
-        add_backBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover back.png")); // NOI18N
         add_backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 add_backBtnActionPerformed(evt);
@@ -417,9 +415,9 @@ public class Employee extends javax.swing.JPanel{
         edit_numberL.setForeground(new java.awt.Color(255, 255, 255));
         edit_numberL.setText("Phone number:");
 
-        edit_saveBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Save.png")); // NOI18N
+        edit_saveBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Save.png"))); // NOI18N
         edit_saveBtn.setBorder(null);
-        edit_saveBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover save.png")); // NOI18N
+        edit_saveBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover save.png"))); // NOI18N
         edit_saveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edit_saveBtnActionPerformed(evt);
@@ -436,9 +434,9 @@ public class Employee extends javax.swing.JPanel{
         edit_bankL.setForeground(new java.awt.Color(255, 255, 255));
         edit_bankL.setText("Bank account:");
 
-        edit_cancelBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Cancel.png")); // NOI18N
+        edit_cancelBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Cancel.png"))); // NOI18N
         edit_cancelBtn.setBorder(null);
-        edit_cancelBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover Cancel.png")); // NOI18N
+        edit_cancelBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover Cancel.png"))); // NOI18N
         edit_cancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edit_cancelBtnActionPerformed(evt);
@@ -460,9 +458,9 @@ public class Employee extends javax.swing.JPanel{
         edit_searchL.setForeground(new java.awt.Color(255, 255, 255));
         edit_searchL.setText("Search by name:");
 
-        edit_deleteBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Delete.png")); // NOI18N
+        edit_deleteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Delete.png"))); // NOI18N
         edit_deleteBtn.setBorder(null);
-        edit_deleteBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover delete.png")); // NOI18N
+        edit_deleteBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover delete.png"))); // NOI18N
         edit_deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edit_deleteBtnActionPerformed(evt);
@@ -470,9 +468,7 @@ public class Employee extends javax.swing.JPanel{
         });
 
         edit_backBtn.setBackground(new java.awt.Color(42, 42, 42));
-        edit_backBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Back.png")); // NOI18N
         edit_backBtn.setBorder(null);
-        edit_backBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover back.png")); // NOI18N
         edit_backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edit_backBtnActionPerformed(evt);

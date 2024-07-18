@@ -77,9 +77,9 @@ public class CashRegister extends javax.swing.JPanel {
         backgroundPanel.setBackground(new java.awt.Color(42, 42, 42));
 
         edit_backBtn.setBackground(new java.awt.Color(42, 42, 42));
-        edit_backBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Back2.png")); // NOI18N
+        edit_backBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Back2.png"))); // NOI18N
         edit_backBtn.setBorder(null);
-        edit_backBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover back2.png")); // NOI18N
+        edit_backBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover back2.png"))); // NOI18N
         edit_backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edit_backBtnActionPerformed(evt);
@@ -177,18 +177,18 @@ public class CashRegister extends javax.swing.JPanel {
         totalLabel.setForeground(new java.awt.Color(255, 255, 255));
         totalLabel.setText("Total ");
 
-        payBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Pay.png")); // NOI18N
+        payBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Pay.png"))); // NOI18N
         payBtn.setBorder(null);
-        payBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/reliapos/Rollover pay.png"))); // NOI18N
+        payBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover pay.png"))); // NOI18N
         payBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 payBtnActionPerformed(evt);
             }
         });
 
-        stornoBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Cancel.png")); // NOI18N
+        stornoBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Cancel.png"))); // NOI18N
         stornoBtn.setBorder(null);
-        stornoBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover Cancel.png")); // NOI18N
+        stornoBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover Cancel.png"))); // NOI18N
         stornoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 stornoBtnActionPerformed(evt);
@@ -407,9 +407,9 @@ public class CashRegister extends javax.swing.JPanel {
             }
         });
 
-        removeBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Delete Row.png")); // NOI18N
+        removeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Delete Row.png"))); // NOI18N
         removeBtn.setBorder(null);
-        removeBtn.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\kostak\\Documents\\NetBeansProjects\\ReliaPOS\\src\\main\\java\\icons\\Rollover deleteRow.png")); // NOI18N
+        removeBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Rollover deleteRow.png"))); // NOI18N
         removeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeBtnActionPerformed(evt);

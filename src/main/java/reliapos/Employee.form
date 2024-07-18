@@ -265,13 +265,13 @@
             <Component class="javax.swing.JButton" name="refreshBtn">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Refresh.png"/>
+                  <Image iconType="3" name="/icons/Refresh.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover refresh.png"/>
+                  <Image iconType="3" name="/icons/Rollover refresh.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -281,13 +281,13 @@
             <Component class="javax.swing.JButton" name="addBtnPanel">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\add.png"/>
+                  <Image iconType="3" name="/icons/add.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover add.png"/>
+                  <Image iconType="3" name="/icons/Rollover add.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -297,13 +297,13 @@
             <Component class="javax.swing.JButton" name="editBtnPanel">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Edit.png"/>
+                  <Image iconType="3" name="/icons/Edit.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover edit.png"/>
+                  <Image iconType="3" name="/icons/Rollover edit.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -313,13 +313,13 @@
             <Component class="javax.swing.JButton" name="savePdfBtn">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Save PDF.png"/>
+                  <Image iconType="3" name="/icons/Save PDF.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover pdf.png"/>
+                  <Image iconType="3" name="/icons/Rollover pdf.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -580,13 +580,13 @@
             <Component class="javax.swing.JButton" name="add_addBtn">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\add.png"/>
+                  <Image iconType="3" name="/icons/add.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover add.png"/>
+                  <Image iconType="3" name="/icons/Rollover add.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -630,13 +630,13 @@
             <Component class="javax.swing.JButton" name="add_cancelBtn">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Cancel.png"/>
+                  <Image iconType="3" name="/icons/Cancel.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover Cancel.png"/>
+                  <Image iconType="3" name="/icons/Rollover Cancel.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -648,14 +648,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="2a" green="2a" red="2a" type="rgb"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Back.png"/>
-                </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
-                </Property>
-                <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover back.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -959,13 +953,13 @@
             <Component class="javax.swing.JButton" name="edit_saveBtn">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Save.png"/>
+                  <Image iconType="3" name="/icons/Save.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover save.png"/>
+                  <Image iconType="3" name="/icons/Rollover save.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -1009,13 +1003,13 @@
             <Component class="javax.swing.JButton" name="edit_cancelBtn">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Cancel.png"/>
+                  <Image iconType="3" name="/icons/Cancel.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover Cancel.png"/>
+                  <Image iconType="3" name="/icons/Rollover Cancel.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -1062,13 +1056,13 @@
             <Component class="javax.swing.JButton" name="edit_deleteBtn">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Delete.png"/>
+                  <Image iconType="3" name="/icons/Delete.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover delete.png"/>
+                  <Image iconType="3" name="/icons/Rollover delete.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -1080,14 +1074,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="2a" green="2a" red="2a" type="rgb"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Back.png"/>
-                </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
-                </Property>
-                <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover back.png"/>
                 </Property>
               </Properties>
               <Events>

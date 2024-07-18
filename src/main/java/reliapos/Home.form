@@ -306,13 +306,13 @@
             <Component class="javax.swing.JButton" name="cancelBtn">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Cancel.png"/>
+                  <Image iconType="3" name="/icons/Cancel.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover Cancel.png"/>
+                  <Image iconType="3" name="/icons/Rollover Cancel.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -325,13 +325,13 @@
                   <Color blue="2a" green="2a" red="2a" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Back.png"/>
+                  <Image iconType="3" name="/icons/Back.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover back.png"/>
+                  <Image iconType="3" name="/icons/Rollover back.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -341,13 +341,13 @@
             <Component class="javax.swing.JButton" name="saveBtn">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Save.png"/>
+                  <Image iconType="3" name="/icons/Save.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover save.png"/>
+                  <Image iconType="3" name="/icons/Rollover save.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -374,9 +374,9 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="topPanel" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="categoryPanel" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="categoryPanel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                              <Component id="loadPanel" pref="1029" max="32767" attributes="0"/>
+                              <Component id="loadPanel" pref="1028" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
@@ -445,7 +445,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\kostak\Downloads\system-solid-41-home (2).png"/>
+                      <Image iconType="3" name="/icons/Home.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -466,13 +466,13 @@
                 <Component class="javax.swing.JButton" name="settingsBtn">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Settings.png"/>
+                      <Image iconType="3" name="/icons/Settings.png"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
                     </Property>
                     <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Settings rollover.png"/>
+                      <Image iconType="3" name="/icons/Settings rollover.png"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -494,20 +494,20 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="productBtn" alignment="0" max="32767" attributes="0"/>
-                              <Component id="employeeBtn" alignment="0" max="32767" attributes="0"/>
                               <Component id="categoryBtn" alignment="0" max="32767" attributes="0"/>
                               <Component id="paymentBtn" alignment="0" max="32767" attributes="0"/>
                               <Component id="cashierBtn" alignment="0" max="32767" attributes="0"/>
+                              <Component id="productBtn" alignment="1" max="32767" attributes="0"/>
+                              <Component id="employeeBtn" alignment="1" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="employeeBtn" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="employeeBtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="productBtn" min="-2" pref="50" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
@@ -516,7 +516,7 @@
                           <Component id="paymentBtn" min="-2" pref="50" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="cashierBtn" min="-2" pref="50" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="420" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -525,23 +525,17 @@
                 <Component class="javax.swing.JToggleButton" name="employeeBtn">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="34" green="34" red="34" type="rgb"/>
+                      <Color blue="2a" green="2a" red="2a" type="rgb"/>
                     </Property>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup1"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Employee.png"/>
+                      <Image iconType="3" name="/icons/Employee.png"/>
                     </Property>
                     <Property name="selected" type="boolean" value="true"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
-                    </Property>
-                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover employees.png"/>
-                    </Property>
-                    <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover employees.png"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -551,22 +545,22 @@
                 <Component class="javax.swing.JToggleButton" name="productBtn">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="34" green="34" red="34" type="rgb"/>
+                      <Color blue="2a" green="2a" red="2a" type="rgb"/>
                     </Property>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup1"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Products.png"/>
+                      <Image iconType="3" name="/icons/Products.png"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
                     </Property>
                     <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover products.png"/>
+                      <Image iconType="3" name="/icons/Rollover products.png"/>
                     </Property>
                     <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover products.png"/>
+                      <Image iconType="3" name="/icons/Rollover products.png"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -582,16 +576,16 @@
                       <ComponentRef name="buttonGroup1"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Categories.png"/>
+                      <Image iconType="3" name="/icons/Categories.png"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
                     </Property>
                     <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover categories.png"/>
+                      <Image iconType="3" name="/icons/Rollover categories.png"/>
                     </Property>
                     <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover categories.png"/>
+                      <Image iconType="3" name="/icons/Rollover categories.png"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -601,22 +595,22 @@
                 <Component class="javax.swing.JToggleButton" name="paymentBtn">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="34" green="34" red="34" type="rgb"/>
+                      <Color blue="2a" green="2a" red="2a" type="rgb"/>
                     </Property>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup1"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Payments.png"/>
+                      <Image iconType="3" name="/icons/Payments.png"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
                     </Property>
                     <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover payments.png"/>
+                      <Image iconType="3" name="/icons/Rollover payments.png"/>
                     </Property>
                     <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover payments.png"/>
+                      <Image iconType="3" name="/icons/Rollover payments.png"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -632,16 +626,16 @@
                       <ComponentRef name="buttonGroup1"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Cashier.png"/>
+                      <Image iconType="3" name="/icons/Cashier.png"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
                     </Property>
                     <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover cashier.png"/>
+                      <Image iconType="3" name="/icons/Rollover cashier.png"/>
                     </Property>
                     <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\kostak\Documents\NetBeansProjects\ReliaPOS\src\main\java\icons\Rollover cashier.png"/>
+                      <Image iconType="3" name="/icons/Rollover cashier.png"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -663,7 +657,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1029" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1028" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
